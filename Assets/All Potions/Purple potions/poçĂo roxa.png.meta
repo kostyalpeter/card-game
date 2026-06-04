@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 82bdeda7f33abdf4ebc464f5de567f1d
+guid: 03f46c4aa76d45f49932ea2d715fae0a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3755361514452952272
-    second: HumansProjectiles_0
+      213: -8938377514756285266
+    second: "po\xE7\u0102o roxa_0"
   - first:
-      213: 1544377788986270335
-    second: HumansProjectiles_1
+      213: 4028495350720926056
+    second: "po\xE7\u0102o roxa_1"
   - first:
-      213: -922368817348342936
-    second: HumansProjectiles_2
-  - first:
-      213: 6941404161562268356
-    second: HumansProjectiles_3
-  - first:
-      213: 1620598322774269242
-    second: HumansProjectiles_4
-  - first:
-      213: -8212861716891659102
-    second: HumansProjectiles_5
+      213: 4452835286165682967
+    second: "po\xE7\u0102o roxa_2"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HumansProjectiles_0
+      name: "po\xE7\u0102o roxa_0"
       rect:
         serializedVersion: 2
-        x: 3
-        y: 36
-        width: 11
-        height: 7
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d424209669bd1430800000000000000
-      internalID: 3755361514452952272
+      spriteID: eacdc94020184f380800000000000000
+      internalID: -8938377514756285266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumansProjectiles_1
+      name: "po\xE7\u0102o roxa_1"
       rect:
         serializedVersion: 2
-        x: 2
-        y: 20
-        width: 11
-        height: 7
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f72a787aa6bbe6510800000000000000
-      internalID: 1544377788986270335
+      spriteID: 86198077d2718e730800000000000000
+      internalID: 4028495350720926056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumansProjectiles_2
+      name: "po\xE7\u0102o roxa_2"
       rect:
         serializedVersion: 2
-        x: 18
-        y: 20
-        width: 11
-        height: 7
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,86 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86b0e0292761333f0800000000000000
-      internalID: -922368817348342936
+      spriteID: 71bfa33c916abcd30800000000000000
+      internalID: 4452835286165682967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumansProjectiles_3
+      name: "po\xE7\u0102o roxa_3"
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c2565cce42d45060800000000000000
-      internalID: 6941404161562268356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HumansProjectiles_4
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 4
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3ddd8896958d7610800000000000000
-      internalID: 1620598322774269242
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HumansProjectiles_5
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 3
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a4944738cd060e80800000000000000
-      internalID: -8212861716891659102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HumansProjectiles_6
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 36
-        width: 13
-        height: 7
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cc52efdf22bb4d4b9f260341d59b084
-      internalID: -588709487
+      spriteID: 6158bda4c2b361048b316bb929c9536d
+      internalID: -1824737512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumansProjectiles_7
+      name: "po\xE7\u0102o roxa_4"
       rect:
         serializedVersion: 2
-        x: 50
-        y: 2
-        width: 12
-        height: 12
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,30 +222,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a7cab3e7cf8b1f4cb1b6e845d7ec741
-      internalID: 70943642
+      spriteID: 31ab6df01c61f2d41addacbf1c961268
+      internalID: 1178007890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HumansProjectiles_8
+      name: "po\xE7\u0102o roxa_5"
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
-        width: 12
-        height: 12
+        x: 32
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8d4b4f1e1840a3498f64453deddedc2
-      internalID: 792868300
+      spriteID: e5f4ec9f9e87699429ac47573ac88864
+      internalID: -927143522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "po\xE7\u0102o roxa_6"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e435b173877aacd47b0c865ef843a4e0
+      internalID: -474625918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "po\xE7\u0102o roxa_7"
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cc31491574ef64fabe00b0da13351a
+      internalID: -489785681
       vertices: []
       indices: 
       edges: []
@@ -329,7 +298,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 60bf49eaa0e2e9046940bf4bd1c8b629
+    spriteID: 937c81f28d73fe348b04be79c92bf95e
     internalID: 0
     vertices: []
     indices: 
@@ -337,17 +306,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      HumansProjectiles_0: 3755361514452952272
-      HumansProjectiles_1: 1544377788986270335
-      HumansProjectiles_2: -922368817348342936
-      HumansProjectiles_3: 6941404161562268356
-      HumansProjectiles_4: 1620598322774269242
-      HumansProjectiles_5: -8212861716891659102
-      HumansProjectiles_6: -588709487
-      HumansProjectiles_7: 70943642
-      HumansProjectiles_8: 792868300
+      "po\xE7\u0102o roxa_0": -8938377514756285266
+      "po\xE7\u0102o roxa_1": 4028495350720926056
+      "po\xE7\u0102o roxa_2": 4452835286165682967
+      "po\xE7\u0102o roxa_3": -1824737512
+      "po\xE7\u0102o roxa_4": 1178007890
+      "po\xE7\u0102o roxa_5": -927143522
+      "po\xE7\u0102o roxa_6": -474625918
+      "po\xE7\u0102o roxa_7": -489785681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
