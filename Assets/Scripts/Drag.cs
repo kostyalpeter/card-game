@@ -9,6 +9,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public GameObject RightTarget;
     public GameObject LeftTarget;
     public float Distance = 350;
+    [SerializeField] public static bool beingDragged;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-
+        beingDragged = true;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -28,17 +29,18 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnEndDrag(PointerEventData eventData)
     {
-            if (Vector2.Distance(transform.position, Right) >= Distance && Vector2.Distance(transform.position, Left) >= Distance)
-            {
-                transform.position = originalPos;
-            }
-            else if (Vector2.Distance(transform.position, Right) < Distance)
-            {
-                transform.position = Right;
-            }
-            else if (Vector2.Distance(transform.position, Left) < Distance)
-            {
-                transform.position = Left;
+        if (Vector2.Distance(transform.position, Right) >= Distance && Vector2.Distance(transform.position, Left) >= Distance)
+        {
+            transform.position = originalPos;
         }
+        else if (Vector2.Distance(transform.position, Right) < Distance)
+        {
+            transform.position = Right;
+        }
+        else if (Vector2.Distance(transform.position, Left) < Distance)
+        {
+            transform.position = Left;
+        }
+        beingDragged = false;
     }
 }
