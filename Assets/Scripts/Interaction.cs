@@ -8,7 +8,7 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject Play;
     bool canPress;
     bool canPressSettings;
-    public GameObject SettingsPanelObject;
+    public RectTransform SettingsPanelObject;
     bool canGear;
     public GameObject GearObject;
     public float GearRotation;
@@ -22,53 +22,52 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     Vector3 OriginPos;
     Vector3 Scale;
     public bool canSet;
-    Vector3 SetPanelPos;
-    public float SetTime;
-    public GameObject SetObject;
-    Vector3 SetPos;
+    Vector2 SetPanelPos;
+    public RectTransform SetObject;
+    Vector2 SetPos;
+    public RectTransform MoveToPos;
+    Vector2 MoveTo;
+    Vector2 CardPos;
+    public RectTransform Card;
+    public bool Starting;
 
     void Start()
     {
         Scale = gameObject.transform.localScale;
-        SetPanelPos = SettingsPanelObject.transform.position;
-        SetPos =  SetObject.transform.position;
+        SetPanelPos = SettingsPanelObject.anchoredPosition;
+        SetPos = SetObject.anchoredPosition;
+        MoveTo = MoveToPos.anchoredPosition;
+        CardPos = Card.anchoredPosition;
     }
     void Update()
     {
-        if (canGear)
+        if (canGear && GearObject != null)
         {
             GearObject.transform.rotation = Quaternion.Euler(0, 0, GearObject.transform.rotation.eulerAngles.z - GearRotation * Time.deltaTime * GearRotationSpeed);
         }
         if (canAnim1)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 30 * Time.deltaTime * Flowingspeed, gameObject.transform.position.z);
-            Debug.Log("Up");
         }
         if (canAnim2)
         {
             gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 30 * Time.deltaTime * Flowingspeed, gameObject.transform.position.z);
-            Debug.Log("Down");
         }
-        if (canSet && Vector2.Distance(SettingsPanelObject.transform.position, SetPos) >= 15)
+        if (canSet && SettingsPanelObject != null)
         {
-            SettingsPanelObject.transform.position = new Vector3(SettingsPanelObject.transform.position.x + 30f * Time.deltaTime * Flowingspeed, SettingsPanelObject.transform.position.y, SettingsPanelObject.transform.position.z);
-            Debug.Log("Up");
+            SettingsPanelObject.anchoredPosition = Vector2.MoveTowards(SettingsPanelObject.anchoredPosition, SetPos, 30 * Time.deltaTime * Flowingspeed);
         }
-        if (Vector2.Distance(SettingsPanelObject.transform.position, SetPanelPos) >= 15)
+        if (!canSet && SettingsPanelObject != null)
         {
-            if (!canSet)
-            {
-                SettingsPanelObject.transform.position = new Vector3(SettingsPanelObject.transform.position.x - 30f * Time.deltaTime * Flowingspeed, SettingsPanelObject.transform.position.y, SettingsPanelObject.transform.position.z);
-                Debug.Log("Up");
-            }
+            SettingsPanelObject.anchoredPosition = Vector2.MoveTowards(SettingsPanelObject.anchoredPosition, SetPanelPos, 30 * Time.deltaTime * Flowingspeed);
         }
-        if (Vector2.Distance(SettingsPanelObject.transform.position, SetPanelPos) <= 15)
+        if (Starting && Card != null)
         {
-            SettingsPanelObject.transform.position = SetPanelPos;
+        Card.anchoredPosition = Vector2.MoveTowards(Card.anchoredPosition, MoveToPos.anchoredPosition, 300f * Time.deltaTime * 30);
         }
-        if (Vector2.Distance(SettingsPanelObject.transform.position, SetPos) <= 15)
+        if(Card.anchoredPosition == MoveTo && Card != null)
         {
-            SettingsPanelObject.transform.position = SetPos;
+            Starting = false;
         }
     }
     public void PlayGame()
@@ -102,39 +101,29 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void StartGame()
     {
         Debug.Log("Start");
+        Starting = true;
     }
 
     public void SettingsPanel()
     {
         if (!Drag.beingDragged)
         {
+            canPressSettings = !canPressSettings;
             if (!canPressSettings)
             {
                 canSet = true;
                 canGear = true;
-                StartCoroutine(ResetSettings1());
                 StartCoroutine(Gear());
             }
-            if (canPressSettings && SettingsPanelObject.activeSelf)
+            if (canPressSettings)
             {
                 canSet = false;
                 canGear = true;
-                StartCoroutine(ResetSettings2());
                 StartCoroutine(Gear());
             }
         }
     }
 
-    IEnumerator ResetSettings1()
-    {
-        yield return new WaitForSeconds(0.1f);
-        canPressSettings = true;
-    }
-    IEnumerator ResetSettings2()
-    {
-        yield return new WaitForSeconds(0.1f);
-        canPressSettings = false;
-    }
     IEnumerator Gear()
     {
         yield return new WaitForSeconds(0.4f);
