@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
@@ -30,14 +29,27 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     Vector2 CardPos;
     public RectTransform Card;
     public bool Starting;
+    public bool canMove;
 
     void Start()
     {
         Scale = gameObject.transform.localScale;
-        SetPanelPos = SettingsPanelObject.anchoredPosition;
-        SetPos = SetObject.anchoredPosition;
-        MoveTo = MoveToPos.anchoredPosition;
-        CardPos = Card.anchoredPosition;
+        if (SettingsPanelObject != null)
+        {
+            SetPanelPos = SettingsPanelObject.anchoredPosition;
+        }
+        if (SetObject != null)
+        {
+            SetPos = SetObject.anchoredPosition;
+        }
+        if (MoveToPos != null)
+        {
+            MoveTo = MoveToPos.anchoredPosition;
+        }
+        if (Card != null)
+        {
+            CardPos = Card.anchoredPosition;
+        }
     }
     void Update()
     {
@@ -63,9 +75,9 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         if (Starting && Card != null)
         {
-        Card.anchoredPosition = Vector2.MoveTowards(Card.anchoredPosition, MoveToPos.anchoredPosition, 300f * Time.deltaTime * 30);
+            Card.anchoredPosition = Vector2.MoveTowards(Card.anchoredPosition, MoveToPos.anchoredPosition, 300f * Time.deltaTime * 30);
         }
-        if(Card.anchoredPosition == MoveTo && Card != null)
+        if (Card.anchoredPosition == MoveTo && Card != null)
         {
             Starting = false;
         }
@@ -173,5 +185,20 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         gameObject.transform.localScale = Scale;
         Debug.Log("Press");
+    }
+
+    public void CardUp()
+    {
+        canMove = !canMove;
+        if (canMove && gameObject.GetComponent<RectTransform>().anchoredPosition.y == 2296)
+        {
+            gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + 50f, gameObject.transform.position.z);
+            Debug.Log("Up");
+        }
+        else if (!canMove && gameObject.GetComponent<RectTransform>().anchoredPosition.y >= 2296)
+        {
+            gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y - 50f, gameObject.transform.position.z);
+            Debug.Log("Down");
+        }
     }
 }

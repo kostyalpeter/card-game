@@ -73,84 +73,82 @@ public class CardPlacement : MonoBehaviour
         }
     }
 
-   public void RefreshBoard()
-
+    public void RefreshBoard()
     {
+        Place Place1 = CardPlace1.GetComponent<Place>();
+        Place Place2 = CardPlace2.GetComponent<Place>();
+        Place Place3 = CardPlace3.GetComponent<Place>();
 
-        if (currentCardIndex <= Cards.Count)
 
+        if (Place1)
+        {
+            SkipCard();
+
+
+            if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
+            {
+                GameObject Nextcard = Cards[currentCardIndex];
+                RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
+
+                nextcard.GetComponent<RectTransform>().anchoredPosition = Pos1;
+                nextcard.GetComponent<RectTransform>().rotation = Rot1;
+
+                nextcard.GetComponent<Card>().CardPlace = 1;
+
+                currentCardIndex++;
+            }
+        }
+        if (Place2)
         {
 
-            GameObject NextCard = Cards[currentCardIndex];
+            SkipCard();
 
-            RectTransform nextCard = NextCard.GetComponent<RectTransform>();
-
-            nextCard.GetComponent<Card>();
-
-            if (nextCard.GetComponent<Card>().locked == false)
-
+            if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
             {
+                GameObject Nextcard = Cards[currentCardIndex];
+                RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
 
-                if (CardPlace1.GetComponent<Place>().isTaken == false)
 
-                {
+                nextcard.GetComponent<RectTransform>().anchoredPosition = Pos2;
+                nextcard.GetComponent<RectTransform>().rotation = Rot2;
 
-                    nextCard.position = CardPlace1.position;
-
-                    nextCard.rotation = CardPlace1.rotation;
-
-                    nextCard.GetComponent<Card>().CardPlace = 1;
-
-                }
-
-                else if (CardPlace1.GetComponent<Place>().isTaken == true)
-
-                {
-
-                    if (CardPlace2.GetComponent<Place>().isTaken == false)
-
-                    {
-
-                        nextCard.position = CardPlace2.position;
-
-                        nextCard.rotation = CardPlace2.rotation;
-
-                        nextCard.GetComponent<Card>().CardPlace = 2;
-
-                    }
-
-                    else if (CardPlace2.GetComponent<Place>().isTaken == true)
-
-                    {
-
-                        nextCard.position = CardPlace3.position;
-
-                        nextCard.rotation = CardPlace3.rotation;
-
-                        nextCard.GetComponent<Card>().CardPlace = 3;
-
-                    }
-
-                }
+                nextcard.GetComponent<Card>().CardPlace = 2;
 
                 currentCardIndex++;
-
-                Debug.Log("card");
-
             }
-
-            else
-
-            {
-
-                currentCardIndex++;
-
-                Debug.Log("card skipped");
-
-            }
-
         }
+        if (Place3)
+        {
 
+            SkipCard();
+
+            if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
+            {
+                GameObject Nextcard = Cards[currentCardIndex];
+                RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
+
+
+                nextcard.GetComponent<RectTransform>().anchoredPosition = Pos3;
+                nextcard.GetComponent<RectTransform>().rotation = Rot3;
+
+                nextcard.GetComponent<Card>().CardPlace = 3;
+
+                currentCardIndex++;
+            }
+        }
     }
 
+    void LateUpdate()
+    {
+        SkipCard();
+    }
+
+    public void SkipCard()
+    {
+        while (currentCardIndex < Cards.Count && Cards[currentCardIndex].GetComponent<Card>().locked)
+        {
+            currentCardIndex++;
+            continue;
+        }
+    }
 }

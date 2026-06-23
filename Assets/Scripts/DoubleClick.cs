@@ -7,6 +7,7 @@ public class DoubleClick : MonoBehaviour
     public float speed = 0.3f;
     CardPlacement cards;
     int currentCardIndex;
+    UseCard useCard;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class DoubleClick : MonoBehaviour
             }
             gameObject.SetActive(false);
             cards.RefreshBoard();
+            gameObject.GetComponent<UseCard>().Use();
         }
     }
 
