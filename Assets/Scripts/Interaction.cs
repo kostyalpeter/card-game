@@ -30,6 +30,7 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public RectTransform Card;
     public bool Starting;
     public bool canMove;
+    GameUIStart gameUIStart;
 
     void Start()
     {
@@ -50,6 +51,7 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             CardPos = Card.anchoredPosition;
         }
+        gameUIStart = GetComponent<GameUIStart>();
     }
     void Update()
     {
@@ -190,12 +192,12 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void CardUp()
     {
         canMove = !canMove;
-        if (canMove && gameObject.GetComponent<RectTransform>().anchoredPosition.y == 2296)
+        if (canMove && gameObject.GetComponent<RectTransform>().anchoredPosition.y == 2296 && GameUIStart.Set >= gameUIStart.locked)
         {
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y + 50f, gameObject.transform.position.z);
             Debug.Log("Up");
         }
-        else if (!canMove && gameObject.GetComponent<RectTransform>().anchoredPosition.y >= 2296)
+        else if (!canMove && gameObject.GetComponent<RectTransform>().anchoredPosition.y >= 2296 && GameUIStart.Set >= gameUIStart.locked)
         {
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(gameObject.GetComponent<RectTransform>().anchoredPosition.x, gameObject.GetComponent<RectTransform>().anchoredPosition.y - 50f, gameObject.transform.position.z);
             Debug.Log("Down");
