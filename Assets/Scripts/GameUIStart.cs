@@ -5,22 +5,35 @@ public class GameUIStart : MonoBehaviour
     public GameObject Play;
     bool showPlay;
     public int locked;
-    [SerializeField] public static int Set;
+    public static int Set;
+    public UseCard.Enemies enemies;
 
-    public void Clicked()
+    void Update()
     {
-        showPlay = !showPlay;
-        if (showPlay && Set >= locked)
+        if (showPlay)
         {
             Play.SetActive(true);
         }
-        if (!showPlay && Set >= locked)
+        if (!showPlay)
         {
             Play.SetActive(false);
+        }
+    }
+
+    public void Clicked()
+    {
+        if (Set >= locked)
+        {
+            showPlay = !showPlay;
         }
     }
     public void Test()
     {
         Set++;
+    }
+
+    public void Starting()
+    {
+
     }
 }

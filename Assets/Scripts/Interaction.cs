@@ -75,14 +75,6 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             SettingsPanelObject.anchoredPosition = Vector2.MoveTowards(SettingsPanelObject.anchoredPosition, SetPanelPos, 30 * Time.deltaTime * Flowingspeed);
         }
-        if (Starting && Card != null)
-        {
-            Card.anchoredPosition = Vector2.MoveTowards(Card.anchoredPosition, MoveToPos.anchoredPosition, 300f * Time.deltaTime * 30);
-        }
-        if (Card.anchoredPosition == MoveTo && Card != null)
-        {
-            Starting = false;
-        }
     }
     public void PlayGame()
     {

@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 6675087}
   - component: {fileID: 6675089}
   - component: {fileID: 6675088}
+  - component: {fileID: 6675090}
   m_Layer: 5
   m_Name: button (9)
   m_TagString: Untagged
@@ -420,6 +421,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6675086}
   m_CullTransparentMesh: 1
+--- !u!114 &6675090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 6675088}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7297127
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +488,7 @@ GameObject:
   - component: {fileID: 7297128}
   - component: {fileID: 7297130}
   - component: {fileID: 7297129}
+  - component: {fileID: 7297131}
   m_Layer: 5
   m_Name: button (3)
   m_TagString: Untagged
@@ -496,6 +554,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7297127}
   m_CullTransparentMesh: 1
+--- !u!114 &7297131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7297129}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7334496
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +621,7 @@ GameObject:
   - component: {fileID: 7334497}
   - component: {fileID: 7334499}
   - component: {fileID: 7334498}
+  - component: {fileID: 7334500}
   m_Layer: 5
   m_Name: button (13)
   m_TagString: Untagged
@@ -572,6 +687,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7334496}
   m_CullTransparentMesh: 1
+--- !u!114 &7334500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 7334498}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7601092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 0
+  enemies: 0
 --- !u!114 &17295713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4619,7 +4791,7 @@ GameObject:
   - component: {fileID: 71071631}
   m_Layer: 5
   m_Name: Prince Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5242,6 +5414,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Ten
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &75640223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5256,6 +5440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 6675086}
   locked: 4
+  enemies: 9
 --- !u!1 &76492417
 GameObject:
   m_ObjectHideFlags: 0
@@ -6838,7 +7023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 773}
+  m_AnchoredPosition: {x: 6, y: 1095}
   m_SizeDelta: {x: 202.66, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &101705397
@@ -7556,6 +7741,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Seven
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &108212604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7570,6 +7767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 702452612}
   locked: 3
+  enemies: 6
 --- !u!1 &108324927
 GameObject:
   m_ObjectHideFlags: 0
@@ -8153,6 +8351,7 @@ GameObject:
   - component: {fileID: 111201285}
   - component: {fileID: 111201287}
   - component: {fileID: 111201286}
+  - component: {fileID: 111201288}
   m_Layer: 5
   m_Name: button (8)
   m_TagString: Untagged
@@ -8218,6 +8417,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111201284}
   m_CullTransparentMesh: 1
+--- !u!114 &111201288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111201284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 111201286}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &113685431
 GameObject:
   m_ObjectHideFlags: 0
@@ -10180,7 +10435,7 @@ GameObject:
   - component: {fileID: 138340596}
   m_Layer: 5
   m_Name: Undead Executioner Boss Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11258,6 +11513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 2
+  enemies: 0
 --- !u!114 &162537701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12640,6 +12896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 3
+  enemies: 0
 --- !u!114 &190894466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13095,8 +13352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1290, y: 4.0553017}
-  m_SizeDelta: {x: 526.7972, y: 1002.772}
+  m_AnchoredPosition: {x: -1307.2872, y: -2.2309}
+  m_SizeDelta: {x: 561.3716, y: 1049.9187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &197129215
 GameObject:
@@ -13247,6 +13504,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Two
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &197129219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13261,6 +13530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 258162542}
   locked: 1
+  enemies: 1
 --- !u!1 &200116326
 GameObject:
   m_ObjectHideFlags: 0
@@ -13783,7 +14053,7 @@ GameObject:
   - component: {fileID: 207083125}
   m_Layer: 5
   m_Name: Skeleton SeekerBoss Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15759,6 +16029,7 @@ GameObject:
   - component: {fileID: 237558592}
   - component: {fileID: 237558594}
   - component: {fileID: 237558593}
+  - component: {fileID: 237558595}
   m_Layer: 5
   m_Name: button (7)
   m_TagString: Untagged
@@ -15824,6 +16095,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237558591}
   m_CullTransparentMesh: 1
+--- !u!114 &237558595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237558591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 237558593}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &239047965
 GameObject:
   m_ObjectHideFlags: 0
@@ -16407,7 +16734,7 @@ GameObject:
   - component: {fileID: 246809052}
   m_Layer: 5
   m_Name: Orc Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16878,6 +17205,7 @@ GameObject:
   - component: {fileID: 258162543}
   - component: {fileID: 258162545}
   - component: {fileID: 258162544}
+  - component: {fileID: 258162546}
   m_Layer: 5
   m_Name: button (4)
   m_TagString: Untagged
@@ -16943,6 +17271,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258162542}
   m_CullTransparentMesh: 1
+--- !u!114 &258162546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258162542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 258162544}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &258305016
 GameObject:
   m_ObjectHideFlags: 0
@@ -17029,6 +17413,7 @@ GameObject:
   - component: {fileID: 261931922}
   - component: {fileID: 261931924}
   - component: {fileID: 261931923}
+  - component: {fileID: 261931925}
   m_Layer: 5
   m_Name: button (2)
   m_TagString: Untagged
@@ -17094,6 +17479,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261931921}
   m_CullTransparentMesh: 1
+--- !u!114 &261931925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261931921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 261931923}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &262707452
 GameObject:
   m_ObjectHideFlags: 0
@@ -18590,6 +19031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 8
+  enemies: 0
 --- !u!114 &285745694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19603,6 +20045,7 @@ GameObject:
   - component: {fileID: 314824249}
   - component: {fileID: 314824251}
   - component: {fileID: 314824250}
+  - component: {fileID: 314824252}
   m_Layer: 5
   m_Name: button (16)
   m_TagString: Untagged
@@ -19668,6 +20111,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314824248}
   m_CullTransparentMesh: 1
+--- !u!114 &314824252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314824248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 314824250}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &315040468
 GameObject:
   m_ObjectHideFlags: 0
@@ -23350,6 +23849,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &360526714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25574,7 +26085,7 @@ GameObject:
   - component: {fileID: 410957241}
   m_Layer: 5
   m_Name: King Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28103,6 +28614,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Four
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &449680491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28117,6 +28640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 261931921}
   locked: 1
+  enemies: 3
 --- !u!1 &457625649
 GameObject:
   m_ObjectHideFlags: 0
@@ -28413,6 +28937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 458806773}
   - component: {fileID: 458806772}
+  - component: {fileID: 458806774}
   m_Layer: 0
   m_Name: CardPlacementManager
   m_TagString: Untagged
@@ -28456,6 +28981,9 @@ MonoBehaviour:
   CardPlace2: {fileID: 1323437899}
   CardPlace3: {fileID: 1382793744}
   currentCardIndex: 0
+  Panel: {fileID: 151877031}
+  backGround: {fileID: 784481150}
+  playerCard: {fileID: 1599209257}
 --- !u!4 &458806773
 Transform:
   m_ObjectHideFlags: 0
@@ -28471,6 +28999,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &458806774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458806771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f775e4584250140847da76f90e2716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UseCard
+  cards: 19
+  enemies: 19
 --- !u!1 &460928460
 GameObject:
   m_ObjectHideFlags: 0
@@ -30159,7 +30701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d617b86005af9f44a5a5ef38926d397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
-  Play: {fileID: 0}
+  Play: {fileID: 1265811821}
   SettingsPanelObject: {fileID: 0}
   GearObject: {fileID: 0}
   GearRotation: 0
@@ -30243,6 +30785,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: One
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &488241217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30257,6 +30811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 1265811821}
   locked: 0
+  enemies: 0
 --- !u!1 &489695940
 GameObject:
   m_ObjectHideFlags: 0
@@ -30338,6 +30893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 5
+  enemies: 0
 --- !u!114 &489695943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32376,7 +32932,6 @@ RectTransform:
   - {fileID: 368718276}
   - {fileID: 1284357833}
   - {fileID: 663008080}
-  - {fileID: 1854065197}
   - {fileID: 1243583181}
   - {fileID: 1382793744}
   - {fileID: 1323437899}
@@ -32400,6 +32955,7 @@ RectTransform:
   - {fileID: 703780276}
   - {fileID: 1686958033}
   - {fileID: 808767553}
+  - {fileID: 1854065197}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -33412,6 +33968,7 @@ GameObject:
   - component: {fileID: 535213484}
   - component: {fileID: 535213486}
   - component: {fileID: 535213485}
+  - component: {fileID: 535213487}
   m_Layer: 5
   m_Name: button (14)
   m_TagString: Untagged
@@ -33477,6 +34034,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535213483}
   m_CullTransparentMesh: 1
+--- !u!114 &535213487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535213483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 535213485}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &537620390
 GameObject:
   m_ObjectHideFlags: 0
@@ -34062,6 +34675,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Eleven
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &549340807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34076,6 +34701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 583933022}
   locked: 4
+  enemies: 10
 --- !u!1 &549471917
 GameObject:
   m_ObjectHideFlags: 0
@@ -35383,6 +36009,7 @@ GameObject:
   - component: {fileID: 583933023}
   - component: {fileID: 583933025}
   - component: {fileID: 583933024}
+  - component: {fileID: 583933026}
   m_Layer: 5
   m_Name: button (10)
   m_TagString: Untagged
@@ -35448,6 +36075,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583933022}
   m_CullTransparentMesh: 1
+--- !u!114 &583933026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583933022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 583933024}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &585885811
 GameObject:
   m_ObjectHideFlags: 0
@@ -36741,6 +37424,7 @@ GameObject:
   - component: {fileID: 610587475}
   - component: {fileID: 610587477}
   - component: {fileID: 610587476}
+  - component: {fileID: 610587478}
   m_Layer: 5
   m_Name: button (12)
   m_TagString: Untagged
@@ -36806,6 +37490,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610587474}
   m_CullTransparentMesh: 1
+--- !u!114 &610587478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610587474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 610587476}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &613553740
 GameObject:
   m_ObjectHideFlags: 0
@@ -40464,6 +41204,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Eight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &649380211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40478,6 +41230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 237558591}
   locked: 3
+  enemies: 7
 --- !u!1 &649461948
 GameObject:
   m_ObjectHideFlags: 0
@@ -43359,7 +44112,7 @@ GameObject:
   - component: {fileID: 693946034}
   m_Layer: 5
   m_Name: Archer Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43766,6 +44519,7 @@ GameObject:
   - component: {fileID: 702452613}
   - component: {fileID: 702452615}
   - component: {fileID: 702452614}
+  - component: {fileID: 702452616}
   m_Layer: 5
   m_Name: button (6)
   m_TagString: Untagged
@@ -43831,6 +44585,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702452612}
   m_CullTransparentMesh: 1
+--- !u!114 &702452616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702452612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 702452614}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &703780275
 GameObject:
   m_ObjectHideFlags: 0
@@ -43989,6 +44799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 4
+  enemies: 0
 --- !u!1 &705013757
 GameObject:
   m_ObjectHideFlags: 0
@@ -44609,6 +45420,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Fifteen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &716252030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44623,6 +45446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 1013516547}
   locked: 8
+  enemies: 14
 --- !u!1 &719073173
 GameObject:
   m_ObjectHideFlags: 0
@@ -47358,7 +48182,7 @@ GameObject:
   - component: {fileID: 766238423}
   m_Layer: 5
   m_Name: Orc Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48269,7 +49093,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2047797958}
   m_Father: {fileID: 808767553}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -49564,7 +50389,6 @@ RectTransform:
   m_Children:
   - {fileID: 784481151}
   - {fileID: 151877032}
-  - {fileID: 2047797958}
   - {fileID: 1599209258}
   m_Father: {fileID: 524963184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52065,6 +52889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 13
+  enemies: 0
 --- !u!114 &846194880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52221,6 +53046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 10
+  enemies: 0
 --- !u!114 &848851678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55435,6 +56261,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Thirteen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &926591070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55449,6 +56287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 610587474}
   locked: 6
+  enemies: 12
 --- !u!1 &929515017
 GameObject:
   m_ObjectHideFlags: 0
@@ -56468,7 +57307,7 @@ GameObject:
   - component: {fileID: 935831055}
   m_Layer: 5
   m_Name: Vampire Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59699,6 +60538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 11
+  enemies: 0
 --- !u!114 &1008092052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59929,6 +60769,7 @@ GameObject:
   - component: {fileID: 1013516548}
   - component: {fileID: 1013516550}
   - component: {fileID: 1013516549}
+  - component: {fileID: 1013516551}
   m_Layer: 5
   m_Name: button (13)
   m_TagString: Untagged
@@ -59994,6 +60835,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013516547}
   m_CullTransparentMesh: 1
+--- !u!114 &1013516551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013516547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1013516549}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1016010581
 GameObject:
   m_ObjectHideFlags: 0
@@ -60135,6 +61032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 7
+  enemies: 0
 --- !u!114 &1017471905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62124,6 +63022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 18
+  enemies: 0
 --- !u!114 &1046823711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62463,6 +63362,7 @@ GameObject:
   - component: {fileID: 1050339673}
   - component: {fileID: 1050339675}
   - component: {fileID: 1050339674}
+  - component: {fileID: 1050339676}
   m_Layer: 5
   m_Name: button (1)
   m_TagString: Untagged
@@ -62528,6 +63428,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050339672}
   m_CullTransparentMesh: 1
+--- !u!114 &1050339676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050339672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1050339674}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1055125256
 GameObject:
   m_ObjectHideFlags: 0
@@ -63977,6 +64933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 15
+  enemies: 0
 --- !u!114 &1078663512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64282,7 +65239,7 @@ GameObject:
   - component: {fileID: 1084504344}
   m_Layer: 5
   m_Name: Vampire Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65599,6 +66556,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Seventeen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1109044984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65613,6 +66582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 1967202976}
   locked: 8
+  enemies: 16
 --- !u!1 &1110126921
 GameObject:
   m_ObjectHideFlags: 0
@@ -65971,6 +66941,7 @@ GameObject:
   - component: {fileID: 1115769354}
   - component: {fileID: 1115769356}
   - component: {fileID: 1115769355}
+  - component: {fileID: 1115769357}
   m_Layer: 5
   m_Name: button (5)
   m_TagString: Untagged
@@ -66036,6 +67007,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115769353}
   m_CullTransparentMesh: 1
+--- !u!114 &1115769357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115769353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1115769355}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1116619897
 GameObject:
   m_ObjectHideFlags: 0
@@ -66532,7 +67559,7 @@ GameObject:
   - component: {fileID: 1127001659}
   m_Layer: 5
   m_Name: Vampire Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69890,6 +70917,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Twelve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1188951281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69904,6 +70943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 1926914137}
   locked: 6
+  enemies: 11
 --- !u!1 &1189965133
 GameObject:
   m_ObjectHideFlags: 0
@@ -71408,6 +72448,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Six
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1206694356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71422,6 +72474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 1115769353}
   locked: 3
+  enemies: 5
 --- !u!1 &1210511263
 GameObject:
   m_ObjectHideFlags: 0
@@ -71646,6 +72699,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Nine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1211242059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71660,6 +72725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 111201284}
   locked: 4
+  enemies: 8
 --- !u!1 &1211700494
 GameObject:
   m_ObjectHideFlags: 0
@@ -71809,6 +72875,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Five
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1211700498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71823,6 +72901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 7297127}
   locked: 1
+  enemies: 4
 --- !u!1 &1213071095
 GameObject:
   m_ObjectHideFlags: 0
@@ -74046,6 +75125,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Eighteen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1238110774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74060,6 +75151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 314824248}
   locked: 8
+  enemies: 17
 --- !u!1 &1241017047
 GameObject:
   m_ObjectHideFlags: 0
@@ -74989,6 +76081,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Fourteen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1257486094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75003,6 +76107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 7334496}
   locked: 6
+  enemies: 13
 --- !u!1 &1258368221
 GameObject:
   m_ObjectHideFlags: 0
@@ -75769,6 +76874,7 @@ GameObject:
   - component: {fileID: 1265811822}
   - component: {fileID: 1265811824}
   - component: {fileID: 1265811823}
+  - component: {fileID: 1265811825}
   m_Layer: 5
   m_Name: button
   m_TagString: Untagged
@@ -75834,6 +76940,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265811821}
   m_CullTransparentMesh: 1
+--- !u!114 &1265811825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265811821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1265811823}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1267137220
 GameObject:
   m_ObjectHideFlags: 0
@@ -78661,7 +79823,7 @@ GameObject:
   - component: {fileID: 1317221526}
   m_Layer: 5
   m_Name: Old Guardian Boss Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82902,6 +84064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 14
+  enemies: 0
 --- !u!114 &1368482621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84423,7 +85586,7 @@ GameObject:
   - component: {fileID: 1392498704}
   m_Layer: 5
   m_Name: Knight Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85291,9 +86454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e7d63d4f2032e48ba24f14f6323b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  RightTarget: {fileID: 0}
-  LeftTarget: {fileID: 0}
-  MiddleTarget: {fileID: 0}
   Distance: 350
 --- !u!114 &1404346740
 MonoBehaviour:
@@ -86272,6 +87432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 1
+  enemies: 0
 --- !u!1 &1423840813
 GameObject:
   m_ObjectHideFlags: 0
@@ -88074,7 +89235,7 @@ GameObject:
   - component: {fileID: 1451473938}
   m_Layer: 5
   m_Name: Wizard Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88817,7 +89978,7 @@ GameObject:
   - component: {fileID: 1460719038}
   m_Layer: 5
   m_Name: Slime Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96518,6 +97679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 0}
   locked: 0
+  enemies: 0
 --- !u!114 &1599209262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98315,7 +99477,7 @@ GameObject:
   - component: {fileID: 1638883833}
   m_Layer: 5
   m_Name: Sprout Boss Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101418,6 +102580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 17
+  enemies: 0
 --- !u!1 &1693866535
 GameObject:
   m_ObjectHideFlags: 0
@@ -102328,6 +103491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 16
+  enemies: 0
 --- !u!114 &1710913117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105483,6 +106647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 6
+  enemies: 0
 --- !u!114 &1758527434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106423,7 +107588,7 @@ GameObject:
   - component: {fileID: 1776562576}
   m_Layer: 5
   m_Name: Knight Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109954,9 +111119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e7d63d4f2032e48ba24f14f6323b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drag
-  RightTarget: {fileID: 0}
-  LeftTarget: {fileID: 0}
-  MiddleTarget: {fileID: 0}
   Distance: 350
 --- !u!114 &1842751991
 MonoBehaviour:
@@ -110833,6 +111995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 9
+  enemies: 0
 --- !u!114 &1854739892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112556,6 +113719,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Sixteen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1876419317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112570,6 +113745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 535213483}
   locked: 8
+  enemies: 15
 --- !u!1 &1881789014
 GameObject:
   m_ObjectHideFlags: 0
@@ -113999,6 +115175,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Nineteen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1900270993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114013,6 +115201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 1935158018}
   locked: 10
+  enemies: 18
 --- !u!1 &1901343379
 GameObject:
   m_ObjectHideFlags: 0
@@ -114821,6 +116010,7 @@ GameObject:
   - component: {fileID: 1926914138}
   - component: {fileID: 1926914140}
   - component: {fileID: 1926914139}
+  - component: {fileID: 1926914141}
   m_Layer: 5
   m_Name: button (11)
   m_TagString: Untagged
@@ -114886,6 +116076,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926914137}
   m_CullTransparentMesh: 1
+--- !u!114 &1926914141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926914137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1926914139}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1927465952
 GameObject:
   m_ObjectHideFlags: 0
@@ -115354,6 +116600,7 @@ GameObject:
   - component: {fileID: 1935158019}
   - component: {fileID: 1935158021}
   - component: {fileID: 1935158020}
+  - component: {fileID: 1935158022}
   m_Layer: 5
   m_Name: button (17)
   m_TagString: Untagged
@@ -115419,6 +116666,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935158018}
   m_CullTransparentMesh: 1
+--- !u!114 &1935158022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935158018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1935158020}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1935522453
 GameObject:
   m_ObjectHideFlags: 0
@@ -117351,6 +118654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UseCard
   cards: 12
+  enemies: 0
 --- !u!114 &1956196145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118092,6 +119396,7 @@ GameObject:
   - component: {fileID: 1967202977}
   - component: {fileID: 1967202979}
   - component: {fileID: 1967202978}
+  - component: {fileID: 1967202980}
   m_Layer: 5
   m_Name: button (15)
   m_TagString: Untagged
@@ -118157,6 +119462,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967202976}
   m_CullTransparentMesh: 1
+--- !u!114 &1967202980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967202976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1967202978}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 458806772}
+        m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
+        m_MethodName: CardCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1967649810
 GameObject:
   m_ObjectHideFlags: 0
@@ -122228,7 +123589,7 @@ GameObject:
   - component: {fileID: 2022111336}
   m_Layer: 5
   m_Name: Knight Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123797,7 +125158,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047797957}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -123805,11 +125166,11 @@ RectTransform:
   - {fileID: 1128323300}
   - {fileID: 465864916}
   - {fileID: 1734071684}
-  m_Father: {fileID: 808767553}
+  m_Father: {fileID: 784481151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.8085, y: -470.4346}
+  m_AnchoredPosition: {x: 19.143814, y: -471.1451}
   m_SizeDelta: {x: 1827.618, y: 55.1308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047797959
@@ -125740,7 +127101,7 @@ GameObject:
   - component: {fileID: 2073713118}
   m_Layer: 5
   m_Name: Archer Boss Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128360,7 +129721,7 @@ GameObject:
   - component: {fileID: 2124158285}
   m_Layer: 5
   m_Name: Orc Card
-  m_TagString: Untagged
+  m_TagString: enemyCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129194,6 +130555,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 458806774}
+        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
+        m_MethodName: Three
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2141685655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129208,6 +130581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameUIStart
   Play: {fileID: 1050339672}
   locked: 1
+  enemies: 2
 --- !u!1 &2141950716
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,9 +15,14 @@ public class CardPlacement : MonoBehaviour
     Quaternion Rot2;
     Quaternion Rot3;
     public int currentCardIndex;
+    public GameObject Panel;
+    public GameObject backGround;
+    public GameObject playerCard;
+    UseCard useCard;
 
     void Start()
     {
+        useCard = GetComponent<UseCard>();
         Pos1 = CardPlace1.anchoredPosition;
         Pos2 = CardPlace2.anchoredPosition;
         Pos3 = CardPlace3.anchoredPosition;
@@ -28,6 +33,11 @@ public class CardPlacement : MonoBehaviour
 
     public void CardCall()
     {
+        useCard.Starting();
+        Panel.SetActive(false);
+        backGround.SetActive(false);
+        playerCard.SetActive(false);
+
         if (Cards.Count > 0)
         {
             for (int i = Cards.Count - 1; i > 0; i--)
