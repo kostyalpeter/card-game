@@ -7,6 +7,10 @@ public class GameUI : MonoBehaviour
     public RectTransform Panel;
     public float pos;
     public float length;
+    public RectTransform PlayerCard;
+    public RectTransform PlayerCardPlace;
+    public RectTransform EnemyCardPlace;
+
 
     void Start()
     {
@@ -16,5 +20,10 @@ public class GameUI : MonoBehaviour
     void Update()
     {
         Panel.anchoredPosition = new Vector3(pos - slider.value * length, Panel.anchoredPosition.y, Panel.transform.position.z);
+    }
+
+    public void Starting()
+    {
+        PlayerCard.anchoredPosition = PlayerCardPlace.anchoredPosition;
     }
 }

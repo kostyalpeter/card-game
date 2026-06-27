@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardPlacement : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class CardPlacement : MonoBehaviour
     public GameObject backGround;
     public GameObject playerCard;
     UseCard useCard;
+    public Slider PlayerHP;
+    public Slider EnemyHP;
+    public GameObject GamePlay;
 
     void Start()
     {
@@ -37,6 +41,9 @@ public class CardPlacement : MonoBehaviour
         Panel.SetActive(false);
         backGround.SetActive(false);
         playerCard.SetActive(false);
+        PlayerHP.gameObject.SetActive(true);
+        EnemyHP.gameObject.SetActive(true);
+        GamePlay.gameObject.SetActive(true);
 
         if (Cards.Count > 0)
         {

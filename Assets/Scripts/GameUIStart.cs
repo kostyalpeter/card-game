@@ -14,7 +14,7 @@ public class GameUIStart : MonoBehaviour
         {
             Play.SetActive(true);
         }
-        if (!showPlay)
+        if (!showPlay && Play != null)
         {
             Play.SetActive(false);
         }
@@ -32,8 +32,4 @@ public class GameUIStart : MonoBehaviour
         Set++;
     }
 
-    public void Starting()
-    {
-
-    }
 }
