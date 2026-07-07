@@ -8,6 +8,7 @@ public class DoubleClick : MonoBehaviour
     CardPlacement cards;
     int currentCardIndex;
     UseCard useCard;
+    public GameObject Player;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class DoubleClick : MonoBehaviour
             gameObject.SetActive(false);
             cards.RefreshBoard();
             gameObject.GetComponent<UseCard>().Use();
+            Player.GetComponent<Animator>().SetTrigger("Shoot");
         }
     }
 
