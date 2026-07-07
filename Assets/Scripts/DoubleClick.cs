@@ -9,6 +9,7 @@ public class DoubleClick : MonoBehaviour
     int currentCardIndex;
     UseCard useCard;
     public GameObject Player;
+    public bool Countdown;
 
     void Start()
     {
@@ -21,7 +22,7 @@ public class DoubleClick : MonoBehaviour
 
     void Update()
     {
-        if (Clicks == 0)
+        if (Clicks == 0 && Countdown == false)
         {
             Clicks = 2;
             Debug.Log("Click");
