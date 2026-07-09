@@ -9,8 +9,8 @@ public class DoubleClick : MonoBehaviour
     int currentCardIndex;
     UseCard useCard;
     public GameObject Player;
-    public bool Countdown;
-
+    public static bool Countdown;
+    public Damaging damaging;
     void Start()
     {
         cards = FindAnyObjectByType<CardPlacement>();
@@ -42,6 +42,8 @@ public class DoubleClick : MonoBehaviour
             cards.RefreshBoard();
             gameObject.GetComponent<UseCard>().Use();
             Player.GetComponent<Animator>().SetTrigger("Shoot");
+            Countdown = true;
+            damaging.Damage();
         }
     }
 

@@ -1887,6 +1887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &20213418
 GameObject:
   m_ObjectHideFlags: 0
@@ -7197,6 +7198,7 @@ GameObject:
   - component: {fileID: 106112122}
   - component: {fileID: 106112121}
   - component: {fileID: 106112124}
+  - component: {fileID: 106112125}
   m_Layer: 5
   m_Name: Player
   m_TagString: Player
@@ -7329,6 +7331,60 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &106112125
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106112119}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 0.26345825, y: -49.338074}
+      - {x: 1687.1743, y: -64.33484}
+      - {x: 1689.0039, y: -13.816837}
+  m_UseDelaunayMesh: 0
 --- !u!1 &106403776
 GameObject:
   m_ObjectHideFlags: 0
@@ -11868,6 +11924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &164608558
 GameObject:
   m_ObjectHideFlags: 0
@@ -12664,6 +12721,7 @@ GameObject:
   - component: {fileID: 175458640}
   - component: {fileID: 175458642}
   - component: {fileID: 175458643}
+  - component: {fileID: 175458644}
   m_Layer: 5
   m_Name: Enemy (3)
   m_TagString: Untagged
@@ -12796,6 +12854,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &175458644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175458637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &177611947
 GameObject:
   m_ObjectHideFlags: 0
@@ -13435,6 +13510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &192270713
 GameObject:
   m_ObjectHideFlags: 0
@@ -17252,6 +17328,7 @@ GameObject:
   - component: {fileID: 249696292}
   - component: {fileID: 249696294}
   - component: {fileID: 249696295}
+  - component: {fileID: 249696296}
   m_Layer: 5
   m_Name: Enemy (8)
   m_TagString: Untagged
@@ -17384,6 +17461,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &249696296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249696289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &251249145
 GameObject:
   m_ObjectHideFlags: 0
@@ -19790,6 +19884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &289487288
 GameObject:
   m_ObjectHideFlags: 0
@@ -20511,6 +20606,7 @@ GameObject:
   - component: {fileID: 302548579}
   - component: {fileID: 302548581}
   - component: {fileID: 302548582}
+  - component: {fileID: 302548583}
   m_Layer: 5
   m_Name: Enemy (6)
   m_TagString: Untagged
@@ -20643,6 +20739,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &302548583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302548576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &303086842
 GameObject:
   m_ObjectHideFlags: 0
@@ -25180,6 +25293,7 @@ GameObject:
   - component: {fileID: 366313879}
   - component: {fileID: 366313881}
   - component: {fileID: 366313882}
+  - component: {fileID: 366313883}
   m_Layer: 5
   m_Name: Enemy (17)
   m_TagString: Untagged
@@ -25312,6 +25426,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &366313883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366313876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &367616257
 GameObject:
   m_ObjectHideFlags: 0
@@ -28257,6 +28388,7 @@ GameObject:
   - component: {fileID: 422429508}
   - component: {fileID: 422429510}
   - component: {fileID: 422429511}
+  - component: {fileID: 422429512}
   m_Layer: 5
   m_Name: Enemy (7)
   m_TagString: Untagged
@@ -28389,6 +28521,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &422429512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422429505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &424658662
 GameObject:
   m_ObjectHideFlags: 0
@@ -32343,6 +32492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &495904895
 GameObject:
   m_ObjectHideFlags: 0
@@ -33261,6 +33411,7 @@ GameObject:
   - component: {fileID: 508466844}
   - component: {fileID: 508466846}
   - component: {fileID: 508466847}
+  - component: {fileID: 508466848}
   m_Layer: 5
   m_Name: Enemy (12)
   m_TagString: Untagged
@@ -33393,6 +33544,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &508466848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508466841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &510066714
 GameObject:
   m_ObjectHideFlags: 0
@@ -34054,6 +34222,7 @@ GameObject:
   - component: {fileID: 519484536}
   - component: {fileID: 519484538}
   - component: {fileID: 519484539}
+  - component: {fileID: 519484540}
   m_Layer: 5
   m_Name: Enemy (18)
   m_TagString: Untagged
@@ -34186,6 +34355,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &519484540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519484533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &519895124
 GameObject:
   m_ObjectHideFlags: 0
@@ -45744,6 +45930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 687988471}
   - component: {fileID: 687988470}
+  - component: {fileID: 687988472}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45787,6 +45974,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &687988472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687988469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e81cd6cd301c62459ed067af299ce9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damaging
+  DamageAmount: 67
+  cardPlacement: {fileID: 458806772}
+  EnemyHp: 0
+  PlayerHp: 0
+  MaxEnemyHp: 100
+  MaxPlayerHp: 100
+  EnemyDamageAmount: 20
 --- !u!1 &689396692
 GameObject:
   m_ObjectHideFlags: 0
@@ -46135,6 +46341,7 @@ GameObject:
   - component: {fileID: 695063423}
   - component: {fileID: 695063425}
   - component: {fileID: 695063426}
+  - component: {fileID: 695063427}
   m_Layer: 5
   m_Name: Enemy (16)
   m_TagString: Untagged
@@ -46267,6 +46474,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &695063427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695063420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &695739439
 GameObject:
   m_ObjectHideFlags: 0
@@ -46902,6 +47126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!114 &703780280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55272,6 +55497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &848851675
 GameObject:
   m_ObjectHideFlags: 0
@@ -55468,6 +55694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &852380261
 GameObject:
   m_ObjectHideFlags: 0
@@ -63224,6 +63451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1012379996
 GameObject:
   m_ObjectHideFlags: 0
@@ -63769,6 +63997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1017722302
 GameObject:
   m_ObjectHideFlags: 0
@@ -65798,6 +66027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1046895818
 GameObject:
   m_ObjectHideFlags: 0
@@ -67760,6 +67990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1083204869
 GameObject:
   m_ObjectHideFlags: 0
@@ -75248,6 +75479,7 @@ GameObject:
   - component: {fileID: 1206487279}
   - component: {fileID: 1206487281}
   - component: {fileID: 1206487282}
+  - component: {fileID: 1206487283}
   m_Layer: 5
   m_Name: Enemy (10)
   m_TagString: Untagged
@@ -75380,6 +75612,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1206487283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206487276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1206694352
 GameObject:
   m_ObjectHideFlags: 0
@@ -80388,6 +80637,7 @@ GameObject:
   - component: {fileID: 1273101405}
   - component: {fileID: 1273101407}
   - component: {fileID: 1273101408}
+  - component: {fileID: 1273101409}
   m_Layer: 5
   m_Name: Enemy (15)
   m_TagString: Untagged
@@ -80520,6 +80770,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1273101409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273101402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1273334092
 GameObject:
   m_ObjectHideFlags: 0
@@ -87425,6 +87692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1374989736
 GameObject:
   m_ObjectHideFlags: 0
@@ -90627,6 +90895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!114 &1422902060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95717,6 +95986,7 @@ GameObject:
   - component: {fileID: 1500624164}
   - component: {fileID: 1500624166}
   - component: {fileID: 1500624167}
+  - component: {fileID: 1500624168}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -95849,6 +96119,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1500624168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500624161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1501518073
 GameObject:
   m_ObjectHideFlags: 0
@@ -95862,6 +96149,7 @@ GameObject:
   - component: {fileID: 1501518076}
   - component: {fileID: 1501518078}
   - component: {fileID: 1501518079}
+  - component: {fileID: 1501518080}
   m_Layer: 5
   m_Name: Enemy (13)
   m_TagString: Untagged
@@ -95994,6 +96282,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1501518080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501518073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1502780783
 GameObject:
   m_ObjectHideFlags: 0
@@ -96082,6 +96387,7 @@ GameObject:
   - component: {fileID: 1510582825}
   - component: {fileID: 1510582827}
   - component: {fileID: 1510582828}
+  - component: {fileID: 1510582829}
   m_Layer: 5
   m_Name: Enemy (11)
   m_TagString: Untagged
@@ -96214,6 +96520,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1510582829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510582822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1511041906
 GameObject:
   m_ObjectHideFlags: 0
@@ -99361,6 +99684,7 @@ GameObject:
   - component: {fileID: 1553524200}
   - component: {fileID: 1553524202}
   - component: {fileID: 1553524203}
+  - component: {fileID: 1553524204}
   m_Layer: 5
   m_Name: Enemy (2)
   m_TagString: Untagged
@@ -99493,6 +99817,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1553524204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553524197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1553745168
 GameObject:
   m_ObjectHideFlags: 0
@@ -102217,6 +102558,7 @@ GameObject:
   - component: {fileID: 1612692562}
   - component: {fileID: 1612692564}
   - component: {fileID: 1612692565}
+  - component: {fileID: 1612692566}
   m_Layer: 5
   m_Name: Enemy (14)
   m_TagString: Untagged
@@ -102349,6 +102691,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1612692566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612692559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1616443229
 GameObject:
   m_ObjectHideFlags: 0
@@ -106143,6 +106502,7 @@ GameObject:
   - component: {fileID: 1674108196}
   - component: {fileID: 1674108198}
   - component: {fileID: 1674108199}
+  - component: {fileID: 1674108200}
   m_Layer: 5
   m_Name: Enemy (5)
   m_TagString: Untagged
@@ -106275,6 +106635,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1674108200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674108193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1674323738
 GameObject:
   m_ObjectHideFlags: 0
@@ -106826,6 +107203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!114 &1686958035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106969,6 +107347,7 @@ GameObject:
   - component: {fileID: 1693628539}
   - component: {fileID: 1693628541}
   - component: {fileID: 1693628542}
+  - component: {fileID: 1693628543}
   m_Layer: 5
   m_Name: Enemy (9)
   m_TagString: Untagged
@@ -107101,6 +107480,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1693628543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693628536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &1693866535
 GameObject:
   m_ObjectHideFlags: 0
@@ -108137,6 +108533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1714762573
 GameObject:
   m_ObjectHideFlags: 0
@@ -111332,6 +111729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1759705972
 GameObject:
   m_ObjectHideFlags: 0
@@ -116808,6 +117206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1859168063
 GameObject:
   m_ObjectHideFlags: 0
@@ -123530,6 +123929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoubleClick
   speed: 0.3
   Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
 --- !u!1 &1957255390
 GameObject:
   m_ObjectHideFlags: 0
@@ -129691,6 +130091,7 @@ GameObject:
   - component: {fileID: 2040273541}
   - component: {fileID: 2040273543}
   - component: {fileID: 2040273544}
+  - component: {fileID: 2040273545}
   m_Layer: 5
   m_Name: Enemy (1)
   m_TagString: Untagged
@@ -129823,6 +130224,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2040273545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040273538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &2041055679
 GameObject:
   m_ObjectHideFlags: 0
@@ -133785,6 +134203,7 @@ GameObject:
   - component: {fileID: 2100669028}
   - component: {fileID: 2100669030}
   - component: {fileID: 2100669031}
+  - component: {fileID: 2100669032}
   m_Layer: 5
   m_Name: Enemy (4)
   m_TagString: Untagged
@@ -133917,6 +134336,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2100669032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100669025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
+  Hurt2: 1
+  Player: {fileID: 106112119}
+  damaging: {fileID: 687988472}
+  Die: 0
 --- !u!1 &2103071414
 GameObject:
   m_ObjectHideFlags: 0
