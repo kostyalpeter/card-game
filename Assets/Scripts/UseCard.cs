@@ -346,4 +346,92 @@ public class UseCard : MonoBehaviour
     {
         Enemy = 19;
     }
+
+    public void DamageAmountSet()
+    {
+        if (cards == Cards.iceshot)
+        {
+            Damaging.DamageAmount = 10;
+        }
+        if (cards == Cards.swordhit)
+        {
+            Damaging.DamageAmount = 15;
+        }
+        if (cards == Cards.swordthrow)
+        {
+            Damaging.DamageAmount = 15;
+        }
+        if (cards == Cards.burst)
+        {
+            Damaging.DamageAmount = 35;
+        }
+        if (cards == Cards.arrowshot)
+        {
+            Damaging.DamageAmount = 20;
+        }
+        if (cards == Cards.arrowrain)
+        {
+            Damaging.DamageAmount = 40;
+        }
+        if (cards == Cards.fireshots)
+        {
+            Damaging.DamageAmount = 35;
+        }
+        if (cards == Cards.blackarrow)
+        {
+            Damaging.DamageAmount = 90;
+        }
+        if (cards == Cards.fireball)
+        {
+            Damaging.DamageAmount = 50;
+        }
+        if (cards == Cards.lightningstrike)
+        {
+            Damaging.DamageAmount = 40;
+        }
+        if (cards == Cards.firerain)
+        {
+            Damaging.DamageAmount = 45;
+        }
+        if (cards == Cards.morexp)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Exp");
+        }
+        if (cards == Cards.lessdamage)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Less damage");
+        }
+        if (cards == Cards.heal)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Heal");
+        }
+        if (cards == Cards.damageboost)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Damage boost");
+        }
+        if (cards == Cards.moregold)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("More gold");
+        }
+        if (cards == Cards.moretime)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("More time");
+        }
+        if (cards == Cards.shield)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Shield");
+        }
+        if (cards == Cards.hp)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Hp");
+        }
+    }
 }

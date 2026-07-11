@@ -18,6 +18,7 @@ public class DoubleClick : MonoBehaviour
         {
             Debug.LogError("Error");
         }
+        useCard = GetComponent<UseCard>();
     }
 
     void Update()
@@ -43,6 +44,7 @@ public class DoubleClick : MonoBehaviour
             gameObject.GetComponent<UseCard>().Use();
             Player.GetComponent<Animator>().SetTrigger("Shoot");
             Countdown = true;
+            useCard.DamageAmountSet();
             damaging.Damage();
         }
     }

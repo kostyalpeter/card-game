@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Damaging : MonoBehaviour
 {
-    public int DamageAmount;
+    public static int DamageAmount;
     public CardPlacement cardPlacement;
     public int EnemyHp;
     public int PlayerHp;
