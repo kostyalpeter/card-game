@@ -22,7 +22,7 @@ public class Animations : MonoBehaviour
             Hurt();
             Hurt2 = false;
         }
-        if (damaging.EnemyHp <= 0 && !Die)
+        if (Damaging.EnemyHp <= 0 && !Die)
         {
             StartCoroutine(Wait3());
         }

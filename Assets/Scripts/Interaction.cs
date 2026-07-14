@@ -57,23 +57,23 @@ public class Interaction : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (canGear && GearObject != null)
         {
-            GearObject.transform.rotation = Quaternion.Euler(0, 0, GearObject.transform.rotation.eulerAngles.z - GearRotation * Time.deltaTime * GearRotationSpeed);
+            GearObject.transform.rotation = Quaternion.Euler(0, 0, GearObject.transform.rotation.eulerAngles.z - GearRotation * UnityEngine.Time.deltaTime * GearRotationSpeed);
         }
         if (canAnim1)
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 30 * Time.deltaTime * Flowingspeed, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 30 * UnityEngine.Time.deltaTime * Flowingspeed, gameObject.transform.position.z);
         }
         if (canAnim2)
         {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 30 * Time.deltaTime * Flowingspeed, gameObject.transform.position.z);
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 30 * UnityEngine.Time.deltaTime * Flowingspeed, gameObject.transform.position.z);
         }
         if (canSet && SettingsPanelObject != null)
         {
-            SettingsPanelObject.anchoredPosition = Vector2.MoveTowards(SettingsPanelObject.anchoredPosition, SetPos, 30 * Time.deltaTime * Flowingspeed);
+            SettingsPanelObject.anchoredPosition = Vector2.MoveTowards(SettingsPanelObject.anchoredPosition, SetPos, 30 * UnityEngine.Time.deltaTime * Flowingspeed);
         }
         if (!canSet && SettingsPanelObject != null)
         {
-            SettingsPanelObject.anchoredPosition = Vector2.MoveTowards(SettingsPanelObject.anchoredPosition, SetPanelPos, 30 * Time.deltaTime * Flowingspeed);
+            SettingsPanelObject.anchoredPosition = Vector2.MoveTowards(SettingsPanelObject.anchoredPosition, SetPanelPos, 30 * UnityEngine.Time.deltaTime * Flowingspeed);
         }
     }
     public void PlayGame()

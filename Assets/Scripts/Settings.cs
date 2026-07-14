@@ -38,44 +38,44 @@ public class Settings : MonoBehaviour
 
         if (showSet)
         {
-            SettingsObject.anchoredPosition = Vector2.MoveTowards(SettingsObject.anchoredPosition, Move.anchoredPosition, 30 * Time.deltaTime * speed);
+            SettingsObject.anchoredPosition = Vector2.MoveTowards(SettingsObject.anchoredPosition, Move.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
         if (!showSet)
         {
-            SettingsObject.anchoredPosition = Vector2.MoveTowards(SettingsObject.anchoredPosition, SettingsPos1.anchoredPosition, 30 * Time.deltaTime * speed);
+            SettingsObject.anchoredPosition = Vector2.MoveTowards(SettingsObject.anchoredPosition, SettingsPos1.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
 
         // Music Movement
 
         if (showMus)
         {
-            MusicObject.anchoredPosition = Vector2.MoveTowards(MusicObject.anchoredPosition, Move.anchoredPosition, 30 * Time.deltaTime * speed);
+            MusicObject.anchoredPosition = Vector2.MoveTowards(MusicObject.anchoredPosition, Move.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
         if (!showMus)
         {
-            MusicObject.anchoredPosition = Vector2.MoveTowards(MusicObject.anchoredPosition, MusicPos1.anchoredPosition, 30 * Time.deltaTime * speed);
+            MusicObject.anchoredPosition = Vector2.MoveTowards(MusicObject.anchoredPosition, MusicPos1.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
 
         // Description Movement
 
         if (showDes)
         {
-            DescriptionObject.anchoredPosition = Vector2.MoveTowards(DescriptionObject.anchoredPosition, Move.anchoredPosition, 30 * Time.deltaTime * speed);
+            DescriptionObject.anchoredPosition = Vector2.MoveTowards(DescriptionObject.anchoredPosition, Move.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
         if (!showDes)
         {
-            DescriptionObject.anchoredPosition = Vector2.MoveTowards(DescriptionObject.anchoredPosition, DescriptionPos1.anchoredPosition, 30 * Time.deltaTime * speed);
+            DescriptionObject.anchoredPosition = Vector2.MoveTowards(DescriptionObject.anchoredPosition, DescriptionPos1.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
 
         // Cards Movement
 
         if (showCard)
         {
-            CardsObject.anchoredPosition = Vector2.MoveTowards(CardsObject.anchoredPosition, Move.anchoredPosition, 30 * Time.deltaTime * speed);
+            CardsObject.anchoredPosition = Vector2.MoveTowards(CardsObject.anchoredPosition, Move.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
         if (!showCard)
         {
-            CardsObject.anchoredPosition = Vector2.MoveTowards(CardsObject.anchoredPosition, CardsPos1.anchoredPosition, 30 * Time.deltaTime * speed);
+            CardsObject.anchoredPosition = Vector2.MoveTowards(CardsObject.anchoredPosition, CardsPos1.anchoredPosition, 30 * UnityEngine.Time.deltaTime * speed);
         }
     }
 

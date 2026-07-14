@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    static int level = 1;
+    public static int level = 1;
     public RectTransform lvl1;
     public RectTransform lvl2;
     public RectTransform lvl3;
