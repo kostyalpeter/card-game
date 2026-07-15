@@ -367,6 +367,7 @@ public class UseCard : MonoBehaviour
         Enemy = 19;
     }
 
+
     public void DamageAmountSet()
     {
         if (cards == Cards.iceshot)

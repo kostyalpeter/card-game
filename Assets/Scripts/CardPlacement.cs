@@ -23,6 +23,8 @@ public class CardPlacement : MonoBehaviour
     public Slider PlayerHP;
     public Slider EnemyHP;
     public GameObject GamePlay;
+    public GameObject Game;
+    public GameObject CardsGame;
 
     void Start()
     {
@@ -38,12 +40,12 @@ public class CardPlacement : MonoBehaviour
     public void CardCall()
     {
         useCard.Starting();
-        Panel.SetActive(false);
-        backGround.SetActive(false);
-        playerCard.SetActive(false);
+        Game.SetActive(false);
         PlayerHP.gameObject.SetActive(true);
         EnemyHP.gameObject.SetActive(true);
         GamePlay.gameObject.SetActive(true);
+        CardsGame.SetActive(true);
+        Time.Timer = 10;
 
         if (Cards.Count > 0)
         {

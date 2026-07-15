@@ -6,8 +6,8 @@ public class Damaging : MonoBehaviour
     public CardPlacement cardPlacement;
     public static int EnemyHp;
     public static int PlayerHp;
-    public int MaxEnemyHp = 100;
-    public int MaxPlayerHp = 100;
+    public static int MaxEnemyHp = 100;
+    public static int MaxPlayerHp = 100;
     public static bool Hurt;
     public int EnemyDamageAmount = 20;
     public bool canDamage;
