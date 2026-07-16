@@ -45,7 +45,11 @@ public class CardPlacement : MonoBehaviour
         EnemyHP.gameObject.SetActive(true);
         GamePlay.gameObject.SetActive(true);
         CardsGame.SetActive(true);
-        Time.Timer = 10;
+        foreach (Transform child in CardsGame.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+        Time.Timer = 35;
 
         if (Cards.Count > 0)
         {
@@ -65,6 +69,7 @@ public class CardPlacement : MonoBehaviour
         if (currentCardIndex < Cards.Count)
         {
             Cards[currentCardIndex].GetComponent<RectTransform>().anchoredPosition = Pos1; Cards[currentCardIndex].GetComponent<RectTransform>().rotation = Rot1;
+            Cards[currentCardIndex].GetComponent<Card>().CardPlace = 1;
             CardPlace1.GetComponent<Place>().isTaken = true;
             currentCardIndex++;
 
@@ -76,6 +81,7 @@ public class CardPlacement : MonoBehaviour
         if (currentCardIndex < Cards.Count)
         {
             Cards[currentCardIndex].GetComponent<RectTransform>().anchoredPosition = Pos2; Cards[currentCardIndex].GetComponent<RectTransform>().rotation = Rot2;
+            Cards[currentCardIndex].GetComponent<Card>().CardPlace = 2;
             CardPlace2.GetComponent<Place>().isTaken = true;
             currentCardIndex++;
 
@@ -87,6 +93,7 @@ public class CardPlacement : MonoBehaviour
         if (currentCardIndex < Cards.Count)
         {
             Cards[currentCardIndex].GetComponent<RectTransform>().anchoredPosition = Pos3; Cards[currentCardIndex].GetComponent<RectTransform>().rotation = Rot3;
+            Cards[currentCardIndex].GetComponent<Card>().CardPlace = 3;
             CardPlace3.GetComponent<Place>().isTaken = true;
             currentCardIndex++;
         }
@@ -98,11 +105,9 @@ public class CardPlacement : MonoBehaviour
         Place Place2 = CardPlace2.GetComponent<Place>();
         Place Place3 = CardPlace3.GetComponent<Place>();
 
-
-        if (Place1)
+        if (Place1 && Place1.isTaken == false)
         {
             SkipCard();
-
 
             if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
             {
@@ -113,32 +118,31 @@ public class CardPlacement : MonoBehaviour
                 nextcard.GetComponent<RectTransform>().rotation = Rot1;
 
                 nextcard.GetComponent<Card>().CardPlace = 1;
+                Place1.isTaken = true;
 
                 currentCardIndex++;
             }
         }
-        if (Place2)
+        if (Place2 && Place2.isTaken == false)
         {
-
             SkipCard();
 
             if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
             {
                 GameObject Nextcard = Cards[currentCardIndex];
                 RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
-
 
                 nextcard.GetComponent<RectTransform>().anchoredPosition = Pos2;
                 nextcard.GetComponent<RectTransform>().rotation = Rot2;
 
                 nextcard.GetComponent<Card>().CardPlace = 2;
+                Place2.isTaken = true;
 
                 currentCardIndex++;
             }
         }
-        if (Place3)
+        if (Place3 && Place3.isTaken == false)
         {
-
             SkipCard();
 
             if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
@@ -146,20 +150,15 @@ public class CardPlacement : MonoBehaviour
                 GameObject Nextcard = Cards[currentCardIndex];
                 RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
 
-
                 nextcard.GetComponent<RectTransform>().anchoredPosition = Pos3;
                 nextcard.GetComponent<RectTransform>().rotation = Rot3;
 
                 nextcard.GetComponent<Card>().CardPlace = 3;
+                Place3.isTaken = true;
 
                 currentCardIndex++;
             }
         }
-    }
-
-    void LateUpdate()
-    {
-        SkipCard();
     }
 
     public void SkipCard()

@@ -161,70 +161,70 @@ public class UseCard : MonoBehaviour
             slimeEnemy.gameObject.SetActive(true);
             EnemyLevel = PlayerStats.level;
         }
-        if (Enemy == 2)
+        else if (Enemy == 2)
         {
             Debug.Log("archer");
             archer.transform.position = gameui.EnemyCardPlace.transform.position;
             archerEnemy.gameObject.SetActive(true);
             EnemyLevel = 2;
         }
-        if (Enemy == 3)
+        else if (Enemy == 3)
         {
             Debug.Log("knight1");
             knight1.transform.position = gameui.EnemyCardPlace.transform.position;
             knight1Enemy.gameObject.SetActive(true);
             EnemyLevel = 2;
         }
-        if (Enemy == 4)
+        else if (Enemy == 4)
         {
             Debug.Log("kngiht2");
             knight2.transform.position = gameui.EnemyCardPlace.transform.position;
             knight2Enemy.gameObject.SetActive(true);
             EnemyLevel = 2;
         }
-        if (Enemy == 5)
+        else if (Enemy == 5)
         {
             Debug.Log("knight3");
             knight3.transform.position = gameui.EnemyCardPlace.transform.position;
             knight3Enemy.gameObject.SetActive(true);
             EnemyLevel = 2;
         }
-        if (Enemy == 6)
+        else if (Enemy == 6)
         {
             Debug.Log("king");
             king.transform.position = gameui.EnemyCardPlace.transform.position;
             kingEnemy.gameObject.SetActive(true);
             EnemyLevel = 5;
         }
-        if (Enemy == 7)
+        else if (Enemy == 7)
         {
             Debug.Log("wizard");
             wizard.transform.position = gameui.EnemyCardPlace.transform.position;
             wizardEnemy.gameObject.SetActive(true);
             EnemyLevel = 5;
         }
-        if (Enemy == 8)
+        else if (Enemy == 8)
         {
             Debug.Log("prince");
             prince.transform.position = gameui.EnemyCardPlace.transform.position;
             princeEnemy.gameObject.SetActive(true);
             EnemyLevel = 5;
         }
-        if (Enemy == 9)
+        else if (Enemy == 9)
         {
             Debug.Log("orc1");
             orc1.transform.position = gameui.EnemyCardPlace.transform.position;
             orc1Enemy.gameObject.SetActive(true);
             EnemyLevel = 4;
         }
-        if (Enemy == 10)
+        else if (Enemy == 10)
         {
             Debug.Log("orc2");
             orc2.transform.position = gameui.EnemyCardPlace.transform.position;
             orc2Enemy.gameObject.SetActive(true);
             EnemyLevel = 4;
         }
-        if (Enemy == 11)
+        else if (Enemy == 11)
         {
             Debug.Log("orc3");
             orc3.transform.position = gameui.EnemyCardPlace.transform.position;
@@ -232,56 +232,56 @@ public class UseCard : MonoBehaviour
             EnemyLevel = 4;
 
         }
-        if (Enemy == 12)
+        else if (Enemy == 12)
         {
             Debug.Log("vampire1");
             vampire1.transform.position = gameui.EnemyCardPlace.transform.position;
             vampire1Enemy.gameObject.SetActive(true);
             EnemyLevel = 5;
         }
-        if (Enemy == 13)
+        else if (Enemy == 13)
         {
             Debug.Log("vampire2");
             vampire2.transform.position = gameui.EnemyCardPlace.transform.position;
             vampire2Enemy.gameObject.SetActive(true);
             EnemyLevel = 6;
         }
-        if (Enemy == 14)
+        else if (Enemy == 14)
         {
             Debug.Log("vampire3");
             vampire3.transform.position = gameui.EnemyCardPlace.transform.position;
             vampire3Enemy.gameObject.SetActive(true);
             EnemyLevel = 6;
         }
-        if (Enemy == 15)
+        else if (Enemy == 15)
         {
             Debug.Log("archerboss");
             archerboss.transform.position = gameui.EnemyCardPlace.transform.position;
             archerbossEnemy.gameObject.SetActive(true);
             EnemyLevel = 8;
         }
-        if (Enemy == 16)
+        else if (Enemy == 16)
         {
             Debug.Log("oldguardian");
             oldguardian.transform.position = gameui.EnemyCardPlace.transform.position;
             oldguardianEnemy.gameObject.SetActive(true);
             EnemyLevel = 8;
         }
-        if (Enemy == 17)
+        else if (Enemy == 17)
         {
             Debug.Log("skeletonseeker");
             skeletonseeker.transform.position = gameui.EnemyCardPlace.transform.position;
             skeletonseekerEnemy.gameObject.SetActive(true);
             EnemyLevel = 9;
         }
-        if (Enemy == 18)
+        else if (Enemy == 18)
         {
             Debug.Log("sprout");
             sprout.transform.position = gameui.EnemyCardPlace.transform.position;
             sproutEnemy.gameObject.SetActive(true);
             EnemyLevel = 9;
         }
-        if (Enemy == 19)
+        else if (Enemy == 19)
         {
             Debug.Log("undeadexecutioner");
             undeadexecutioner.transform.position = gameui.EnemyCardPlace.transform.position;
@@ -293,78 +293,97 @@ public class UseCard : MonoBehaviour
     public void One()
     {
         Enemy = 1;
+        Debug.Log(Enemy);
     }
     public void Two()
     {
         Enemy = 2;
+        Debug.Log(Enemy);
     }
     public void Three()
     {
         Enemy = 3;
+        Debug.Log(Enemy);
     }
     public void Four()
     {
         Enemy = 4;
+        Debug.Log(Enemy);
     }
     public void Five()
     {
         Enemy = 5;
+        Debug.Log(Enemy);
     }
     public void Six()
     {
         Enemy = 6;
+        Debug.Log(Enemy);
     }
     public void Seven()
     {
         Enemy = 7;
+        Debug.Log(Enemy);
     }
     public void Eight()
     {
         Enemy = 8;
+        Debug.Log(Enemy);
     }
     public void Nine()
     {
         Enemy = 9;
+        Debug.Log(Enemy);
     }
     public void Ten()
     {
         Enemy = 10;
+        Debug.Log(Enemy);
     }
     public void Eleven()
     {
         Enemy = 11;
+        Debug.Log(Enemy);
     }
     public void Twelve()
     {
         Enemy = 12;
+        Debug.Log(Enemy);
     }
     public void Thirteen()
     {
         Enemy = 13;
+        Debug.Log(Enemy);
     }
     public void Fourteen()
     {
         Enemy = 14;
+        Debug.Log(Enemy);
     }
     public void Fifteen()
     {
         Enemy = 15;
+        Debug.Log(Enemy);
     }
     public void Sixteen()
     {
         Enemy = 16;
+        Debug.Log(Enemy);
     }
     public void Seventeen()
     {
         Enemy = 17;
+        Debug.Log(Enemy);
     }
     public void Eighteen()
     {
         Enemy = 18;
+        Debug.Log(Enemy);
     }
     public void Nineteen()
     {
         Enemy = 19;
+        Debug.Log(Enemy);
     }
 
 
@@ -416,6 +435,7 @@ public class UseCard : MonoBehaviour
         }
         if (cards == Cards.morexp)
         {
+            Damaging.DamageAmount = 0;
             Debug.Log("Exp");
         }
         if (cards == Cards.lessdamage)
@@ -425,7 +445,7 @@ public class UseCard : MonoBehaviour
         }
         if (cards == Cards.heal)
         {
-            Damaging.DamageAmount = 0;
+            Damaging.PlayerHp += 20;
             Debug.Log("Heal");
         }
         if (cards == Cards.damageboost)
@@ -436,11 +456,13 @@ public class UseCard : MonoBehaviour
         if (cards == Cards.moregold)
         {
             Shop.Gold += 5;
+            Damaging.DamageAmount = 0;
             Debug.Log("More gold");
         }
         if (cards == Cards.moretime)
         {
             Time.Timer += 30;
+            Damaging.DamageAmount = 0;
             Debug.Log("More time");
         }
         if (cards == Cards.shield)
@@ -450,7 +472,9 @@ public class UseCard : MonoBehaviour
         }
         if (cards == Cards.hp)
         {
-            Damaging.PlayerHp += 25;
+            Damaging.PlayerHp /= 2;
+            Damaging.EnemyHp /= 2;
+            Damaging.DamageAmount = 0;
             Debug.Log("Hp");
         }
     }

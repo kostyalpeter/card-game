@@ -29,10 +29,11 @@ public class Damaging : MonoBehaviour
     {
         EnemyHp -= DamageAmount;
         Hurt = true;
+        canDamage = true;
     }
     public void PlayerDamage()
     {
-        if (canDamage)
+        if (canDamage && EnemyHp > 0)
         {
             if (UseCard.EnemyLevel == 1)
             {
@@ -70,12 +71,9 @@ public class Damaging : MonoBehaviour
             {
                 EnemyDamageAmount = EnemyDamageAmount *= 3;
             }
-        }
-
-        if (EnemyHp > 0)
-        {
             PlayerHp -= EnemyDamageAmount;
+            canDamage = false;
+            Debug.Log("Enemy Attack");
         }
-        canDamage = false;
     }
 }

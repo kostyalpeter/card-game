@@ -465,18 +465,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Ten
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -634,18 +622,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Five
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -803,18 +779,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Fourteen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -9041,18 +9005,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Nine
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -9545,7 +9497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1497651466}
+      - m_Target: {fileID: 118953249}
         m_TargetAssemblyTypeName: ShopBuyCards, Assembly-CSharp
         m_MethodName: Buy
         m_Mode: 1
@@ -13351,6 +13303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -17169,18 +17122,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Eight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -17996,6 +17937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -18543,18 +18485,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Two
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -18787,18 +18717,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Four
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -21336,6 +21254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -21761,18 +21680,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Eighteen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -26046,6 +25953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -29211,6 +29119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -31150,10 +31059,10 @@ MonoBehaviour:
   sprout: {fileID: 1638883833}
   undeadexecutioner: {fileID: 138340596}
   slimeEnemy: {fileID: 1500624162}
-  archerEnemy: {fileID: 2100669026}
-  knight1Enemy: {fileID: 2040273539}
-  knight2Enemy: {fileID: 1553524198}
-  knight3Enemy: {fileID: 175458638}
+  archerEnemy: {fileID: 2040273539}
+  knight1Enemy: {fileID: 1553524198}
+  knight2Enemy: {fileID: 175458638}
+  knight3Enemy: {fileID: 2100669026}
   kingEnemy: {fileID: 1674108194}
   wizardEnemy: {fileID: 302548577}
   princeEnemy: {fileID: 422429506}
@@ -34321,6 +34230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -35175,6 +35085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -36769,18 +36680,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Sixteen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -38917,18 +38816,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Eleven
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -40439,18 +40326,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Thirteen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -47062,7 +46937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Time
   timerText: {fileID: 1078779399}
   TimerTest: 0
-  Shop1: {fileID: 16451693}
+  Shop1: {fileID: 0}
   Game1: {fileID: 699060594}
   slime: {fileID: 1460719038}
   archer: {fileID: 693946034}
@@ -47084,10 +46959,10 @@ MonoBehaviour:
   sprout: {fileID: 1638883833}
   undeadexecutioner: {fileID: 138340596}
   slimeEnemy: {fileID: 1500624162}
-  archerEnemy: {fileID: 2100669026}
-  knight1Enemy: {fileID: 2040273539}
-  knight2Enemy: {fileID: 1553524198}
-  knight3Enemy: {fileID: 175458638}
+  archerEnemy: {fileID: 2040273539}
+  knight1Enemy: {fileID: 1553524198}
+  knight2Enemy: {fileID: 175458638}
+  knight3Enemy: {fileID: 2100669026}
   kingEnemy: {fileID: 1674108194}
   wizardEnemy: {fileID: 302548577}
   princeEnemy: {fileID: 422429506}
@@ -47636,6 +47511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -48176,18 +48052,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Seven
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -65173,18 +65037,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Fifteen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -68054,18 +67906,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Three
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -71935,18 +71775,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Six
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -77527,6 +77355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -82216,18 +82045,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: One
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -82708,6 +82525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -98431,6 +98249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -98593,6 +98412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -98830,6 +98650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -102197,6 +102018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -105082,6 +104904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -109025,6 +108848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -109884,6 +109708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -123880,18 +123705,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Twelve
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -124577,18 +124390,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Nineteen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -127464,18 +127265,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 458806774}
-        m_TargetAssemblyTypeName: UseCard, Assembly-CSharp
-        m_MethodName: Seventeen
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 458806772}
         m_TargetAssemblyTypeName: CardPlacement, Assembly-CSharp
         m_MethodName: CardCall
@@ -133151,6 +132940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}
@@ -137262,6 +137052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178bd4d157f4936458792cda972e7e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animations
+  Countdown2: 1
   Hurt2: 1
   Player: {fileID: 106112119}
   damaging: {fileID: 687988472}

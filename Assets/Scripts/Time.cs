@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Time : MonoBehaviour
 {
     public TMP_Text timerText;
-    public static float Timer = 5;
+    public static float Timer;
     public int TimerTest;
-    public GameObject Shop;
+    public GameObject Shop1;
     public GameObject Game1;
     public RectTransform slime;
     public RectTransform archer;
@@ -53,6 +53,11 @@ public class Time : MonoBehaviour
     public Slider PlayerSlider;
     public GameObject cards;
     public static bool canTime;
+    Shop shop;
+    void Start()
+    {
+        shop = GetComponent<Shop>();
+    }
     void Update()
     {
         if (canTime)
@@ -61,9 +66,25 @@ public class Time : MonoBehaviour
             {
                 Timer -= UnityEngine.Time.deltaTime;
                 timerText.text = Timer.ToString("0");
-            }
+                if (Damaging.EnemyHp <= 0)
+                {
+                    Debug.Log("Player won!");
+                    StartCoroutine(StartShop());
+                    canTime = false;
+                    shop.StartShop();
+                    Shop.Gold++;
+                }
+                else if (Damaging.PlayerHp <= 0)
+                {
+                    Debug.Log("Enemy won!");
+                    StartCoroutine(StartShop());
+                    canTime = false;
+                    shop.StartShop();
+                    Shop.Gold++;
+                }
 
-            if (Timer <= 0)
+            }
+            else if (Timer <= 0)
             {
                 Timer = 0;
                 if (Damaging.EnemyHp < Damaging.PlayerHp)
@@ -71,12 +92,15 @@ public class Time : MonoBehaviour
                     Debug.Log("Player won!");
                     StartCoroutine(StartShop());
                     canTime = false;
+                    shop.StartShop();
+                    Shop.Gold++;
                 }
                 if (Damaging.EnemyHp > Damaging.PlayerHp)
                 {
                     Debug.Log("Enemy won!");
                     StartCoroutine(StartShop());
                     canTime = false;
+                    Shop.Gold++;
                 }
                 if (Damaging.EnemyHp == Damaging.PlayerHp)
                 {
@@ -90,7 +114,7 @@ public class Time : MonoBehaviour
     public IEnumerator StartShop()
     {
         yield return new WaitForSeconds(1);
-        Shop.SetActive(true);
+        Shop1.SetActive(true);
         Game1.SetActive(false);
         Damaging.EnemyHp = Damaging.MaxEnemyHp;
         Damaging.PlayerHp = Damaging.MaxPlayerHp;

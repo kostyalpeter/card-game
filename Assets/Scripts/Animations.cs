@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class Animations : MonoBehaviour
 {
-    public bool Countdown2 = true;
+    public static bool Countdown2 = true;
     public bool Hurt2 = true;
     public GameObject Player;
     public Damaging damaging;
     public bool Die;
     void Update()
     {
-        Debug.Log(DoubleClick.Countdown);
         if (DoubleClick.Countdown && Countdown2 == true)
         {
             StartCoroutine(Wait());
@@ -62,5 +61,4 @@ public class Animations : MonoBehaviour
         GetComponent<Animator>().SetTrigger("Die");
         Die = true;
     }
-
 }
