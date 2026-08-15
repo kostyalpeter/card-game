@@ -169,4 +169,23 @@ public class CardPlacement : MonoBehaviour
             continue;
         }
     }
+
+    public void RestartAndShuffle()
+    {
+        currentCardIndex = 0;
+
+        if (CardPlace1.GetComponent<Place>()) CardPlace1.GetComponent<Place>().isTaken = false;
+        if (CardPlace2.GetComponent<Place>()) CardPlace2.GetComponent<Place>().isTaken = false;
+        if (CardPlace3.GetComponent<Place>()) CardPlace3.GetComponent<Place>().isTaken = false;
+
+        foreach (GameObject card in Cards)
+        {
+            if (card != null)
+            {
+                card.SetActive(true);
+            }
+        }
+
+        CardCall();
+    }
 }

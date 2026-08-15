@@ -42,7 +42,6 @@ public class Shop : MonoBehaviour
         UseCards[2].transform.position = startpos3;
         UseCards[3].transform.position = startpos4;
         DoubleClick.Countdown = false;
-        Animations.Countdown2 = true;
     }
     public void StartShop()
     {

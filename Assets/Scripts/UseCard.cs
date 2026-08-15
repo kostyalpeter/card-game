@@ -411,11 +411,11 @@ public class UseCard : MonoBehaviour
         }
         if (cards == Cards.arrowrain)
         {
-            Damaging.DamageAmount = 40;
+            Damaging.DamageAmount = 5;
         }
         if (cards == Cards.fireshots)
         {
-            Damaging.DamageAmount = 35;
+            Damaging.DamageAmount = 15;
         }
         if (cards == Cards.blackarrow)
         {

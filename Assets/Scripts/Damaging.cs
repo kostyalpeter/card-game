@@ -39,35 +39,35 @@ public class Damaging : MonoBehaviour
             {
                 EnemyDamageAmount = EnemyDamageAmount *= 1;
             }
-            if (UseCard.EnemyLevel == 2)
+            else if (UseCard.EnemyLevel == 2)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= (int)1.15;
             }
-            if (UseCard.EnemyLevel == 3)
+            else if (UseCard.EnemyLevel == 3)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= (int)1.3;
             }
-            if (UseCard.EnemyLevel == 4)
+            else if (UseCard.EnemyLevel == 4)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= (int)1.45;
             }
-            if (UseCard.EnemyLevel == 5)
+            else if (UseCard.EnemyLevel == 5)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= (int)1.60;
             }
-            if (UseCard.EnemyLevel == 6)
+            else if (UseCard.EnemyLevel == 6)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= (int)1.75;
             }
-            if (UseCard.EnemyLevel == 7)
+            else if (UseCard.EnemyLevel == 7)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= 2;
             }
-            if (UseCard.EnemyLevel == 8)
+            else if (UseCard.EnemyLevel == 8)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= (int)2.5;
             }
-            if (UseCard.EnemyLevel == 9)
+            else if (UseCard.EnemyLevel == 9)
             {
                 EnemyDamageAmount = EnemyDamageAmount *= 3;
             }

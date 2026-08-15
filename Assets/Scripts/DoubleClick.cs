@@ -45,7 +45,6 @@ public class DoubleClick : MonoBehaviour
             Player.GetComponent<Animator>().SetTrigger("Shoot");
             Countdown = true;
             useCard.DamageAmountSet();
-            damaging.Damage();
         }
     }
 
