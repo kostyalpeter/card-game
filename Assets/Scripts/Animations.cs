@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Animations : MonoBehaviour
 {
+    public GameObject Player;
     void Update()
     {
         if (Anim.CanHit)
@@ -17,5 +18,10 @@ public class Animations : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+    }
+    void PlayerAnim()
+    {
+        Player.GetComponent<Animator>().SetTrigger("Damage");
+        DoubleClick.Countdown = false;
     }
 }

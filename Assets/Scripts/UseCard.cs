@@ -393,89 +393,90 @@ public class UseCard : MonoBehaviour
         {
             Damaging.DamageAmount = 10;
         }
-        if (cards == Cards.swordhit)
+        else if (cards == Cards.swordhit)
         {
             Damaging.DamageAmount = 15;
         }
-        if (cards == Cards.swordthrow)
+        else if (cards == Cards.swordthrow)
         {
             Damaging.DamageAmount = 15;
         }
-        if (cards == Cards.burst)
+        else if (cards == Cards.burst)
         {
             Damaging.DamageAmount = 35;
         }
-        if (cards == Cards.arrowshot)
+        else if (cards == Cards.arrowshot)
         {
             Damaging.DamageAmount = 20;
         }
-        if (cards == Cards.arrowrain)
+        else if (cards == Cards.arrowrain)
         {
             Damaging.DamageAmount = 5;
         }
-        if (cards == Cards.fireshots)
+        else if (cards == Cards.fireshots)
         {
             Damaging.DamageAmount = 15;
         }
-        if (cards == Cards.blackarrow)
+        else if (cards == Cards.blackarrow)
         {
             Damaging.DamageAmount = 90;
         }
-        if (cards == Cards.fireball)
+        else if (cards == Cards.fireball)
         {
             Damaging.DamageAmount = 50;
         }
-        if (cards == Cards.lightningstrike)
+        else if (cards == Cards.lightningstrike)
         {
             Damaging.DamageAmount = 40;
         }
-        if (cards == Cards.firerain)
+        else if (cards == Cards.firerain)
         {
-            Damaging.DamageAmount = 45;
+            Damaging.DamageAmount = 10;
         }
-        if (cards == Cards.morexp)
+        else if (cards == Cards.morexp)
         {
             Damaging.DamageAmount = 0;
             Debug.Log("Exp");
         }
-        if (cards == Cards.lessdamage)
+        else if (cards == Cards.lessdamage)
         {
             Damaging.DamageAmount = 0;
             Debug.Log("Less damage");
         }
-        if (cards == Cards.heal)
+        else if (cards == Cards.heal)
         {
             Damaging.PlayerHp += 20;
             Debug.Log("Heal");
         }
-        if (cards == Cards.damageboost)
+        else if (cards == Cards.damageboost)
         {
-            Damaging.DamageAmount *= (int)1.4;
+            Damaging.DamageAmount *= (int)(Damaging.DamageAmount * 1.4f);
             Debug.Log("Damage boost");
         }
-        if (cards == Cards.moregold)
+        else if (cards == Cards.moregold)
         {
             Shop.Gold += 5;
             Damaging.DamageAmount = 0;
             Debug.Log("More gold");
         }
-        if (cards == Cards.moretime)
+        else if (cards == Cards.moretime)
         {
             Time.Timer += 30;
             Damaging.DamageAmount = 0;
             Debug.Log("More time");
         }
-        if (cards == Cards.shield)
+        else if (cards == Cards.shield)
         {
             Damaging.DamageAmount = 0;
             Debug.Log("Shield");
         }
-        if (cards == Cards.hp)
+        else if (cards == Cards.hp)
         {
             Damaging.PlayerHp /= 2;
             Damaging.EnemyHp /= 2;
             Damaging.DamageAmount = 0;
             Debug.Log("Hp");
         }
+        Debug.Log(Damaging.DamageAmount);
     }
 }

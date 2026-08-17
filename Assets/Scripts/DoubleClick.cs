@@ -39,12 +39,13 @@ public class DoubleClick : MonoBehaviour
             {
                 cards.CardPlace3.GetComponent<Place>().isTaken = false;
             }
-            gameObject.SetActive(false);
             cards.RefreshBoard();
+            useCard.DamageAmountSet();
             gameObject.GetComponent<UseCard>().Use();
             Player.GetComponent<Animator>().SetTrigger("Shoot");
             Countdown = true;
-            useCard.DamageAmountSet();
+            Debug.Log(Countdown);
+            gameObject.SetActive(false);
         }
     }
 
@@ -54,7 +55,7 @@ public class DoubleClick : MonoBehaviour
         StartCoroutine(ResetClicks());
     }
 
-    IEnumerator ResetClicks()
+    public IEnumerator ResetClicks()
     {
         yield return new WaitForSeconds(speed);
         Clicks = 2;
