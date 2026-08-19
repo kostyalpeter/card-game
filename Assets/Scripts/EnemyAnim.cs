@@ -1,37 +1,14 @@
-// using UnityEngine;
-// using System.Collections;
+using UnityEngine;
+using System.Collections;
 
 
-// public class EnemyAnim : MonoBehaviour
-// {
-//     public static bool EnemyAnimBool;
-//     public GameObject Player;
-//     void Update()
-//     {
-//         if (EnemyAnimBool)
-//         {
-//             StartCoroutine(Anim());
-//         }
-//     }
+public class EnemyAnim : MonoBehaviour
+{
+    public GameObject Anim;
 
-//     IEnumerator Anim()
-//     {
-//         yield return new WaitForSeconds(3f);
-//         Animation();
-//     }
-
-//     public void Animation()
-//     {
-//         if (EnemyAnimBool)
-//         {
-//             gameObject.GetComponent<Animator>().SetTrigger("Shoot");
-//             EnemyAnimBool = false;
-//         }
-//     }
-
-//     public void PlayerAnim()
-//     {
-//         Player.GetComponent<Animator>().SetTrigger("Damage");
-//         DoubleClick.Countdown = false;
-//     }
-// }
+    public void Animation()
+    {
+        Anim.SetActive(true); 
+        Anim.GetComponent<Animator>().SetTrigger("Attack");
+    }
+}

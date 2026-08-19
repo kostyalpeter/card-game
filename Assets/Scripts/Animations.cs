@@ -8,20 +8,30 @@ public class Animations : MonoBehaviour
     {
         if (Anim.CanHit)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("Damage");
-            StartCoroutine(Wait());
-            Anim.CanHit = false;
+            if (gameObject.GetComponent<Animator>() != null)
+            {
+                gameObject.GetComponent<Animator>().SetTrigger("Damage");
+                StartCoroutine(Wait());
+                Anim.CanHit = false;
+            }
         }
     }
 
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(3f);
-        gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+        if (gameObject.GetComponent<Animator>() != null)
+        {
+            gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+        }
     }
     void PlayerAnim()
     {
-        Player.GetComponent<Animator>().SetTrigger("Damage");
-        DoubleClick.Countdown = false;
+        if (Player != null)
+        {
+            Player.GetComponent<Animator>().SetTrigger("Damage");
+            Damaging.Hit = true;
+            DoubleClick.Countdown = false;
+        }
     }
 }

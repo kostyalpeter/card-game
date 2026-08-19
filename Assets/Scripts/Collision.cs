@@ -26,19 +26,18 @@ public class UICollision : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             RectTransform enemyRect = enemy.GetComponent<RectTransform>();
+            Animator enemyAnimator = enemy.GetComponent<Animator>();
 
-            // Ha az Enemy is UI elem (RectTransform), ellenőrizzük az ütközést
             if (enemyRect != null && IsOverlapping(myRect, enemyRect))
             {
                 isHandled = true;
 
-                // 1. Sebzés lejátszása
                 if (damaging != null)
                 {
                     damaging.Damage();
+                    Debug.Log("Damage");
                 }
 
-                // 2. Kártya eltüntetése
                 gameObject.SetActive(false);
                 return;
             }

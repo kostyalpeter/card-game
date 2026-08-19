@@ -48,7 +48,6 @@ public class Anim : MonoBehaviour
 
     public void Damage()
     {
-        CanHit = true;
         damaging.Damage();
     }
 }

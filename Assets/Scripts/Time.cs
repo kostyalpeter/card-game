@@ -73,6 +73,7 @@ public class Time : MonoBehaviour
                     canTime = false;
                     shop.StartShop();
                     Shop.Gold++;
+                    GameUIStart.Set++;
                 }
                 else if (Damaging.PlayerHp <= 0)
                 {
