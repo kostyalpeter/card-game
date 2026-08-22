@@ -83,89 +83,120 @@ public class Animations2 : MonoBehaviour
 
     public void Ice()
     {
-        iceButton.GetComponent<Click>().Clicks--;
-        if (iceButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            ice.SetActive(true);
-            ice.GetComponent<Animator>().SetTrigger("Attack");
+            iceButton.GetComponent<Click>().Clicks--;
+
+            if (iceButton.GetComponent<Click>().Clicks == 0)
+            {
+                ice.SetActive(true);
+                ice.GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
     }
     public void Lightning()
     {
-        lightningButton.GetComponent<Click>().Clicks--;
-        if (lightningButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            lightning.SetActive(true);
-            lightning.GetComponent<Animator>().SetTrigger("Attack");
+            lightningButton.GetComponent<Click>().Clicks--;
+            if (lightningButton.GetComponent<Click>().Clicks == 0)
+            {
+                lightning.SetActive(true);
+                lightning.GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
     }
     public void FireRain()
     {
-        fireBallButton.GetComponent<Click>().Clicks--;
-        if (fireBallButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            FireRainBool = true;
+            fireBallButton.GetComponent<Click>().Clicks--;
+            if (fireBallButton.GetComponent<Click>().Clicks == 0)
+            {
+                FireRainBool = true;
+            }
         }
     }
     public void Burst()
     {
-        burstButton.GetComponent<Click>().Clicks--;
-        if (burstButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            burst.SetActive(true);
-            burst.GetComponent<Animator>().SetTrigger("Attack");
+            burstButton.GetComponent<Click>().Clicks--;
+            if (burstButton.GetComponent<Click>().Clicks == 0)
+            {
+                burst.SetActive(true);
+                burst.GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
     }
     public void Sword()
     {
-        swordButton.GetComponent<Click>().Clicks--;
-        if (swordButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            sword.SetActive(true);
-            sword.GetComponent<Animator>().SetTrigger("Attack");
+            swordButton.GetComponent<Click>().Clicks--;
+            if (swordButton.GetComponent<Click>().Clicks == 0)
+            {
+                sword.SetActive(true);
+                sword.GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
     }
     public void FireBall()
     {
-        fireBallButton.GetComponent<Click>().Clicks--;
-        if (fireBallButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            fireBall.SetActive(true);
-            fireBall.GetComponent<Animator>().SetTrigger("Attack");
+            fireBallButton.GetComponent<Click>().Clicks--;
+            if (fireBallButton.GetComponent<Click>().Clicks == 0)
+            {
+                fireBall.SetActive(true);
+                fireBall.GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
     }
     public void TheBlackArrow()
     {
-        theBlackArrowButton.GetComponent<Click>().Clicks--;
-        if (theBlackArrowButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            theBlackArrow.SetActive(true);
-            theBlackArrow.GetComponent<Animator>().SetTrigger("Attack");
+            theBlackArrowButton.GetComponent<Click>().Clicks--;
+            if (theBlackArrowButton.GetComponent<Click>().Clicks == 0)
+            {
+                theBlackArrow.SetActive(true);
+                theBlackArrow.GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
     }
     public void FireShots()
     {
-        fireShotsButton.GetComponent<Click>().Clicks--;
-        if (fireShotsButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            FireShotsBool = true;
+            fireShotsButton.GetComponent<Click>().Clicks--;
+            if (fireShotsButton.GetComponent<Click>().Clicks == 0)
+            {
+                FireShotsBool = true;
+            }
         }
     }
     public void ArrowRain()
     {
-        arrowRainButton.GetComponent<Click>().Clicks--;
-        if (arrowRainButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            ArrowRainBool = true;
+            arrowRainButton.GetComponent<Click>().Clicks--;
+            if (arrowRainButton.GetComponent<Click>().Clicks == 0)
+            {
+                ArrowRainBool = true;
+            }
         }
     }
     public void ArrowShot()
     {
-        arrowShotButton.GetComponent<Click>().Clicks--;
-        if (arrowShotButton.GetComponent<Click>().Clicks == 0)
+        if (DoubleClick.Countdown == false)
         {
-            arrowShot.SetActive(true);
-            arrowShot.GetComponent<Animator>().SetTrigger("Attack");
+            arrowShotButton.GetComponent<Click>().Clicks--;
+            if (arrowShotButton.GetComponent<Click>().Clicks == 0)
+            {
+                arrowShot.SetActive(true);
+                arrowShot.GetComponent<Animator>().SetTrigger("Attack");
+            }
         }
     }
 }

@@ -13,11 +13,15 @@ public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (DoubleClick.Countdown) return;
+
         beingDragged = true;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (DoubleClick.Countdown) return;
+
         gameObject.transform.position = eventData.position;
     }
 

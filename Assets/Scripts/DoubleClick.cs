@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class DoubleClick : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class DoubleClick : MonoBehaviour
     public Damaging damaging;
     public enum Cards { Shoot, Walk };
     public Cards cardType;
+    public TMP_Text Text;
     void Start()
     {
         cards = FindAnyObjectByType<CardPlacement>();
@@ -25,8 +27,18 @@ public class DoubleClick : MonoBehaviour
 
     void Update()
     {
+        if (Countdown)
+        {
+            Text.text = "True";
+        }
+        else
+        {
+            Text.text = "False";
+        }
+
         if (Clicks == 0 && Countdown == false)
         {
+            Countdown = true;
             Clicks = 2;
             Debug.Log("Click");
             if (gameObject.GetComponent<Card>().CardPlace == 1)
@@ -52,7 +64,6 @@ public class DoubleClick : MonoBehaviour
             {
                 Player.GetComponent<Animator>().SetTrigger("Walk");
             }
-            Countdown = true;
             Debug.Log(Countdown);
             gameObject.SetActive(false);
         }
@@ -60,8 +71,11 @@ public class DoubleClick : MonoBehaviour
 
     public void Click()
     {
-        Clicks -= 1;
-        StartCoroutine(ResetClicks());
+        if (Countdown == false)
+        {
+            Clicks -= 1;
+            StartCoroutine(ResetClicks());
+        }
     }
 
     public IEnumerator ResetClicks()

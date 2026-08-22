@@ -19,7 +19,7 @@ public class UICollision : MonoBehaviour
 
     void Update()
     {
-        if (isHandled) return;
+        if (isHandled && DoubleClick.Countdown == false) return;
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -33,6 +33,7 @@ public class UICollision : MonoBehaviour
 
                 if (damaging != null)
                 {
+                    DoubleClick.Countdown = true;
                     damaging.Damage();
                     Debug.Log("Damage");
                     Damaging.Asd = true;
