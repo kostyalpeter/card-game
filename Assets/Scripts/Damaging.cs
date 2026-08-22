@@ -12,6 +12,7 @@ public class Damaging : MonoBehaviour
     public int EnemyDamageAmount = 20;
     public bool canDamage;
     public static bool Hit;
+    public static bool Asd;
     void Start()
     {
         EnemyHp = MaxEnemyHp;
@@ -24,7 +25,7 @@ public class Damaging : MonoBehaviour
         cardPlacement.PlayerHP.maxValue = MaxPlayerHp;
         cardPlacement.EnemyHP.value = EnemyHp;
         cardPlacement.PlayerHP.value = PlayerHp;
-
+        
         if (Hit)
         {
             PlayerDamage();
@@ -35,7 +36,7 @@ public class Damaging : MonoBehaviour
     {
         EnemyHp -= DamageAmount;
         Hurt = true;
-        canDamage = true;
+        canDamage = true; 
         Anim.CanHit = true;
         Debug.Log("Damage67");
     }

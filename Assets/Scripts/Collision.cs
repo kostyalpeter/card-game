@@ -26,7 +26,6 @@ public class UICollision : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             RectTransform enemyRect = enemy.GetComponent<RectTransform>();
-            Animator enemyAnimator = enemy.GetComponent<Animator>();
 
             if (enemyRect != null && IsOverlapping(myRect, enemyRect))
             {
@@ -36,6 +35,8 @@ public class UICollision : MonoBehaviour
                 {
                     damaging.Damage();
                     Debug.Log("Damage");
+                    Damaging.Asd = true;
+                    Anim.CanHit = true;
                 }
 
                 gameObject.SetActive(false);

@@ -10,10 +10,15 @@ public class Animations : MonoBehaviour
         {
             if (gameObject.GetComponent<Animator>() != null)
             {
+                Anim.CanHit = false;
                 gameObject.GetComponent<Animator>().SetTrigger("Damage");
                 StartCoroutine(Wait());
-                Anim.CanHit = false;
             }
+        }
+
+        else if (Damaging.Asd)
+        {
+            StartCoroutine(Wait());
         }
     }
 
@@ -22,7 +27,11 @@ public class Animations : MonoBehaviour
         yield return new WaitForSeconds(3f);
         if (gameObject.GetComponent<Animator>() != null)
         {
-            gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+            if (Damaging.Asd)
+            {
+                gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+                Damaging.Asd = false;
+            }
         }
     }
     void PlayerAnim()

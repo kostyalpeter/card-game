@@ -11,6 +11,8 @@ public class DoubleClick : MonoBehaviour
     public GameObject Player;
     public static bool Countdown;
     public Damaging damaging;
+    public enum Cards { Shoot, Walk };
+    public Cards cardType;
     void Start()
     {
         cards = FindAnyObjectByType<CardPlacement>();
@@ -42,7 +44,14 @@ public class DoubleClick : MonoBehaviour
             cards.RefreshBoard();
             useCard.DamageAmountSet();
             gameObject.GetComponent<UseCard>().Use();
-            Player.GetComponent<Animator>().SetTrigger("Shoot");
+            if (cardType == Cards.Shoot)
+            {
+                Player.GetComponent<Animator>().SetTrigger("Shoot");
+            }
+            else if (cardType == Cards.Walk)
+            {
+                Player.GetComponent<Animator>().SetTrigger("Walk");
+            }
             Countdown = true;
             Debug.Log(Countdown);
             gameObject.SetActive(false);

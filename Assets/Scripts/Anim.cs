@@ -49,5 +49,6 @@ public class Anim : MonoBehaviour
     public void Damage()
     {
         damaging.Damage();
+        Damaging.Asd = true;
     }
 }
