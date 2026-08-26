@@ -2,12 +2,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
 public class CardTexts : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public RectTransform Box;
     public TMP_Text Text;
     public static bool ShowBool;
     static Vector3 OffSet;
+    static RectTransform clickedCard;
     void Update()
     {
 
@@ -34,9 +36,18 @@ public class CardTexts : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Show();
-        var pos = gameObject.GetComponent<RectTransform>().anchoredPosition;
+        if (clickedCard == gameObject.GetComponent<RectTransform>())
+        {
+            Show();
+        }
+        else
+        {
+            ShowBool = true;
+            clickedCard = gameObject.GetComponent<RectTransform>();
 
-        OffSet = new Vector3(pos.x, pos.y += 315, gameObject.transform.position.z);
+            var pos = gameObject.GetComponent<RectTransform>().anchoredPosition;
+
+            OffSet = new Vector3(pos.x, pos.y += 315, gameObject.transform.position.z);
+        }
     }
 }
