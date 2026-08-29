@@ -15,6 +15,7 @@ public class DoubleClick : MonoBehaviour
     public enum Cards { Shoot, Walk };
     public Cards cardType;
     public TMP_Text Text;
+    public Damaging damage;
     void Start()
     {
         cards = FindAnyObjectByType<CardPlacement>();
@@ -56,6 +57,7 @@ public class DoubleClick : MonoBehaviour
             cards.RefreshBoard();
             useCard.DamageAmountSet();
             gameObject.GetComponent<UseCard>().Use();
+            gameObject.GetComponent<CardUpgrade>().CardUpgradeCheck();
             if (cardType == Cards.Shoot)
             {
                 Player.GetComponent<Animator>().SetTrigger("Shoot");
@@ -64,7 +66,20 @@ public class DoubleClick : MonoBehaviour
             {
                 Player.GetComponent<Animator>().SetTrigger("Walk");
             }
-            Debug.Log(Countdown);
+            var c = gameObject.GetComponent<CardUpgrade>();
+            if (c.cardUpgrades == CardUpgrade.CardUpgrades.PurpleGalaxy)
+            {
+
+            }
+            else if (c.cardUpgrades == CardUpgrade.CardUpgrades.RedGalaxy)
+            {
+                damage.Damage2();
+            }
+            else if (c.cardUpgrades == CardUpgrade.CardUpgrades.GreenGalaxy)
+            {
+
+            }   
+            else { }
             gameObject.SetActive(false);
         }
     }

@@ -39,6 +39,7 @@ public class CardPlacement : MonoBehaviour
 
     public void CardCall()
     {
+        CardUpgrade.Starting = true;
         useCard.Starting();
         Game.SetActive(false);
         PlayerHP.gameObject.SetActive(true);
