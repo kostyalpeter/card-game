@@ -39,6 +39,7 @@ public class CardPlacement : MonoBehaviour
 
     public void CardCall()
     {
+        Damaging.PlayerHp = 100;
         CardUpgrade.Starting = true;
         useCard.Starting();
         Game.SetActive(false);

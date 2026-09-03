@@ -5,14 +5,23 @@ public class Damaging : MonoBehaviour
     public static int DamageAmount;
     public CardPlacement cardPlacement;
     public static int EnemyHp;
-    public static int PlayerHp;
+    private static int playerHp = 100;
     public static int MaxEnemyHp = 100;
     public static int MaxPlayerHp = 100;
+    public static int PlayerHp
+    {
+        get => playerHp;
+        set
+        {
+            playerHp = Mathf.Clamp(value, 0, MaxPlayerHp);
+        }
+    }
     public static bool Hurt;
-    public int EnemyDamageAmount = 20;
+    public static int EnemyDamageAmount = 20;
     public bool canDamage;
     public static bool Hit;
     public static bool Asd;
+    public static bool Enemy;
     void Start()
     {
         EnemyHp = MaxEnemyHp;
@@ -47,6 +56,13 @@ public class Damaging : MonoBehaviour
         Hurt = true;
         canDamage = true;
         Anim.CanHit = true;
+    }
+    public void NonAttack()
+    {
+        Enemy = true;
+        Hurt = true;
+        canDamage = true;
+        Asd = true;
     }
     public void PlayerDamage()
     {
@@ -88,9 +104,12 @@ public class Damaging : MonoBehaviour
             {
                 EnemyDamageAmount = EnemyDamageAmount *= 3;
             }
-            PlayerHp -= EnemyDamageAmount;
-            canDamage = false;
-            Debug.Log("Enemy Attack");
+            if (NonAttacks.Shield != true)
+            {
+                PlayerHp -= EnemyDamageAmount;
+                canDamage = false;
+                Debug.Log("Enemy Attack");
+            }
         }
     }
 }

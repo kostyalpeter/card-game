@@ -445,23 +445,20 @@ public class UseCard : MonoBehaviour
         }
         else if (cards == Cards.heal)
         {
-            Damaging.PlayerHp += 20;
+            Damaging.DamageAmount = 0;
             Debug.Log("Heal");
         }
         else if (cards == Cards.damageboost)
         {
-            Damaging.DamageAmount *= (int)(Damaging.DamageAmount * 1.4f);
             Debug.Log("Damage boost");
         }
         else if (cards == Cards.moregold)
         {
-            Shop.Gold += 5;
             Damaging.DamageAmount = 0;
             Debug.Log("More gold");
         }
         else if (cards == Cards.moretime)
         {
-            Time.Timer += 30;
             Damaging.DamageAmount = 0;
             Debug.Log("More time");
         }
@@ -472,8 +469,6 @@ public class UseCard : MonoBehaviour
         }
         else if (cards == Cards.hp)
         {
-            Damaging.PlayerHp /= 2;
-            Damaging.EnemyHp /= 2;
             Damaging.DamageAmount = 0;
             Debug.Log("Hp");
         }

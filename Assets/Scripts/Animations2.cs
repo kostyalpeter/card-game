@@ -26,6 +26,25 @@ public class Animations2 : MonoBehaviour
     public bool FireRainBool;
     public bool FireShotsBool;
     public bool ArrowRainBool;
+
+
+
+    public GameObject heal;
+    public GameObject moreXp;
+    public GameObject moreTime;
+    public GameObject lessDamage;
+    public GameObject damageBoost;
+    public GameObject moreGold;
+    public GameObject shield;
+    public GameObject hp;
+    public GameObject HpButton;
+    public GameObject HealButton;
+    public GameObject MoreXpButton;
+    public GameObject MoreTimeButton;
+    public GameObject LessDamageButton;
+    public GameObject DamageBoostButton;
+    public GameObject MoreGoldButton;
+    public GameObject ShieldButton;
     Button btn;
 
 
@@ -196,6 +215,103 @@ public class Animations2 : MonoBehaviour
             {
                 arrowShot.SetActive(true);
                 arrowShot.GetComponent<Animator>().SetTrigger("Attack");
+            }
+        }
+    }
+    public void Heal()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            HealButton.GetComponent<Click>().Clicks--;
+            if (HealButton.GetComponent<Click>().Clicks == 0)
+            {
+                heal.SetActive(true);
+                heal.GetComponent<Animator>().SetTrigger("Trigger");
+            }
+        }
+    }
+    public void MoreGold()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            MoreGoldButton.GetComponent<Click>().Clicks--;
+            if (MoreGoldButton.GetComponent<Click>().Clicks == 0)
+            {
+                moreGold.SetActive(true);
+                moreGold.GetComponent<Animator>().SetTrigger("Trigger");
+            }
+        }
+    }
+    public void DamageBoost()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            DamageBoostButton.GetComponent<Click>().Clicks--;
+            if (DamageBoostButton.GetComponent<Click>().Clicks == 0)
+            {
+                damageBoost.SetActive(true);
+                damageBoost.GetComponent<Animator>().SetTrigger("Trigger");
+            }
+        }
+    }
+    public void LessDamage()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            LessDamageButton.GetComponent<Click>().Clicks--;
+            if (LessDamageButton.GetComponent<Click>().Clicks == 0)
+            {
+                lessDamage.SetActive(true);
+                lessDamage.GetComponent<Animator>().SetTrigger("Trigger");
+            }
+        }
+    }
+    public void MoreXp()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            MoreXpButton.GetComponent<Click>().Clicks--;
+            if (MoreXpButton.GetComponent<Click>().Clicks == 0)
+            {
+                moreXp.SetActive(true);
+                moreXp.GetComponent<Animator>().SetTrigger("Trigger");
+            }
+        }
+    }
+    public void Shield()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            ShieldButton.GetComponent<Click>().Clicks--;
+            if (ShieldButton.GetComponent<Click>().Clicks == 0)
+            {
+                shield.SetActive(true);
+                NonAttacks.Shield = true;
+                shield.GetComponent<NonAttacks>().Shieldd();
+            }
+        }
+    }
+    public void MoreTime()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            MoreTimeButton.GetComponent<Click>().Clicks--;
+            if (MoreTimeButton.GetComponent<Click>().Clicks == 0)
+            {
+                moreTime.SetActive(true);
+                moreTime.GetComponent<Animator>().SetTrigger("Trigger");
+            }
+        }
+    }
+    public void Hp()
+    {
+        if (DoubleClick.Countdown == false)
+        {
+            HpButton.GetComponent<Click>().Clicks--;
+            if (HpButton.GetComponent<Click>().Clicks == 0)
+            {
+                hp.SetActive(true);
+                hp.GetComponent<Animator>().SetTrigger("Trigger");
             }
         }
     }

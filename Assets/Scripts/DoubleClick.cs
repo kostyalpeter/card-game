@@ -12,7 +12,7 @@ public class DoubleClick : MonoBehaviour
     public GameObject Player;
     public static bool Countdown;
     public Damaging damaging;
-    public enum Cards { Shoot, Walk };
+    public enum Cards { Shoot, Walk, NonAttack };
     public Cards cardType;
     public TMP_Text Text;
     public Damaging damage;
@@ -65,6 +65,9 @@ public class DoubleClick : MonoBehaviour
             else if (cardType == Cards.Walk)
             {
                 Player.GetComponent<Animator>().SetTrigger("Walk");
+            }
+            else if (cardType == Cards.NonAttack)
+            {
             }
             var c = gameObject.GetComponent<CardUpgrade>();
             if (c.cardUpgrades == CardUpgrade.CardUpgrades.PurpleGalaxy)

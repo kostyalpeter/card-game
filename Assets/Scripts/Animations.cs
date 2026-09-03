@@ -4,6 +4,7 @@ using UnityEngine;
 public class Animations : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject Shieldd;
     void Update()
     {
         if (Anim.CanHit)
@@ -17,6 +18,10 @@ public class Animations : MonoBehaviour
         }
 
         else if (Damaging.Asd)
+        {
+            StartCoroutine(Wait());
+        }
+        else if (Damaging.Enemy)
         {
             StartCoroutine(Wait());
         }
@@ -34,13 +39,25 @@ public class Animations : MonoBehaviour
             }
         }
     }
-    void PlayerAnim()
+    public void PlayerAnim()
     {
-        if (Player != null)
+        if (Player != null && NonAttacks.Shield != true)
         {
             Player.GetComponent<Animator>().SetTrigger("Damage");
             Damaging.Hit = true;
             DoubleClick.Countdown = false;
         }
+    }
+    public void Shield()
+    {
+        DoubleClick.Countdown = false;
+        Shieldd.SetActive(false);
+        StartCoroutine(Wait2());
+    }
+
+    IEnumerator Wait2()
+    {
+        yield return new WaitForSeconds(1f);
+        NonAttacks.Shield = false;
     }
 }
