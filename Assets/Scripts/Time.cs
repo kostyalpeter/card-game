@@ -53,6 +53,7 @@ public class Time : MonoBehaviour
     public Slider PlayerSlider;
     public GameObject cards;
     public static bool canTime;
+    public static float speed = 1f;
     Shop shop;
     void Start()
     {
@@ -64,8 +65,9 @@ public class Time : MonoBehaviour
         {
             if (Timer > 0)
             {
-                Timer -= UnityEngine.Time.deltaTime;
+                Timer -= UnityEngine.Time.deltaTime * speed;
                 timerText.text = Timer.ToString("0");
+
                 if (Damaging.EnemyHp <= 0)
                 {
                     Debug.Log("Player won!");
@@ -95,6 +97,7 @@ public class Time : MonoBehaviour
                     canTime = false;
                     shop.StartShop();
                     Shop.Gold++;
+                    GameUIStart.Set++;
                 }
                 if (Damaging.EnemyHp > Damaging.PlayerHp)
                 {

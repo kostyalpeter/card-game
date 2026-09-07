@@ -6,6 +6,10 @@ public class NonAttacks : MonoBehaviour
     public GameObject Hp2;
     public Damaging damaging;
     public static bool Shield;
+    public static bool Watered;
+    public static bool Oiled;
+    public static bool DamageBoosted;
+    public static bool LessDamaged;
 
     public void Hp()
     {
@@ -23,8 +27,7 @@ public class NonAttacks : MonoBehaviour
     }
     public void DamageBoost()
     {
-
-        Damaging.DamageAmount *= (int)(Damaging.DamageAmount * 1.4f);
+        DamageBoosted = true;
     }
     public void Heal()
     {
@@ -43,8 +46,7 @@ public class NonAttacks : MonoBehaviour
     }
     public void LessDamage()
     {
-
-        Damaging.EnemyDamageAmount /= 2;
+        LessDamaged = true;
     }
     public void MoreTime()
     {
@@ -63,5 +65,17 @@ public class NonAttacks : MonoBehaviour
         damaging.NonAttack();
 
         Shield = true;
+    }
+    public void Water()
+    {
+        damaging.NonAttack();
+
+        Watered = true;
+    }
+    public void Oil()
+    {
+        damaging.NonAttack();
+
+        Oiled = true;
     }
 }

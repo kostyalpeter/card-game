@@ -5,78 +5,113 @@ public class ShopBuyCards : MonoBehaviour
     public CardStats cardStats;
     public void Buy()
     {
-        if (cardStats.CardLevel < 9)
+        if (gameObject.GetComponent<ShopCard>() == null)
         {
-            if (cardStats.CardLevel == 0)
+            if (cardStats.CardLevel < 9)
             {
-                if (Shop.Gold >= 3)
+                if (cardStats.CardLevel == 0)
                 {
-                    Purchase();
-                    Shop.Gold -= 3;
+                    if (Shop.Gold >= 3)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 1)
+                {
+                    if (Shop.Gold >= 3)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 2)
+                {
+                    if (Shop.Gold >= 3)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 3)
+                {
+                    if (Shop.Gold >= 4)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 4)
+                {
+                    if (Shop.Gold >= 4)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 5)
+                {
+                    if (Shop.Gold >= 4)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 6)
+                {
+                    if (Shop.Gold >= 5)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 7)
+                {
+                    if (Shop.Gold >= 5)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
+                }
+                else if (cardStats.CardLevel == 8)
+                {
+                    if (Shop.Gold >= 5)
+                    {
+                        Purchase();
+                        Shop.Gold -= 3;
+                    }
                 }
             }
-            else if (cardStats.CardLevel == 1)
+        }
+        else if (gameObject.GetComponent<ShopCard>() != null)
+        {
+            var card = cardStats.GetComponent<CardUpgrade>();
+            var shopCard = gameObject.GetComponent<ShopCard>();
+            if (Shop.Gold >= 6)
             {
-                if (Shop.Gold >= 3)
+                if (shopCard.cardType == ShopCard.CardType.Purple)
                 {
-                    Purchase();
-                    Shop.Gold -= 3;
+                    card.cardUpgrades = CardUpgrade.CardUpgrades.PurpleGalaxy;
+                    gameObject.SetActive(false);
+                    Shop.Gold -= 6;
                 }
-            }
-            else if (cardStats.CardLevel == 2)
-            {
-                if (Shop.Gold >= 3)
+                if (shopCard.cardType == ShopCard.CardType.Red)
                 {
-                    Purchase();
-                    Shop.Gold -= 3;
+                    card.cardUpgrades = CardUpgrade.CardUpgrades.RedGalaxy;
+                    gameObject.SetActive(false);
+                    Shop.Gold -= 6;
                 }
-            }
-            else if (cardStats.CardLevel == 3)
-            {
-                if (Shop.Gold >= 4)
+                if (shopCard.cardType == ShopCard.CardType.Green)
                 {
-                    Purchase();
-                    Shop.Gold -= 3;
+                    card.cardUpgrades = CardUpgrade.CardUpgrades.GreenGalaxy;
+                    gameObject.SetActive(false);
+                    Shop.Gold -= 6;
                 }
-            }
-            else if (cardStats.CardLevel == 4)
-            {
-                if (Shop.Gold >= 4)
+                if (shopCard.cardType == ShopCard.CardType.none)
                 {
-                    Purchase();
-                    Shop.Gold -= 3;
-                }
-            }
-            else if (cardStats.CardLevel == 5)
-            {
-                if (Shop.Gold >= 4)
-                {
-                    Purchase();
-                    Shop.Gold -= 3;
-                }
-            }
-            else if (cardStats.CardLevel == 6)
-            {
-                if (Shop.Gold >= 5)
-                {
-                    Purchase();
-                    Shop.Gold -= 3;
-                }
-            }
-            else if (cardStats.CardLevel == 7)
-            {
-                if (Shop.Gold >= 5)
-                {
-                    Purchase();
-                    Shop.Gold -= 3;
-                }
-            }
-            else if (cardStats.CardLevel == 8)
-            {
-                if (Shop.Gold >= 5)
-                {
-                    Purchase();
-                    Shop.Gold -= 3;
+                    card.cardUpgrades = CardUpgrade.CardUpgrades.none;
+                    gameObject.SetActive(false);
+                    Shop.Gold -= 4;
                 }
             }
         }

@@ -25,6 +25,8 @@ public class CardPlacement : MonoBehaviour
     public GameObject GamePlay;
     public GameObject Game;
     public GameObject CardsGame;
+    public GameObject CardObject;
+    public int Discards = 3;
 
     void Start()
     {
@@ -39,7 +41,9 @@ public class CardPlacement : MonoBehaviour
 
     public void CardCall()
     {
-        Damaging.PlayerHp = 100;
+        Discards = 3;
+        Damaging.PlayerHp = Damaging.MaxPlayerHp;
+        Damaging.EnemyHp = Damaging.MaxEnemyHp;        
         CardUpgrade.Starting = true;
         useCard.Starting();
         Game.SetActive(false);
@@ -47,6 +51,7 @@ public class CardPlacement : MonoBehaviour
         EnemyHP.gameObject.SetActive(true);
         GamePlay.gameObject.SetActive(true);
         CardsGame.SetActive(true);
+        DoubleClick.CardPlays = 3;
         foreach (Transform child in CardsGame.transform)
         {
             child.gameObject.SetActive(true);
@@ -189,5 +194,31 @@ public class CardPlacement : MonoBehaviour
         }
 
         CardCall();
+    }
+    public void Discard()
+    {
+        DoubleClick[] allCards = CardObject.GetComponentsInChildren<DoubleClick>();
+        foreach (DoubleClick card in allCards)
+        {
+            if (card.selected && Discards > 0)
+            {
+                card.selected = false;
+                card.gameObject.SetActive(false);
+                if (card.gameObject.GetComponent<Card>().CardPlace == 1)
+                {
+                    CardPlace1.GetComponent<Place>().isTaken = false;
+                }
+                else if (card.gameObject.GetComponent<Card>().CardPlace == 2)
+                {
+                    CardPlace2.GetComponent<Place>().isTaken = false;
+                }
+                else if (card.gameObject.GetComponent<Card>().CardPlace == 3)
+                {
+                    CardPlace3.GetComponent<Place>().isTaken = false;
+                }
+                Discards--;
+            }
+            RefreshBoard();
+        }
     }
 }

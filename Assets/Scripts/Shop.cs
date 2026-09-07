@@ -101,7 +101,7 @@ public class Shop : MonoBehaviour
             }
         }
 
-        var num = Random.Range(1, 21);
+        var num = Random.Range(1, 1);
 
         if (num == 1)
         {
@@ -128,25 +128,27 @@ public class Shop : MonoBehaviour
 
                         ShopCard cardScript = targetCard.GetComponent<ShopCard>();
 
-                        if (cardScript != null)
-                        {
-                            cardScript = img.gameObject.GetComponent<ShopCard>();
-
-                        }
+                        // if (cardScript != null)
+                        // {
+                        //     cardScript = img.gameObject.GetComponent<ShopCard>();
+                        // }
                         if (num2 == 1)
                         {
                             Img2.color = tempColor1;
                             if (cardScript != null) cardScript.cardType = ShopCard.CardType.Purple;
+                            cardScript.cardType = ShopCard.CardType.Purple;
                         }
                         if (num2 == 2)
                         {
                             Img2.color = tempColor2;
                             if (cardScript != null) cardScript.cardType = ShopCard.CardType.Green;
+                            cardScript.cardType = ShopCard.CardType.Green;
                         }
                         if (num2 == 3)
                         {
                             Img2.color = tempColor3;
                             if (cardScript != null) cardScript.cardType = ShopCard.CardType.Red;
+                            cardScript.cardType = ShopCard.CardType.Red;
                         }
                     }
                 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UseCard : MonoBehaviour
 {
-    public enum Cards { iceshot, swordhit, swordthrow, burst, arrowshot, arrowrain, fireshots, blackarrow, fireball, lightningstrike, firerain, lessdamage, morexp, heal, damageboost, moregold, moretime, shield, hp, none }
+    public enum Cards { iceshot, swordhit, swordthrow, burst, arrowshot, arrowrain, fireshots, blackarrow, fireball, lightningstrike, firerain, lessdamage, morexp, heal, damageboost, moregold, moretime, shield, hp, water, oil, none }
     public enum Enemies { slime, archer, knight1, knight2, knight3, king, wizard, prince, orc1, orc2, orc3, vampire1, vampire2, vampire3, archerboss, oldguardian, skeletonseeker, sprout, undeadexecutioner, none }
     public Cards cards;
     public Enemies enemies;
@@ -56,100 +56,7 @@ public class UseCard : MonoBehaviour
 
     public void Use()
     {
-        if (cards == Cards.iceshot)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.swordhit)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.swordthrow)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.burst)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.arrowshot)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.arrowrain)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.fireshots)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.blackarrow)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.fireball)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.lightningstrike)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.firerain)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.morexp)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.lessdamage)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.heal)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.damageboost)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.moregold)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.moretime)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.shield)
-        {
-            Debug.Log(cards);
-        }
-
-        else if (cards == Cards.hp)
-        {
-            Debug.Log(cards);
-        }
+        Debug.Log(cards);
     }
 
     public void Starting()
@@ -391,7 +298,19 @@ public class UseCard : MonoBehaviour
     {
         if (cards == Cards.iceshot)
         {
-            Damaging.DamageAmount = 10;
+            if (NonAttacks.Watered == false || NonAttacks.Oiled == false)
+            {
+                Damaging.DamageAmount = 10;
+            }
+            if (NonAttacks.Watered == true)
+            {
+                Damaging.DamageAmount = 10 * (int)1.5f;
+                // ----
+            }
+            if (NonAttacks.Oiled == true)
+            {
+                Damaging.DamageAmount = 10 / 3;
+            }
         }
         else if (cards == Cards.swordhit)
         {
@@ -403,7 +322,18 @@ public class UseCard : MonoBehaviour
         }
         else if (cards == Cards.burst)
         {
-            Damaging.DamageAmount = 35;
+            if (NonAttacks.Watered == false || NonAttacks.Oiled == false)
+            {
+                Damaging.DamageAmount = 35;
+            }
+            if (NonAttacks.Watered == true)
+            {
+                Damaging.DamageAmount = 35 / 3;
+            }
+            if (NonAttacks.Oiled == true)
+            {
+                Damaging.DamageAmount = 35 * 3;
+            }
         }
         else if (cards == Cards.arrowshot)
         {
@@ -415,7 +345,18 @@ public class UseCard : MonoBehaviour
         }
         else if (cards == Cards.fireshots)
         {
-            Damaging.DamageAmount = 15;
+            if (NonAttacks.Watered == false || NonAttacks.Oiled == false)
+            {
+                Damaging.DamageAmount = 15;
+            }
+            if (NonAttacks.Watered == true)
+            {
+                Damaging.DamageAmount = 15 / 3;
+            }
+            if (NonAttacks.Oiled == true)
+            {
+                Damaging.DamageAmount = 15 * 3;
+            }
         }
         else if (cards == Cards.blackarrow)
         {
@@ -423,15 +364,44 @@ public class UseCard : MonoBehaviour
         }
         else if (cards == Cards.fireball)
         {
-            Damaging.DamageAmount = 50;
+            if (NonAttacks.Watered == false || NonAttacks.Oiled == false)
+            {
+                Damaging.DamageAmount = 50;
+            }
+            if (NonAttacks.Watered == true)
+            {
+                Damaging.DamageAmount = 50 / 3;
+            }
+            if (NonAttacks.Oiled == true)
+            {
+                Damaging.DamageAmount = 50 * 3;
+            }
         }
         else if (cards == Cards.lightningstrike)
         {
-            Damaging.DamageAmount = 40;
+            if (NonAttacks.Watered == false)
+            {
+                Damaging.DamageAmount = 40;
+            }
+            if (NonAttacks.Watered == true)
+            {
+                Damaging.DamageAmount = 40 * 3;
+            }
         }
         else if (cards == Cards.firerain)
         {
-            Damaging.DamageAmount = 10;
+            if (NonAttacks.Watered == false || NonAttacks.Oiled == false)
+            {
+                Damaging.DamageAmount = 10;
+            }
+            if (NonAttacks.Watered == true)
+            {
+                Damaging.DamageAmount = 10 / 3;
+            }
+            if (NonAttacks.Oiled == true)
+            {
+                Damaging.DamageAmount = 10 * 3;
+            }
         }
         else if (cards == Cards.morexp)
         {
@@ -472,6 +442,24 @@ public class UseCard : MonoBehaviour
             Damaging.DamageAmount = 0;
             Debug.Log("Hp");
         }
+        else if (cards == Cards.water)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Water");
+        }
+        else if (cards == Cards.oil)
+        {
+            Damaging.DamageAmount = 0;
+            Debug.Log("Oil");
+        }
         Debug.Log(Damaging.DamageAmount);
+        if (NonAttacks.DamageBoosted)
+        {
+            Damaging.DamageAmount *= (int)1.5f;
+        }
+        else
+        {
+            Damaging.DamageAmount *= 1;
+        }
     }
 }

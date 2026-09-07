@@ -7,21 +7,24 @@ public class Animations : MonoBehaviour
     public GameObject Shieldd;
     void Update()
     {
-        if (Anim.CanHit)
+        if (Damaging.EnemyHp > 0 && Damaging.PlayerHp > 0 && DoubleClick.CardPlays ==0)
         {
-            if (gameObject.GetComponent<Animator>() != null)
+            if (Anim.CanHit)
             {
-                Anim.CanHit = false;
-                gameObject.GetComponent<Animator>().SetTrigger("Damage");
-                StartCoroutine(Wait());
+                if (gameObject.GetComponent<Animator>() != null)
+                {
+                    Anim.CanHit = false;
+                    gameObject.GetComponent<Animator>().SetTrigger("Damage");
+                    StartCoroutine(Wait());
+                }
             }
         }
 
-        else if (Damaging.Asd)
+        if (Damaging.Asd && DoubleClick.CardPlays == 0)
         {
             StartCoroutine(Wait());
         }
-        else if (Damaging.Enemy)
+        if (Damaging.Enemy && DoubleClick.CardPlays == 0)
         {
             StartCoroutine(Wait());
         }
@@ -32,20 +35,22 @@ public class Animations : MonoBehaviour
         yield return new WaitForSeconds(3f);
         if (gameObject.GetComponent<Animator>() != null)
         {
-            if (Damaging.Asd)
+            if (Damaging.Asd && DoubleClick.CardPlays == 0)
             {
                 gameObject.GetComponent<Animator>().SetTrigger("Shoot");
                 Damaging.Asd = false;
+                Damaging.Enemy = false;
             }
         }
     }
     public void PlayerAnim()
     {
-        if (Player != null && NonAttacks.Shield != true)
+        if (Player != null && NonAttacks.Shield != true && DoubleClick.CardPlays == 0)
         {
             Player.GetComponent<Animator>().SetTrigger("Damage");
             Damaging.Hit = true;
             DoubleClick.Countdown = false;
+            DoubleClick.CardPlays = DoubleClick.Amount;
         }
     }
     public void Shield()
