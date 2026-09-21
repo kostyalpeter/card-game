@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +51,7 @@ public class Animations2 : MonoBehaviour
     public GameObject OilButton;
     public GameObject WaterButton;
     Button btn;
+
 
     void Update()
     {

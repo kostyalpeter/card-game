@@ -10,18 +10,22 @@ public class CardTexts : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public static bool ShowBool;
     static Vector3 OffSet;
     static RectTransform clickedCard;
+    public float OffSet1 = 315;
     void Update()
     {
-
-        if (ShowBool)
+        if (Box != null)
         {
 
-            Box.gameObject.SetActive(true);
-            Box.anchoredPosition = OffSet;
-        }
-        else
-        {
-            Box.gameObject.SetActive(false);
+            if (ShowBool)
+            {
+
+                Box.gameObject.SetActive(true);
+                Box.anchoredPosition = OffSet;
+            }
+            else
+            {
+                Box.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -47,7 +51,7 @@ public class CardTexts : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
             var pos = gameObject.GetComponent<RectTransform>().anchoredPosition;
 
-            OffSet = new Vector3(pos.x, pos.y += 315, gameObject.transform.position.z);
+            OffSet = new Vector3(pos.x, pos.y += OffSet1, gameObject.transform.position.z);
         }
     }
 }

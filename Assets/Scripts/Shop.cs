@@ -4,13 +4,17 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 using System.Threading;
+using System.Security.Cryptography;
+using Unity.Hierarchy;
 
 public class Shop : MonoBehaviour
 {
     public static int Gold;
     public TMP_Text GoldText;
     Time time;
-    public GameObject game;
+    public GameObject game1;
+    public GameObject game2;
+    public GameObject game3;
     public List<GameObject> UseCards = new List<GameObject>();
     public List<GameObject> Cards = new List<GameObject>();
     public GameObject ShopPos1;
@@ -39,7 +43,9 @@ public class Shop : MonoBehaviour
     public void Next()
     {
         time.Shop1.SetActive(false);
-        game.SetActive(true);
+        game1.SetActive(true);
+        game2.SetActive(true);
+        game3.SetActive(true);
         UseCards[0].transform.position = startpos1;
         UseCards[1].transform.position = startpos2;
         Cards[2].transform.position = startpos3;
@@ -80,12 +86,38 @@ public class Shop : MonoBehaviour
         yield return new WaitForSeconds(1f);
         UseCards[0].gameObject.SetActive(true);
         UseCards[1].gameObject.SetActive(true);
-        Cards[2].gameObject.SetActive(true);
-        Cards[3].gameObject.SetActive(true);
         UseCards[0].transform.position = ShopPos1.transform.position;
         UseCards[1].transform.position = ShopPos2.transform.position;
-        Cards[2].transform.position = ShopPos3.transform.position;
-        Cards[3].transform.position = ShopPos4.transform.position;
+
+        List<GameObject> availableCards = new List<GameObject>();
+        foreach (GameObject cardGo in Cards)
+        {
+            if(cardGo != null)
+            {
+                ShopBuyCards shopCard = cardGo.GetComponent<ShopBuyCards>();
+
+                if(shopCard != null && shopCard.cardStats != null)
+                {
+                    Card card = shopCard.cardStats.GetComponent<Card>();
+                    if(card != null && card.locked)
+                    {
+                        availableCards.Add(cardGo);
+                    }
+                }
+            }
+        }
+
+        if(availableCards.Count > 0)
+        {
+            availableCards[0].SetActive(true);
+            availableCards[0].transform.position = ShopPos3.transform.position;
+        }
+        if(availableCards.Count > 1)
+        {
+            availableCards[1].SetActive(true);
+            availableCards[1].transform.position = ShopPos4.transform.position;
+        }
+
 
         {
             foreach (GameObject card in Cards)
@@ -101,7 +133,7 @@ public class Shop : MonoBehaviour
             }
         }
 
-        var num = Random.Range(1, 1);
+        var num = Random.Range(1, 21);
 
         if (num == 1)
         {
@@ -128,10 +160,6 @@ public class Shop : MonoBehaviour
 
                         ShopCard cardScript = targetCard.GetComponent<ShopCard>();
 
-                        // if (cardScript != null)
-                        // {
-                        //     cardScript = img.gameObject.GetComponent<ShopCard>();
-                        // }
                         if (num2 == 1)
                         {
                             Img2.color = tempColor1;
@@ -155,4 +183,15 @@ public class Shop : MonoBehaviour
             }
         }
     }
+
+    public void SaveData(Save data)
+    {
+        data.Gold = Gold;
+    }
+
+    public void LoadData(Save data)
+    {
+        Gold = data.Gold;
+    }
+
 }

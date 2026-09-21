@@ -27,7 +27,6 @@ public class Console : MonoBehaviour
         RegisterCommand("heal", Heal);
         RegisterCommand("gold", Gold);
         RegisterCommand("hp", Hp);
-        // RegisterCommand("card", Card);
         RegisterCommand("console", Commands);
         RegisterCommand("time", Timer);
     }
@@ -307,42 +306,6 @@ public class Console : MonoBehaviour
             return;
         }
     }
-    // void Card(string[] args)
-    // {
-    //     if (args.Length == 3)
-    //     {
-    //         string subCommand = args[0].ToLower();
-    //         string target = args[1].ToLower();
-
-    //         if (subCommand == "give" && int.TryParse(args[2], out int amount))
-    //         {
-    //             if (target == "player")
-    //             {
-    //                 Damaging.PlayerHp = amount;
-    //             }
-    //             else if (target == "enemy")
-    //             {
-    //                 Damaging.EnemyHp = amount;
-    //             }
-    //         }
-    //         if (subCommand == "remove" && int.TryParse(args[2], out int amount2))
-    //         {
-    //             if (target == "player")
-    //             {
-    //                 Damaging.PlayerHp -= amount2;
-    //             }
-    //             else if (target == "enemy")
-    //             {
-    //                 Damaging.EnemyHp -= amount2;
-    //             }
-    //             else
-    //             {
-    //                 LogToConsole("Unknown argument or wrong letter case. Use full lower case letters.");
-    //             }
-    //         }
-    //         return;
-    //     }
-    // }
     void Commands(string[] args)
     {
         if (args.Length == 1)

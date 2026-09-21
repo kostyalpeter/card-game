@@ -6,11 +6,11 @@ public class PlayerAnim : MonoBehaviour
     public void TurnPlayer()
     {
         var player = gameObject.transform.localScale;
-        if(player.x == 1)
+        if (player.x == 1)
         {
             player.x = -1;
         }
-        else if(player.x == -1)
+        else if (player.x == -1)
         {
             player.x = 1;
         }
@@ -24,6 +24,7 @@ public class PlayerAnim : MonoBehaviour
 
     public void AnimEnd()
     {
+        DoubleClick.CoolDown = false;
         Damaging.Asd = true;
     }
 }

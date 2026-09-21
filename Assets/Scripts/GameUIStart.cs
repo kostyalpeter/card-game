@@ -31,5 +31,13 @@ public class GameUIStart : MonoBehaviour
     {
         Set++;
     }
+    public void SaveData(Save data)
+    {
+        data.Set = Set;
+    }
 
+    public void LoadData(Save data)
+    {
+        Set = data.Set;
+    }
 }

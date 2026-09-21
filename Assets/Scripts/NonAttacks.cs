@@ -10,6 +10,7 @@ public class NonAttacks : MonoBehaviour
     public static bool Oiled;
     public static bool DamageBoosted;
     public static bool LessDamaged;
+    public PlayerAudio playerAudio;
 
     public void Hp()
     {
@@ -36,7 +37,6 @@ public class NonAttacks : MonoBehaviour
     }
     public void MoreGold()
     {
-
         Shop.Gold += 5;
     }
     public void MoreXP()
@@ -57,6 +57,7 @@ public class NonAttacks : MonoBehaviour
     public void Hide()
     {
         damaging.NonAttack();
+        DoubleClick.CoolDown = false;
 
         gameObject.SetActive(false);
     }
@@ -77,5 +78,32 @@ public class NonAttacks : MonoBehaviour
         damaging.NonAttack();
 
         Oiled = true;
+    }
+
+
+
+    public void Drink()
+    {
+        if (playerAudio != null)
+        {
+            Audio.Volume = 100f;
+            playerAudio.Drink();
+        }
+    }
+    public void Splash()
+    {
+        if (playerAudio != null)
+        {
+            Audio.Volume = 100f;
+            playerAudio.Splash();
+        }
+    }
+    public void Break()
+    {
+        if (playerAudio != null)
+        {
+            Audio.Volume = 100f;
+            playerAudio.Break();
+        }
     }
 }

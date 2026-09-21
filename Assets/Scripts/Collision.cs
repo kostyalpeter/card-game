@@ -6,6 +6,11 @@ public class UICollision : MonoBehaviour
 
     private RectTransform myRect;
     private bool isHandled = false;
+    public enum Type
+    {
+        Arrow, Fire
+    }
+    public Type type;
 
     void Awake()
     {
@@ -33,11 +38,15 @@ public class UICollision : MonoBehaviour
 
                 if (damaging != null)
                 {
-                    DoubleClick.Countdown = true;
+                    DoubleClick.Countdown = false;
                     damaging.Damage();
                     Debug.Log("Damage");
                     Damaging.Asd = true;
                     Anim.CanHit = true;
+                    if(type == Type.Arrow)
+                    {
+                        gameObject.GetComponent<Audio>().ArrowHit();
+                    }
                 }
 
                 gameObject.SetActive(false);

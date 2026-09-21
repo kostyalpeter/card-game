@@ -54,6 +54,7 @@ public class Time : MonoBehaviour
     public GameObject cards;
     public static bool canTime;
     public static float speed = 1f;
+    int goldAdd;
     Shop shop;
     void Start()
     {
@@ -74,8 +75,9 @@ public class Time : MonoBehaviour
                     StartCoroutine(StartShop());
                     canTime = false;
                     shop.StartShop();
-                    Shop.Gold++;
+                    Shop.Gold += 2;
                     GameUIStart.Set++;
+                    Shop.Gold += goldAdd;
                 }
                 else if (Damaging.PlayerHp <= 0)
                 {
@@ -84,6 +86,7 @@ public class Time : MonoBehaviour
                     canTime = false;
                     shop.StartShop();
                     Shop.Gold++;
+                    GameUIStart.Set--;
                 }
 
             }
@@ -96,8 +99,9 @@ public class Time : MonoBehaviour
                     StartCoroutine(StartShop());
                     canTime = false;
                     shop.StartShop();
-                    Shop.Gold++;
+                    Shop.Gold += 2;
                     GameUIStart.Set++;
+                    Shop.Gold += goldAdd;
                 }
                 if (Damaging.EnemyHp > Damaging.PlayerHp)
                 {
@@ -105,6 +109,7 @@ public class Time : MonoBehaviour
                     StartCoroutine(StartShop());
                     canTime = false;
                     Shop.Gold++;
+                    GameUIStart.Set--;
                 }
                 if (Damaging.EnemyHp == Damaging.PlayerHp)
                 {
@@ -114,10 +119,15 @@ public class Time : MonoBehaviour
             }
         }
     }
+    public void GoldAdd()
+    {
+        var num = (int)Damaging.PlayerHp / 10;
+        goldAdd = num;
+    }
 
     public IEnumerator StartShop()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3f);
         Shop1.SetActive(true);
         Game1.SetActive(false);
         Damaging.EnemyHp = Damaging.MaxEnemyHp;
@@ -230,4 +240,15 @@ public class Time : MonoBehaviour
     {
         canTime = !canTime;
     }
+
+        public void SaveData(Save data)
+    {
+        data.Time = Timer;
+    }
+
+    public void LoadData(Save data)
+    {
+        Timer = data.Time;
+    }
+
 }

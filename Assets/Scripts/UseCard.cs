@@ -195,6 +195,52 @@ public class UseCard : MonoBehaviour
             undeadexecutionerEnemy.gameObject.SetActive(true);
             EnemyLevel = 9;
         }
+
+        if (EnemyLevel == 1)
+        {
+            Damaging.MaxEnemyHp = 300;
+            Damaging.EnemyHp = 300;
+        }
+        else if (EnemyLevel == 2)
+        {
+            Damaging.MaxEnemyHp = 350;
+            Damaging.EnemyHp = 350;
+        }
+        else if (EnemyLevel == 3)
+        {
+            Damaging.MaxEnemyHp = 450;
+            Damaging.EnemyHp = 450;
+        }
+        else if (EnemyLevel == 4)
+        {
+            Damaging.MaxEnemyHp = 500;
+            Damaging.EnemyHp = 500;
+        }
+        else if (EnemyLevel == 5)
+        {
+            Damaging.MaxEnemyHp = 600;
+            Damaging.EnemyHp = 600;
+        }
+        else if (EnemyLevel == 6)
+        {
+            Damaging.MaxEnemyHp = 750;
+            Damaging.EnemyHp = 750;
+        }
+        else if (EnemyLevel == 7)
+        {
+            Damaging.MaxEnemyHp = 800;
+            Damaging.EnemyHp = 800;
+        }
+        else if (EnemyLevel == 8)
+        {
+            Damaging.MaxEnemyHp = 900;
+            Damaging.EnemyHp = 900;
+        }
+        else if (EnemyLevel == 9)
+        {
+            Damaging.MaxEnemyHp = 1000;
+            Damaging.EnemyHp = 1000;
+        }
     }
 
     public void One()
@@ -305,7 +351,8 @@ public class UseCard : MonoBehaviour
             if (NonAttacks.Watered == true)
             {
                 Damaging.DamageAmount = 10 * (int)1.5f;
-                // ----
+                DoubleClick.CardPlays += 1;
+                Debug.Log(DoubleClick.CardPlays);
             }
             if (NonAttacks.Oiled == true)
             {
@@ -455,7 +502,7 @@ public class UseCard : MonoBehaviour
         Debug.Log(Damaging.DamageAmount);
         if (NonAttacks.DamageBoosted)
         {
-            Damaging.DamageAmount *= (int)1.5f;
+            Damaging.DamageAmount *= 1.5f;
         }
         else
         {

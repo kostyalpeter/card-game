@@ -86,29 +86,34 @@ public class ShopBuyCards : MonoBehaviour
         else if (gameObject.GetComponent<ShopCard>() != null)
         {
             var card = cardStats.GetComponent<CardUpgrade>();
+            Card cards = cardStats.GetComponent<Card>();
             var shopCard = gameObject.GetComponent<ShopCard>();
             if (Shop.Gold >= 6)
             {
                 if (shopCard.cardType == ShopCard.CardType.Purple)
                 {
+                    cards.locked = false;
                     card.cardUpgrades = CardUpgrade.CardUpgrades.PurpleGalaxy;
                     gameObject.SetActive(false);
                     Shop.Gold -= 6;
                 }
                 if (shopCard.cardType == ShopCard.CardType.Red)
                 {
+                    cards.locked = false;
                     card.cardUpgrades = CardUpgrade.CardUpgrades.RedGalaxy;
                     gameObject.SetActive(false);
                     Shop.Gold -= 6;
                 }
                 if (shopCard.cardType == ShopCard.CardType.Green)
                 {
+                    cards.locked = false;
                     card.cardUpgrades = CardUpgrade.CardUpgrades.GreenGalaxy;
                     gameObject.SetActive(false);
                     Shop.Gold -= 6;
                 }
                 if (shopCard.cardType == ShopCard.CardType.none)
                 {
+                    cards.locked = false;
                     card.cardUpgrades = CardUpgrade.CardUpgrades.none;
                     gameObject.SetActive(false);
                     Shop.Gold -= 4;

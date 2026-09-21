@@ -6,5 +6,6 @@ public class EnemyAnimController : MonoBehaviour
     {
         gameObject.GetComponent<Animations>().PlayerAnim();
         gameObject.SetActive(false);
+        NonAttacks.Shield = false;
     }
 }

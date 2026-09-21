@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BalatroCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
+public class CardAnimations : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    private static BalatroCardUI currentSelectedCard;
+    private static CardAnimations currentSelectedCard;
 
     [Header("Hover Beallitasok")]
     public float liftAmount = 30f;
@@ -38,7 +38,7 @@ public class BalatroCardUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private Vector3 rotationVelocity;
 
     private float idleOffset;
-    private bool isSelected = false;
+    public bool isSelected = false;
     private bool isPressed = false;
 
     void Awake()

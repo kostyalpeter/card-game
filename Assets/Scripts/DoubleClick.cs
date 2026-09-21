@@ -1,5 +1,8 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class DoubleClick : MonoBehaviour
 {
@@ -27,8 +30,13 @@ public class DoubleClick : MonoBehaviour
     InvCardAnim invCardAnim;
     public static int CardPlays = 3;
     public static int Amount = 3;
+    public static bool canPlay = true;
+    public static bool CoolDown = false;
+    public CardAudio cardAudio;
+    public TMP_Text text;
     void Start()
     {
+        Amount = 3;
         cards = FindAnyObjectByType<CardPlacement>();
         if (cards == null)
         {
@@ -47,6 +55,9 @@ public class DoubleClick : MonoBehaviour
         {
             Text.text = "False";
         }
+        text.text = "Cardplays remaining:" + CardPlays;
+        
+        cards.selected.text = selected.ToString();
     }
 
     public void Click()
@@ -82,8 +93,13 @@ public class DoubleClick : MonoBehaviour
 
     void PlayCard()
     {
-        if (selected && Countdown == false && CardPlays > 0)
+        if (selected && Countdown == false && CardPlays > 0 && canPlay && !CoolDown)
         {
+            StartCoroutine(Wait());
+            Audio.Volume = 100f;
+            cardAudio.CardPlay();
+            CoolDown = true;
+            canPlay = false;
             CardPlays--;
             if (CardPlays == 0)
             {
@@ -172,5 +188,10 @@ public class DoubleClick : MonoBehaviour
             case SpellType.Water: anim.Water(); break;
             case SpellType.Oil: anim.Oil(); break;
         }
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        canPlay = true;
     }
 }

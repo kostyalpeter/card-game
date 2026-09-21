@@ -1,14 +1,22 @@
 using UnityEngine;
 
-public class Damaging : MonoBehaviour
+public class Damaging : MonoBehaviour, ISaveable
 {
-    public static int DamageAmount;
+    public static float DamageAmount;
     public CardPlacement cardPlacement;
-    public static int EnemyHp;
-    private static int playerHp = 100;
-    public static int MaxEnemyHp = 100;
-    public static int MaxPlayerHp = 100;
-    public static int PlayerHp
+    public static float EnemyHp
+    {
+        get => enemyHp;
+        set
+        {
+            enemyHp = Mathf.Clamp(value, 0, MaxEnemyHp);
+        }
+    }
+    public static float enemyHp;
+    private static float playerHp = 100;
+    public static float MaxEnemyHp;
+    public static float MaxPlayerHp = 100;
+    public static float PlayerHp
     {
         get => playerHp;
         set
@@ -17,15 +25,14 @@ public class Damaging : MonoBehaviour
         }
     }
     public static bool Hurt;
-    public static int EnemyDamageAmount;
+    public static float EnemyDamageAmount;
     public bool canDamage;
     public static bool Hit;
     public static bool Asd;
     public static bool Enemy;
-    public static bool Ulty = true;
+    public static bool Ulty;
     void Start()
     {
-        EnemyHp = MaxEnemyHp;
         PlayerHp = MaxPlayerHp;
     }
 
@@ -91,35 +98,35 @@ public class Damaging : MonoBehaviour
             }
             else if (UseCard.EnemyLevel == 2)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.05;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.05f;
             }
             else if (UseCard.EnemyLevel == 3)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.1;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.1f;
             }
             else if (UseCard.EnemyLevel == 4)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.15;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.15f;
             }
             else if (UseCard.EnemyLevel == 5)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.2;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.2f;
             }
             else if (UseCard.EnemyLevel == 6)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.25;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.25f;
             }
             else if (UseCard.EnemyLevel == 7)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.3;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.3f;
             }
             else if (UseCard.EnemyLevel == 8)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.35;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.35f;
             }
             else if (UseCard.EnemyLevel == 9)
             {
-                EnemyDamageAmount = EnemyDamageAmount *= (int)1.4;
+                EnemyDamageAmount = EnemyDamageAmount *= 1.4f;
             }
 
             Debug.Log(EnemyDamageAmount);
@@ -163,4 +170,17 @@ public class Damaging : MonoBehaviour
             NonAttacks.LessDamaged = false;
         }
     }
+
+    public void SaveData(Save data)
+    {
+        data.playerHp = playerHp;
+        data.EnemyHp = enemyHp;
+    }
+
+    public void LoadData(Save data)
+    {
+        playerHp = data.playerHp;
+        enemyHp = data.EnemyHp;
+    }
+
 }

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEditor;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,10 +23,15 @@ public class CardPlacement : MonoBehaviour
     public Slider PlayerHP;
     public Slider EnemyHP;
     public GameObject GamePlay;
-    public GameObject Game;
-    public GameObject CardsGame;
     public GameObject CardObject;
-    public int Discards = 3;
+    public static int Discards = 3;
+
+    public TMP_Text selected;
+    public TMP_Text canplay;
+    public TMP_Text cooldown;
+    public TMP_Text countdown;
+    public GameObject Game;
+    public GameObject CurrentCards;
 
     void Start()
     {
@@ -39,28 +44,36 @@ public class CardPlacement : MonoBehaviour
         Rot3 = CardPlace3.rotation;
     }
 
+    void Update()
+    {
+        canplay.text = DoubleClick.canPlay.ToString();
+        cooldown.text = DoubleClick.CoolDown.ToString();
+        countdown.text = DoubleClick.Countdown.ToString();
+    }
+
     public void CardCall()
     {
-        Discards = 3;
-        Damaging.PlayerHp = Damaging.MaxPlayerHp;
-        Damaging.EnemyHp = Damaging.MaxEnemyHp;        
-        CardUpgrade.Starting = true;
+        CurrentCards.SetActive(true);
+        Time.canTime = true;
         useCard.Starting();
-        Game.SetActive(false);
+        Panel.SetActive(false);
+        backGround.SetActive(false);
+        playerCard.SetActive(false);
         PlayerHP.gameObject.SetActive(true);
         EnemyHP.gameObject.SetActive(true);
         GamePlay.gameObject.SetActive(true);
-        CardsGame.SetActive(true);
-        DoubleClick.CardPlays = 3;
-        foreach (Transform child in CardsGame.transform)
-        {
-            child.gameObject.SetActive(true);
-        }
-        Time.Timer = 35;
+        Time.Timer = 30;
+        DoubleClick.CardPlays = DoubleClick.Amount;
+        Game.SetActive(true);
 
+        ResetAndRecallCards();
+    }
+
+    public void CardCall2()
+    {
         if (Cards.Count > 0)
         {
-            for (int i = Cards.Count - 1; i > 0; i--)
+            for (int i = Cards.Count - 1; i >= 0; i--)
             {
                 int randomindex = Random.Range(0, i + 1);
                 GameObject ideiglenes = Cards[i];
@@ -68,157 +81,176 @@ public class CardPlacement : MonoBehaviour
                 Cards[randomindex] = ideiglenes;
             }
         }
-        GameObject FirstCard = Cards[0];
-        while (currentCardIndex < Cards.Count && Cards[currentCardIndex].GetComponent<Card>().locked)
-        {
-            currentCardIndex++;
-        }
-        if (currentCardIndex < Cards.Count)
-        {
-            Cards[currentCardIndex].GetComponent<RectTransform>().anchoredPosition = Pos1; Cards[currentCardIndex].GetComponent<RectTransform>().rotation = Rot1;
-            Cards[currentCardIndex].GetComponent<Card>().CardPlace = 1;
-            CardPlace1.GetComponent<Place>().isTaken = true;
-            currentCardIndex++;
 
-        }
-        while (currentCardIndex < Cards.Count && Cards[currentCardIndex].GetComponent<Card>().locked)
-        {
-            currentCardIndex++;
-        }
-        if (currentCardIndex < Cards.Count)
-        {
-            Cards[currentCardIndex].GetComponent<RectTransform>().anchoredPosition = Pos2; Cards[currentCardIndex].GetComponent<RectTransform>().rotation = Rot2;
-            Cards[currentCardIndex].GetComponent<Card>().CardPlace = 2;
-            CardPlace2.GetComponent<Place>().isTaken = true;
-            currentCardIndex++;
+        currentCardIndex = 0;
 
-        }
-        while (currentCardIndex < Cards.Count && Cards[currentCardIndex].GetComponent<Card>().locked)
-        {
-            currentCardIndex++;
-        }
-        if (currentCardIndex < Cards.Count)
-        {
-            Cards[currentCardIndex].GetComponent<RectTransform>().anchoredPosition = Pos3; Cards[currentCardIndex].GetComponent<RectTransform>().rotation = Rot3;
-            Cards[currentCardIndex].GetComponent<Card>().CardPlace = 3;
-            CardPlace3.GetComponent<Place>().isTaken = true;
-            currentCardIndex++;
-        }
+        TryPlaceCardInSlot(CardPlace1, Pos1, Rot1, 1);
+        TryPlaceCardInSlot(CardPlace2, Pos2, Rot2, 2);
+        TryPlaceCardInSlot(CardPlace3, Pos3, Rot3, 3);
+
+        CheckIfDeckEmpty();
     }
 
+private void TryPlaceCardInSlot(RectTransform slotTransform, Vector2 pos, Quaternion rot, int placeIndex)
+{
+    if (slotTransform == null) return;
+
+    Place placeScript = slotTransform.GetComponent<Place>();
+
+    SkipCard();
+
+    if (currentCardIndex < Cards.Count)
+    {
+        GameObject c = Cards[currentCardIndex];
+        
+        Card cardComp = c.GetComponent<Card>();
+        if (cardComp != null && cardComp.locked)
+        {
+            currentCardIndex++;
+            return;
+        }
+
+        c.SetActive(true);
+
+        if (cardComp != null)
+        {
+            cardComp.CardPlace = placeIndex;
+        }
+
+        RectTransform cRect = c.GetComponent<RectTransform>();
+        cRect.anchoredPosition = pos;
+        cRect.rotation = rot;
+
+        if (placeScript != null)
+        {
+            placeScript.isTaken = true;
+        }
+
+        currentCardIndex++;
+    }
+}
     public void RefreshBoard()
     {
-        Place Place1 = CardPlace1.GetComponent<Place>();
-        Place Place2 = CardPlace2.GetComponent<Place>();
-        Place Place3 = CardPlace3.GetComponent<Place>();
+        Place place1 = CardPlace1.GetComponent<Place>();
+        Place place2 = CardPlace2.GetComponent<Place>();
+        Place place3 = CardPlace3.GetComponent<Place>();
 
-        if (Place1 && Place1.isTaken == false)
+        if (place1 != null && !place1.isTaken)
         {
-            SkipCard();
-
-            if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
-            {
-                GameObject Nextcard = Cards[currentCardIndex];
-                RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
-
-                nextcard.GetComponent<RectTransform>().anchoredPosition = Pos1;
-                nextcard.GetComponent<RectTransform>().rotation = Rot1;
-
-                nextcard.GetComponent<Card>().CardPlace = 1;
-                Place1.isTaken = true;
-
-                currentCardIndex++;
-            }
+            TryPlaceCardInSlot(CardPlace1, Pos1, Rot1, 1);
         }
-        if (Place2 && Place2.isTaken == false)
+
+        if (place2 != null && !place2.isTaken)
         {
-            SkipCard();
-
-            if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
-            {
-                GameObject Nextcard = Cards[currentCardIndex];
-                RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
-
-                nextcard.GetComponent<RectTransform>().anchoredPosition = Pos2;
-                nextcard.GetComponent<RectTransform>().rotation = Rot2;
-
-                nextcard.GetComponent<Card>().CardPlace = 2;
-                Place2.isTaken = true;
-
-                currentCardIndex++;
-            }
+            TryPlaceCardInSlot(CardPlace2, Pos2, Rot2, 2);
         }
-        if (Place3 && Place3.isTaken == false)
+
+        if (place3 != null && !place3.isTaken)
         {
-            SkipCard();
+            TryPlaceCardInSlot(CardPlace3, Pos3, Rot3, 3);
+        }
 
-            if (currentCardIndex < Cards.Count && !Cards[currentCardIndex].GetComponent<Card>().locked)
-            {
-                GameObject Nextcard = Cards[currentCardIndex];
-                RectTransform nextcard = Nextcard.GetComponent<RectTransform>();
+        CheckIfDeckEmpty();
+    }
 
-                nextcard.GetComponent<RectTransform>().anchoredPosition = Pos3;
-                nextcard.GetComponent<RectTransform>().rotation = Rot3;
+    private void CheckIfDeckEmpty()
+    {
+        SkipCard();
 
-                nextcard.GetComponent<Card>().CardPlace = 3;
-                Place3.isTaken = true;
+        bool p1Empty = CardPlace1 != null && !CardPlace1.GetComponent<Place>().isTaken;
+        bool p2Empty = CardPlace2 != null && !CardPlace2.GetComponent<Place>().isTaken;
+        bool p3Empty = CardPlace3 != null && !CardPlace3.GetComponent<Place>().isTaken;
 
-                currentCardIndex++;
-            }
+        if (currentCardIndex >= Cards.Count && p1Empty && p2Empty && p3Empty)
+        {
+            ResetAndRecallCards();
         }
     }
 
-    public void SkipCard()
+public void SkipCard()
+{
+    while (currentCardIndex < Cards.Count)
     {
-        while (currentCardIndex < Cards.Count && Cards[currentCardIndex].GetComponent<Card>().locked)
+        GameObject current = Cards[currentCardIndex];
+
+        if (current == null)
         {
             currentCardIndex++;
             continue;
         }
-    }
 
-    public void RestartAndShuffle()
-    {
-        currentCardIndex = 0;
-
-        if (CardPlace1.GetComponent<Place>()) CardPlace1.GetComponent<Place>().isTaken = false;
-        if (CardPlace2.GetComponent<Place>()) CardPlace2.GetComponent<Place>().isTaken = false;
-        if (CardPlace3.GetComponent<Place>()) CardPlace3.GetComponent<Place>().isTaken = false;
-
-        foreach (GameObject card in Cards)
+        Card cardComp = current.GetComponent<Card>();
+        if (cardComp != null && cardComp.locked)
         {
-            if (card != null)
-            {
-                card.SetActive(true);
-            }
+            currentCardIndex++;
         }
-
-        CardCall();
+        else
+        {
+            break;
+        }
     }
+}
     public void Discard()
     {
         DoubleClick[] allCards = CardObject.GetComponentsInChildren<DoubleClick>();
+        bool needRefresh = false;
+
         foreach (DoubleClick card in allCards)
         {
             if (card.selected && Discards > 0)
             {
                 card.selected = false;
+
+                Card cardComp = card.gameObject.GetComponent<Card>();
+                if (cardComp != null)
+                {
+                    if (cardComp.CardPlace == 1 && CardPlace1 != null) CardPlace1.GetComponent<Place>().isTaken = false;
+                    else if (cardComp.CardPlace == 2 && CardPlace2 != null) CardPlace2.GetComponent<Place>().isTaken = false;
+                    else if (cardComp.CardPlace == 3 && CardPlace3 != null) CardPlace3.GetComponent<Place>().isTaken = false;
+                }
+
                 card.gameObject.SetActive(false);
-                if (card.gameObject.GetComponent<Card>().CardPlace == 1)
-                {
-                    CardPlace1.GetComponent<Place>().isTaken = false;
-                }
-                else if (card.gameObject.GetComponent<Card>().CardPlace == 2)
-                {
-                    CardPlace2.GetComponent<Place>().isTaken = false;
-                }
-                else if (card.gameObject.GetComponent<Card>().CardPlace == 3)
-                {
-                    CardPlace3.GetComponent<Place>().isTaken = false;
-                }
+
                 Discards--;
+                needRefresh = true;
             }
+        }
+
+        if (needRefresh)
+        {
             RefreshBoard();
         }
+    }
+
+    public void CoolDown()
+    {
+        DoubleClick.CoolDown = false;
+    }
+
+    public void ResetAndRecallCards()
+    {
+        foreach (GameObject card in Cards)
+        {
+            if (card != null)
+            {
+                card.SetActive(false);
+                Card c = card.GetComponent<Card>();
+                if (c != null)
+                {
+                    c.locked = false;
+                }
+            }
+        }
+
+        if (CardPlace1 != null && CardPlace1.GetComponent<Place>() != null)
+            CardPlace1.GetComponent<Place>().isTaken = false;
+
+        if (CardPlace2 != null && CardPlace2.GetComponent<Place>() != null)
+            CardPlace2.GetComponent<Place>().isTaken = false;
+
+        if (CardPlace3 != null && CardPlace3.GetComponent<Place>() != null)
+            CardPlace3.GetComponent<Place>().isTaken = false;
+
+        CardCall2();
     }
 }
