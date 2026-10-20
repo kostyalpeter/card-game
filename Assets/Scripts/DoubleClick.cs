@@ -141,6 +141,7 @@ public class DoubleClick : MonoBehaviour
             origin.anchoredPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
             gameObject.GetComponent<RectTransform>().anchoredPosition = place.anchoredPosition;
             Refresh();
+            CoolDownWait();
         }
     }
     public void Refresh()
@@ -194,4 +195,10 @@ public class DoubleClick : MonoBehaviour
         yield return new WaitForSeconds(1f);
         canPlay = true;
     }
+    IEnumerator CoolDownWait()
+    {
+        yield return new WaitForSeconds(2f);
+        CoolDown = false;
+    }
+    
 }

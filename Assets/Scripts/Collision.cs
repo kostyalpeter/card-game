@@ -6,6 +6,8 @@ public class UICollision : MonoBehaviour
 
     private RectTransform myRect;
     private bool isHandled = false;
+    private float enableDelay = 0f;
+
     public enum Type
     {
         Arrow, Fire
@@ -20,10 +22,17 @@ public class UICollision : MonoBehaviour
     void OnEnable()
     {
         isHandled = false;
-    }
+        enableDelay = 0.1f; // Megakadályozza, hogy azonnal újra kikapcsoljon
+    }   
 
     void Update()
     {
+        if (enableDelay > 0)
+        {
+            enableDelay -= UnityEngine.Time.deltaTime;
+            return;
+        }
+
         if (isHandled && DoubleClick.Countdown == false) return;
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -43,9 +52,13 @@ public class UICollision : MonoBehaviour
                     Debug.Log("Damage");
                     Damaging.Asd = true;
                     Anim.CanHit = true;
-                    if(type == Type.Arrow)
+                    if (type == Type.Arrow)
                     {
-                        gameObject.GetComponent<Audio>().ArrowHit();
+                        Audio audioComp = gameObject.GetComponent<Audio>();
+                        if (audioComp != null)
+                        {
+                            audioComp.ArrowHit();
+                        }
                     }
                 }
 

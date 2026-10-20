@@ -1,12 +1,14 @@
 using System;
-using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Console : MonoBehaviour
 {
-    private Dictionary<string, Action<string[]>> commands = new Dictionary<string, Action<string[]>>();
+    private Dictionary<string, Action<string[]>> commands =
+        new Dictionary<string, Action<string[]>>();
+
     [Header("UI Elements")]
     public GameObject consoleUI;
     public TMP_InputField inputField;
@@ -20,8 +22,6 @@ public class Console : MonoBehaviour
     private int GoldAmount = 0;
     public static bool console = true;
 
-
-
     void Awake()
     {
         RegisterCommand("heal", Heal);
@@ -29,6 +29,7 @@ public class Console : MonoBehaviour
         RegisterCommand("hp", Hp);
         RegisterCommand("console", Commands);
         RegisterCommand("time", Timer);
+        RegisterCommand("game", Fix);
     }
 
     void Update()
@@ -70,7 +71,8 @@ public class Console : MonoBehaviour
 
     private void NavigateHistory(int direction)
     {
-        if (commandHistory.Count == 0) return;
+        if (commandHistory.Count == 0)
+            return;
 
         historyIndex -= direction;
         historyIndex = Mathf.Clamp(historyIndex, 0, commandHistory.Count - 1);
@@ -81,7 +83,8 @@ public class Console : MonoBehaviour
 
     public void SubmitCommand()
     {
-        if (inputField == null || string.IsNullOrWhiteSpace(inputField.text)) return;
+        if (inputField == null || string.IsNullOrWhiteSpace(inputField.text))
+            return;
 
         string inputText = inputField.text;
 
@@ -92,11 +95,12 @@ public class Console : MonoBehaviour
 
         inputField.text = "";
         inputField.ActivateInputField();
-
     }
+
     void ProcessCommand(string Input)
     {
-        if (string.IsNullOrWhiteSpace(Input)) return;
+        if (string.IsNullOrWhiteSpace(Input))
+            return;
 
         string[] parts = Input.Split(' ');
         string command = parts[0].ToLower();
@@ -108,10 +112,7 @@ public class Console : MonoBehaviour
         {
             commands[command].Invoke(args);
         }
-        else
-        {
-
-        }
+        else { }
     }
 
     private void RegisterCommand(string name, Action<string[]> action)
@@ -126,7 +127,9 @@ public class Console : MonoBehaviour
             if (healAmount > 0)
             {
                 Damaging.PlayerHp += healAmount;
-                LogToConsole($"Player healed by {healAmount} points. Current PlayerHp: {Damaging.PlayerHp}");
+                LogToConsole(
+                    $"Player healed by {healAmount} points. Current PlayerHp: {Damaging.PlayerHp}"
+                );
             }
             else
             {
@@ -167,7 +170,9 @@ public class Console : MonoBehaviour
                 }
                 else
                 {
-                    LogToConsole("Unknown argument or wrong letter case. Use full lower case letters.");
+                    LogToConsole(
+                        "Unknown argument or wrong letter case. Use full lower case letters."
+                    );
                 }
             }
             else
@@ -177,6 +182,7 @@ public class Console : MonoBehaviour
             return;
         }
     }
+
     void Gold(string[] args)
     {
         if (args.Length == 0)
@@ -184,7 +190,9 @@ public class Console : MonoBehaviour
             if (GoldAmount > 0)
             {
                 Shop.Gold += GoldAmount;
-                LogToConsole($"Gold amount raised by {GoldAmount}. Current Gold Amount {Shop.Gold}");
+                LogToConsole(
+                    $"Gold amount raised by {GoldAmount}. Current Gold Amount {Shop.Gold}"
+                );
             }
             else
             {
@@ -215,21 +223,30 @@ public class Console : MonoBehaviour
                 if (target == "set")
                 {
                     GoldAmount = amount;
-                    LogToConsole($"Gold amount set to {GoldAmount}. Current Gold Amount {Shop.Gold}");
+                    Shop.Gold = GoldAmount;
+                    LogToConsole(
+                        $"Gold amount set to {GoldAmount}. Current Gold Amount {Shop.Gold}"
+                    );
                 }
                 else if (target == "add")
                 {
                     Shop.Gold += amount;
-                    LogToConsole($"Gold amount raised by {GoldAmount}. Current Gold Amount {Shop.Gold}");
+                    LogToConsole(
+                        $"Gold amount raised by {GoldAmount}. Current Gold Amount {Shop.Gold}"
+                    );
                 }
                 else if (target == "remove")
                 {
                     Shop.Gold -= amount;
-                    LogToConsole($"Gold amount lowered by {GoldAmount}. Current Gold Amount {Shop.Gold}");
+                    LogToConsole(
+                        $"Gold amount lowered by {GoldAmount}. Current Gold Amount {Shop.Gold}"
+                    );
                 }
                 else
                 {
-                    LogToConsole("Unknown argument or wrong letter case. Use full lower case letters.");
+                    LogToConsole(
+                        "Unknown argument or wrong letter case. Use full lower case letters."
+                    );
                 }
             }
             else
@@ -239,6 +256,7 @@ public class Console : MonoBehaviour
             return;
         }
     }
+
     void Hp(string[] args)
     {
         if (args.Length == 2)
@@ -300,12 +318,15 @@ public class Console : MonoBehaviour
                 }
                 else
                 {
-                    LogToConsole("Unknown argument or wrong letter case. Use full lower case letters.");
+                    LogToConsole(
+                        "Unknown argument or wrong letter case. Use full lower case letters."
+                    );
                 }
             }
             return;
         }
     }
+
     void Commands(string[] args)
     {
         if (args.Length == 1)
@@ -325,6 +346,28 @@ public class Console : MonoBehaviour
             LogToConsole("Unknown argument or wrong letter case. Use full lower case letters.");
         }
     }
+    void Fix(string[] args)
+    {
+        if (args.Length == 1)
+        {
+            if (args[0] == "fix")
+            {
+                DoubleClick.CoolDown = false;
+                DoubleClick.Countdown = false;
+                DoubleClick.canPlay = true;
+            }
+            else
+            {
+                LogToConsole("Unknown argument or wrong letter case. Use full lower case letters.");
+            }
+            return;
+        }
+        else
+        {
+            LogToConsole("Unknown argument or wrong letter case. Use full lower case letters.");
+        }
+    }
+
     void Timer(string[] args)
     {
         if (args.Length == 1)

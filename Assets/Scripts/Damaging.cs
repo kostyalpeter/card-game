@@ -175,12 +175,13 @@ public class Damaging : MonoBehaviour, ISaveable
     {
         data.playerHp = playerHp;
         data.EnemyHp = enemyHp;
+        data.Ulty = Ulty;
     }
 
     public void LoadData(Save data)
     {
         playerHp = data.playerHp;
         enemyHp = data.EnemyHp;
+        Ulty = data.Ulty;
     }
-
 }

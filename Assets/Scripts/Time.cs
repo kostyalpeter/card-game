@@ -3,7 +3,7 @@ using TMPro;
 using System.Collections;
 using UnityEngine.UI;
 
-public class Time : MonoBehaviour
+public class Time : MonoBehaviour, ISaveable
 {
     public TMP_Text timerText;
     public static float Timer;
@@ -241,7 +241,7 @@ public class Time : MonoBehaviour
         canTime = !canTime;
     }
 
-        public void SaveData(Save data)
+    public void SaveData(Save data)
     {
         data.Time = Timer;
     }

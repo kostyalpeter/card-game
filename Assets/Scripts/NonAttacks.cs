@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NonAttacks : MonoBehaviour
+public class NonAttacks : MonoBehaviour, ISaveable
 {
     public GameObject Hp1;
     public GameObject Hp2;
@@ -16,7 +16,6 @@ public class NonAttacks : MonoBehaviour
     {
         if (Hp1 && Hp2 != null)
         {
-
             Damaging.EnemyHp /= 2;
             Damaging.PlayerHp /= 2;
             Hp1.SetActive(true);
@@ -26,34 +25,39 @@ public class NonAttacks : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
     public void DamageBoost()
     {
         DamageBoosted = true;
     }
+
     public void Heal()
     {
-
         Damaging.PlayerHp += 20;
     }
+
     public void MoreGold()
     {
         Shop.Gold += 5;
     }
+
     public void MoreXP()
     {
-
         Debug.Log("MoreXP");
     }
+
     public void LessDamage()
     {
         LessDamaged = true;
     }
+
     public void MoreTime()
     {
         damaging.NonAttack();
 
         Time.Timer += 30;
     }
+
     public void Hide()
     {
         damaging.NonAttack();
@@ -61,26 +65,27 @@ public class NonAttacks : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
     public void Shieldd()
     {
         damaging.NonAttack();
 
         Shield = true;
     }
+
     public void Water()
     {
         damaging.NonAttack();
 
         Watered = true;
     }
+
     public void Oil()
     {
         damaging.NonAttack();
 
         Oiled = true;
     }
-
-
 
     public void Drink()
     {
@@ -90,6 +95,7 @@ public class NonAttacks : MonoBehaviour
             playerAudio.Drink();
         }
     }
+
     public void Splash()
     {
         if (playerAudio != null)
@@ -98,6 +104,7 @@ public class NonAttacks : MonoBehaviour
             playerAudio.Splash();
         }
     }
+
     public void Break()
     {
         if (playerAudio != null)
@@ -105,5 +112,25 @@ public class NonAttacks : MonoBehaviour
             Audio.Volume = 100f;
             playerAudio.Break();
         }
+    }
+
+    public void SaveData(Save data)
+    {
+        data.Shield = Shield;
+        data.watered = Watered;
+        data.oiled = Oiled;
+        data.LessDamaged = LessDamaged;
+        data.damageBoost = DamageBoosted;
+        Debug.Log("asked saved");
+    }
+
+    public void LoadData(Save data)
+    {
+        Shield = data.Shield;
+        Watered = data.watered;
+        Oiled = data.oiled;
+        LessDamaged = data.LessDamaged;
+        DamageBoosted = data.damageBoost;
+        Debug.Log("asked loaded");
     }
 }

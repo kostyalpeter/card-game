@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
 using System.Linq;
+using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
@@ -12,11 +12,21 @@ public class SaveManager : MonoBehaviour
         saveFilePath = Application.persistentDataPath + "/save.json";
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveGame();
+    }
+
     public void SaveGame()
     {
         Save data = new Save();
 
-        IEnumerable<ISaveable> saveables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ISaveable>();
+        IEnumerable<ISaveable> saveables = FindObjectsByType<MonoBehaviour>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            )
+            .OfType<ISaveable>();
+
         foreach (ISaveable saveable in saveables)
         {
             saveable.SaveData(data);
@@ -24,7 +34,6 @@ public class SaveManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(saveFilePath, json);
-
     }
 
     public void LoadGame()
@@ -37,11 +46,26 @@ public class SaveManager : MonoBehaviour
         string json = File.ReadAllText(saveFilePath);
         Save data = JsonUtility.FromJson<Save>(json);
 
-        IEnumerable<ISaveable> saveables = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<ISaveable>();
+        IEnumerable<ISaveable> saveables = FindObjectsByType<MonoBehaviour>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            )
+            .OfType<ISaveable>();
+
         foreach (ISaveable saveable in saveables)
         {
             saveable.LoadData(data);
         }
+    }
 
+    public void DeleteSave()
+    {
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath);
+        }
+        else
+        {
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading;
 using System.Security.Cryptography;
 using Unity.Hierarchy;
 
-public class Shop : MonoBehaviour
+public class Shop : MonoBehaviour, ISaveable
 {
     public static int Gold;
     public TMP_Text GoldText;

@@ -1,4 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,8 +32,6 @@ public class Animations2 : MonoBehaviour
     public bool FireShotsBool;
     public bool ArrowRainBool;
 
-
-
     public GameObject heal;
     public GameObject moreXp;
     public GameObject moreTime;
@@ -52,156 +54,181 @@ public class Animations2 : MonoBehaviour
     public GameObject WaterButton;
     Button btn;
 
+    private Dictionary<Transform, Vector3> initialPositions = new Dictionary<Transform, Vector3>();
+    private Dictionary<Transform, Quaternion> initialRotations = new Dictionary<Transform, Quaternion>();
+    
+    // Szótár a futó időzítők (Coroutine-ok) nyomon követésére
+    private Dictionary<GameObject, Coroutine> activeCoroutines = new Dictionary<GameObject, Coroutine>();
+
+    void Awake()
+    {
+        SaveInitialTransforms(ice);
+        SaveInitialTransforms(lightning);
+        SaveInitialTransforms(fireRain);
+        SaveInitialTransforms(burst);
+        SaveInitialTransforms(sword);
+        SaveInitialTransforms(fireBall);
+        SaveInitialTransforms(theBlackArrow);
+        SaveInitialTransforms(fireShots);
+        SaveInitialTransforms(arrowRain);
+        SaveInitialTransforms(arrowShot);
+        SaveInitialTransforms(heal);
+        SaveInitialTransforms(moreXp);
+        SaveInitialTransforms(moreTime);
+        SaveInitialTransforms(lessDamage);
+        SaveInitialTransforms(damageBoost);
+        SaveInitialTransforms(moreGold);
+        SaveInitialTransforms(shield);
+        SaveInitialTransforms(hp);
+        SaveInitialTransforms(water);
+        SaveInitialTransforms(oil);
+    }
 
     void Update()
     {
-        if (FireRainBool)
+        if (NonAttacks.Shield)
         {
-            if (!fireRain.activeSelf)
-            {
-                fireRain.SetActive(true);
-                return;
-            }
-            Animator[] allChildren = fireRain.GetComponentsInChildren<Animator>();
-
-
-            foreach (Animator child in allChildren)
-            {
-                child.SetTrigger("Attack");
-                FireRainBool = false;
-            }
+            shield.SetActive(true);
         }
-        if (FireShotsBool)
+    }
+
+    private void SaveInitialTransforms(GameObject parent)
+    {
+        if (parent == null) return;
+
+        Transform[] transforms = parent.GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in transforms)
         {
-            if (!fireShots.activeSelf)
+            if (!initialPositions.ContainsKey(t))
             {
-                fireShots.SetActive(true);
-                return;
-            }
-            Animator[] allChildren = fireShots.GetComponentsInChildren<Animator>();
-
-
-            foreach (Animator child in allChildren)
-            {
-                child.SetTrigger("Attack");
-                FireShotsBool = false;
-            }
-        }
-        if (ArrowRainBool)
-        {
-            if (!arrowRain.activeSelf)
-            {
-                arrowRain.SetActive(true);
-                return;
-            }
-            Animator[] allChildren = arrowRain.GetComponentsInChildren<Animator>();
-
-
-            foreach (Animator child in allChildren)
-            {
-                child.SetTrigger("Attack");
-                ArrowRainBool = false;
+                initialPositions.Add(t, t.localPosition);
+                initialRotations.Add(t, t.localRotation);
             }
         }
     }
 
-    public void Ice()
+    private void ResetTransforms(GameObject parent)
     {
-        ice.SetActive(true);
-        ice.GetComponent<Animator>().SetTrigger("Attack");
-    }
-    public void Lightning()
-    {
-        lightning.SetActive(true);
-        lightning.GetComponent<Animator>().SetTrigger("Attack");
+        if (parent == null) return;
+
+        Transform[] transforms = parent.GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in transforms)
+        {
+            if (initialPositions.TryGetValue(t, out Vector3 startPos))
+            {
+                t.localPosition = startPos;
+            }
+            if (initialRotations.TryGetValue(t, out Quaternion startRot))
+            {
+                t.localRotation = startRot;
+            }
+        }
     }
 
-    public void FireRain()
+    private void PlayAttack(GameObject parentObj)
     {
-        FireRainBool = true;
+        if (parentObj == null) return;
+
+        // Ha erre az objektumra már futott egy kikapcsoló időzítő, leállítjuk
+        if (activeCoroutines.TryGetValue(parentObj, out Coroutine runningCoroutine))
+        {
+            if (runningCoroutine != null)
+            {
+                StopCoroutine(runningCoroutine);
+            }
+        }
+
+        ResetTransforms(parentObj);
+        parentObj.SetActive(true);
+
+        Transform[] allChildren = parentObj.GetComponentsInChildren<Transform>(true);
+        foreach (Transform child in allChildren)
+        {
+            child.gameObject.SetActive(true);
+        }
+
+        Animator[] animators = parentObj.GetComponentsInChildren<Animator>(true);
+        foreach (Animator anim in animators)
+        {
+            anim.enabled = true;
+            anim.Rebind();
+            anim.Update(0f);
+            anim.SetTrigger("Attack");
+        }
+
+        // Elindítjuk a 3 másodperces automatikus kikapcsoló időzítőt
+        activeCoroutines[parentObj] = StartCoroutine(DisableAfterDelay(parentObj, 3f));
     }
-    public void Burst()
+
+    private void PlayTriggerAnimation(GameObject obj)
     {
-        burst.SetActive(true);
-        burst.GetComponent<Animator>().SetTrigger("Attack");
+        if (obj == null) return;
+
+        if (activeCoroutines.TryGetValue(obj, out Coroutine runningCoroutine))
+        {
+            if (runningCoroutine != null)
+            {
+                StopCoroutine(runningCoroutine);
+            }
+        }
+
+        ResetTransforms(obj);
+        obj.SetActive(true);
+
+        Transform[] allChildren = obj.GetComponentsInChildren<Transform>(true);
+        foreach (Transform child in allChildren)
+        {
+            child.gameObject.SetActive(true);
+        }
+
+        Animator anim = obj.GetComponent<Animator>();
+        if (anim != null)
+        {
+            anim.enabled = true;
+            anim.Rebind();
+            anim.Update(0f);
+            anim.SetTrigger("Trigger");
+        }
+
+        activeCoroutines[obj] = StartCoroutine(DisableAfterDelay(obj, 3f));
     }
-    public void Sword()
+
+    // Időzítő függvény: vár 'delay' másodpercet, majd kikapcsolja az objektumot
+    private IEnumerator DisableAfterDelay(GameObject obj, float delay)
     {
-        sword.SetActive(true);
-        sword.GetComponent<Animator>().SetTrigger("Attack");
+        yield return new WaitForSeconds(delay);
+
+        if (obj != null)
+        {
+            obj.SetActive(false);
+        }
     }
-    public void FireBall()
-    {
-        fireBall.SetActive(true);
-        fireBall.GetComponent<Animator>().SetTrigger("Attack");
-    }
-    public void TheBlackArrow()
-    {
-        theBlackArrow.SetActive(true);
-        theBlackArrow.GetComponent<Animator>().SetTrigger("Attack");
-    }
-    public void FireShots()
-    {
-        FireShotsBool = true;
-    }
-    public void ArrowRain()
-    {
-        ArrowRainBool = true;
-    }
-    public void ArrowShot()
-    {
-        arrowShot.SetActive(true);
-        arrowShot.GetComponent<Animator>().SetTrigger("Attack");
-    }
-    public void Heal()
-    {
-        heal.SetActive(true);
-        heal.GetComponent<Animator>().SetTrigger("Trigger");
-    }
-    public void MoreGold()
-    {
-        moreGold.SetActive(true);
-        moreGold.GetComponent<Animator>().SetTrigger("Trigger");
-    }
-    public void DamageBoost()
-    {
-        damageBoost.SetActive(true);
-        damageBoost.GetComponent<Animator>().SetTrigger("Trigger");
-    }
-    public void LessDamage()
-    {
-        lessDamage.SetActive(true);
-        lessDamage.GetComponent<Animator>().SetTrigger("Trigger");
-    }
-    public void MoreXp()
-    {
-        moreXp.SetActive(true);
-        moreXp.GetComponent<Animator>().SetTrigger("Trigger");
-    }
+
+    public void Ice() => PlayAttack(ice);
+    public void Lightning() => PlayAttack(lightning);
+    public void FireRain() => PlayAttack(fireRain);
+    public void Burst() => PlayAttack(burst);
+    public void Sword() => PlayAttack(sword);
+    public void FireBall() => PlayAttack(fireBall);
+    public void TheBlackArrow() => PlayAttack(theBlackArrow);
+    public void FireShots() => PlayAttack(fireShots);
+    public void ArrowRain() => PlayAttack(arrowRain);
+    public void ArrowShot() => PlayAttack(arrowShot);
+
+    public void Heal() => PlayTriggerAnimation(heal);
+    public void MoreGold() => PlayTriggerAnimation(moreGold);
+    public void DamageBoost() => PlayTriggerAnimation(damageBoost);
+    public void LessDamage() => PlayTriggerAnimation(lessDamage);
+    public void MoreXp() => PlayTriggerAnimation(moreXp);
+    public void MoreTime() => PlayTriggerAnimation(moreTime);
+    public void Hp() => PlayTriggerAnimation(hp);
+    public void Water() => PlayTriggerAnimation(water);
+    public void Oil() => PlayTriggerAnimation(oil);
+
     public void Shield()
     {
         shield.SetActive(true);
         NonAttacks.Shield = true;
         shield.GetComponent<NonAttacks>().Shieldd();
-    }
-    public void MoreTime()
-    {
-        moreTime.SetActive(true);
-        moreTime.GetComponent<Animator>().SetTrigger("Trigger");
-    }
-    public void Hp()
-    {
-        hp.SetActive(true);
-        hp.GetComponent<Animator>().SetTrigger("Trigger");
-    }
-    public void Water()
-    {
-        water.SetActive(true);
-        water.GetComponent<Animator>().SetTrigger("Trigger");
-    }
-    public void Oil()
-    {
-        oil.SetActive(true);
-        oil.GetComponent<Animator>().SetTrigger("Trigger");
     }
 }

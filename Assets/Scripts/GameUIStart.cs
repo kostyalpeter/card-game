@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameUIStart : MonoBehaviour
+public class GameUIStart : MonoBehaviour, ISaveable
 {
     public GameObject Play;
     bool showPlay;
