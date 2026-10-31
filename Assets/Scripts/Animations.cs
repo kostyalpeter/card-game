@@ -7,26 +7,24 @@ public class Animations : MonoBehaviour
     public GameObject Player;
     public GameObject Shieldd;
     public static bool damage;
+
     void Update()
     {
-        if (Damaging.EnemyHp > 0 && Damaging.PlayerHp > 0)
+        if (Anim.CanHit)
         {
-            if (Anim.CanHit)
+            if (gameObject.GetComponent<Animator>() != null)
             {
-                if (gameObject.GetComponent<Animator>() != null)
+                Anim.CanHit = false;
+                gameObject.GetComponent<Animator>().SetTrigger("Damage");
+                damage = true;
+                StartCoroutine(Wait3());
+                NonAttacks.Watered = false;
+                NonAttacks.Oiled = false;
+                NonAttacks.DamageBoosted = false;
+                NonAttacks.LessDamaged = false;
+                if (DoubleClick.CardPlays == 0)
                 {
-                    Anim.CanHit = false;
-                    gameObject.GetComponent<Animator>().SetTrigger("Damage");
-                    damage = true;
-                    StartCoroutine(Wait3());
-                    NonAttacks.Watered = false;
-                    NonAttacks.Oiled = false;
-                    NonAttacks.DamageBoosted = false;
-                    NonAttacks.LessDamaged = false;
-                    if (DoubleClick.CardPlays == 0)
-                    {
-                        StartCoroutine(Wait());
-                    }
+                    StartCoroutine(Wait());
                 }
             }
         }
@@ -54,11 +52,13 @@ public class Animations : MonoBehaviour
             }
         }
     }
+
     public IEnumerator Wait3()
     {
         yield return new WaitForSeconds(0.5f);
         damage = false;
     }
+
     public void PlayerAnim()
     {
         if (Player != null && NonAttacks.Shield != true && DoubleClick.CardPlays == 0)
@@ -73,6 +73,7 @@ public class Animations : MonoBehaviour
             gameObject.GetComponent<Audio>().ShieldHitt();
         }
     }
+
     public void Shield()
     {
         DoubleClick.Countdown = false;

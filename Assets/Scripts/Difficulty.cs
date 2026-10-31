@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class Difficulty : MonoBehaviour
 {
@@ -7,6 +7,10 @@ public class Difficulty : MonoBehaviour
     public GameObject x2;
     public GameObject x3;
     public static bool Started;
+
+    public TMP_Text easy;
+    public TMP_Text medium;
+    public TMP_Text hard;
 
     public void X1()
     {

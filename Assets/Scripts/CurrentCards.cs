@@ -7,6 +7,7 @@ public class CurrentCards : MonoBehaviour
     public GameObject CarddContainer;
     public List<GameObject> deckCards = new List<GameObject>();
     public RectTransform[] places;
+    public int placesIndex;
     public void Click()
     {
         if (Object.activeSelf)
@@ -24,7 +25,7 @@ public class CurrentCards : MonoBehaviour
     public void Card()
     {
         deckCards.Clear();
-        int placesIndex = 0;
+        placesIndex = 0;
 
         foreach (Transform child in CarddContainer.transform)
         {

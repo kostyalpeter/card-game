@@ -3,31 +3,62 @@ using UnityEngine.EventSystems;
 
 public class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    Vector2 originalPos;
-    public float Distance = 350;
+    private Vector2 originalAnchoredPos;
     [SerializeField] public static bool beingDragged;
+    private RectTransform rectTransform;
+    private RectTransform canvasRectTransform;
+    private Canvas canvas;
+    private Vector2 pointerOffset;
 
     void Start()
     {
-        originalPos = transform.position;
+        rectTransform = GetComponent<RectTransform>();
+        originalAnchoredPos = rectTransform.anchoredPosition;
+        canvas = GetComponentInParent<Canvas>();
+        if (canvas != null)
+        {
+            canvasRectTransform = canvas.transform as RectTransform;
+        }
     }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (DoubleClick.Countdown) return;
 
         beingDragged = true;
+
+        if (canvasRectTransform != null)
+        {
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvasRectTransform,
+                eventData.position,
+                canvas.worldCamera,
+                out Vector2 localPointerPos
+            );
+            pointerOffset = rectTransform.anchoredPosition - localPointerPos;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if (DoubleClick.Countdown) return;
 
-        gameObject.transform.position = eventData.position;
+        if (canvasRectTransform != null && canvas != null)
+        {
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvasRectTransform,
+                eventData.position,
+                canvas.worldCamera,
+                out Vector2 localPointerPos
+            );
+
+            rectTransform.anchoredPosition = localPointerPos + pointerOffset;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-            transform.position = originalPos;
-            beingDragged = false;
+        rectTransform.anchoredPosition = originalAnchoredPos;
+        beingDragged = false;
     }
 }

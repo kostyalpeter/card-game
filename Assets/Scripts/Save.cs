@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.XR;
-using UnityEngine;
 
 [System.Serializable]
 public class Save

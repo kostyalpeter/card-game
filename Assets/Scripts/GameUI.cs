@@ -10,6 +10,7 @@ public class GameUI : MonoBehaviour
     public RectTransform PlayerCard;
     public RectTransform PlayerCardPlace;
     public RectTransform EnemyCardPlace;
+    public GameObject GamePlay;
 
 
     void Start()
@@ -24,6 +25,7 @@ public class GameUI : MonoBehaviour
 
     public void Starting()
     {
+        GamePlay.SetActive(true);
         PlayerCard.anchoredPosition = PlayerCardPlace.anchoredPosition;
     }
 }

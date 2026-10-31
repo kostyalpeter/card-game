@@ -2,45 +2,44 @@ using UnityEngine;
 
 public class CardStats : MonoBehaviour
 {
-    public int CardLevel;
-    public float CardDamage;
-    void Update()
+    [SerializeField] private int cardLevel = 1;
+    public int CardLevel 
+    { 
+        get => cardLevel; 
+        set 
+        {
+            if (cardLevel != value)
+            {
+                cardLevel = value;
+                CalculateDamage();
+            }
+        }
+    }
+
+    [SerializeField] private float baseDamage;
+    public float CardDamage { get; private set; }
+
+    void Awake()
     {
-        if(CardLevel == 1)
+        CalculateDamage();
+    }
+
+    void CalculateDamage()
+    {
+        float multiplier = cardLevel switch
         {
-            CardDamage *= 1.1f;
-        }
-        if(CardLevel == 2)
-        {
-            CardDamage *= 1.2f;
-        }
-        if(CardLevel == 3)
-        {
-            CardDamage *= 1.3f;
-        }
-        if(CardLevel == 4)
-        {
-            CardDamage *= 1.4f;
-        }
-        if(CardLevel == 5)
-        {
-            CardDamage *= 1.5f;
-        }
-        if(CardLevel == 6)
-        {
-            CardDamage *= 1.6f;
-        }
-        if(CardLevel == 7)
-        {
-            CardDamage *= 1.7f;
-        }
-        if(CardLevel == 8)
-        {
-            CardDamage *= 1.8f;
-        }
-        if(CardLevel == 9)
-        {
-            CardDamage *= 1.9f;
-        }
+            1 => 1.0f,
+            2 => 1.1f,
+            3 => 1.2f,
+            4 => 1.3f,
+            5 => 1.4f,
+            6 => 1.5f,
+            7 => 1.6f,
+            8 => 1.7f,
+            9 => 2.0f,
+            _ => 1.0f
+        };
+
+        CardDamage = baseDamage * multiplier;
     }
 }

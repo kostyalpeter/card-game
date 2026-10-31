@@ -21,6 +21,7 @@ public class Console : MonoBehaviour
     private int healAmount = 0;
     private int GoldAmount = 0;
     public static bool console = true;
+    public CardPlacement CardPlacement;
 
     void Awake()
     {
@@ -355,6 +356,7 @@ public class Console : MonoBehaviour
                 DoubleClick.CoolDown = false;
                 DoubleClick.Countdown = false;
                 DoubleClick.canPlay = true;
+                CardPlacement.ResetAndRecallCards();
             }
             else
             {

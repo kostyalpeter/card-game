@@ -54,6 +54,7 @@ public class Time : MonoBehaviour, ISaveable
     public GameObject cards;
     public static bool canTime;
     public static float speed = 1f;
+    public GameObject Player;
     int goldAdd;
     Shop shop;
     void Start()
@@ -86,7 +87,11 @@ public class Time : MonoBehaviour, ISaveable
                     canTime = false;
                     shop.StartShop();
                     Shop.Gold++;
-                    GameUIStart.Set--;
+                    if(GameUIStart.Set > 1)
+                    {
+                        GameUIStart.Set--;
+                    }
+                    Asked.lives--;
                 }
 
             }
@@ -109,7 +114,11 @@ public class Time : MonoBehaviour, ISaveable
                     StartCoroutine(StartShop());
                     canTime = false;
                     Shop.Gold++;
-                    GameUIStart.Set--;
+                    if(GameUIStart.Set > 1)
+                    {
+                        GameUIStart.Set--;
+                    }
+                    Asked.lives--;
                 }
                 if (Damaging.EnemyHp == Damaging.PlayerHp)
                 {
@@ -127,9 +136,10 @@ public class Time : MonoBehaviour, ISaveable
 
     public IEnumerator StartShop()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         Shop1.SetActive(true);
         Game1.SetActive(false);
+        Player.SetActive(false);
         Damaging.EnemyHp = Damaging.MaxEnemyHp;
         Damaging.PlayerHp = Damaging.MaxPlayerHp;
         EnemySlider.gameObject.SetActive(false);

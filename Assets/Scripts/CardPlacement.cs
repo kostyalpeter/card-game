@@ -18,7 +18,6 @@ public class CardPlacement : MonoBehaviour, ISaveable
     public int currentCardIndex;
     public GameObject Panel;
     public GameObject backGround;
-    public GameObject playerCard;
     UseCard useCard;
     public Slider PlayerHP;
     public Slider EnemyHP;
@@ -34,6 +33,8 @@ public class CardPlacement : MonoBehaviour, ISaveable
     public TMP_Text countdown;
     public GameObject Game;
     public GameObject CurrentCards;
+    public GameObject Player;
+    int start = 1;
 
     void Start()
     {
@@ -56,6 +57,9 @@ public class CardPlacement : MonoBehaviour, ISaveable
 
     public void CardCall()
     {
+        Player.SetActive(true);
+        start = 1;
+        DoubleClick.CoolDown = false;
         Difficulty.Started = true;
         Discards = DiscardAmount;
         CurrentCards.SetActive(true);
@@ -63,13 +67,35 @@ public class CardPlacement : MonoBehaviour, ISaveable
         useCard.Starting();
         Panel.SetActive(false);
         backGround.SetActive(false);
-        playerCard.SetActive(false);
         PlayerHP.gameObject.SetActive(true);
         EnemyHP.gameObject.SetActive(true);
         GamePlay.gameObject.SetActive(true);
-        Time.Timer = 30;
+        Time.Timer = 180;
         DoubleClick.CardPlays = DoubleClick.Amount;
         Game.SetActive(true);
+
+        foreach (GameObject card in Cards)
+        {
+            if (card != null)
+            {
+                if (CardObject != null)
+                {
+                    card.transform.SetParent(CardObject.transform, false);
+                }
+                card.transform.localScale = Vector3.one;
+                card.GetComponent<DoubleClick>().selected = false;
+                card.SetActive(false);
+            }
+        }
+
+        if (CardPlace1 != null && CardPlace1.GetComponent<Place>() != null)
+            CardPlace1.GetComponent<Place>().isTaken = false;
+
+        if (CardPlace2 != null && CardPlace2.GetComponent<Place>() != null)
+            CardPlace2.GetComponent<Place>().isTaken = false;
+
+        if (CardPlace3 != null && CardPlace3.GetComponent<Place>() != null)
+            CardPlace3.GetComponent<Place>().isTaken = false;
 
         CardCall2();
     }
@@ -93,9 +119,13 @@ public class CardPlacement : MonoBehaviour, ISaveable
         if (currentCardIndex < Cards.Count)
         {
             GameObject c = Cards[currentCardIndex];
+            if (CardObject != null)
+                c.transform.SetParent(CardObject.transform, false);
             c.SetActive(true);
-            c.GetComponent<RectTransform>().anchoredPosition = Pos1;
-            c.GetComponent<RectTransform>().rotation = Rot1;
+            RectTransform rect = c.GetComponent<RectTransform>();
+            rect.anchoredPosition = Pos1;
+            rect.rotation = Rot1;
+            rect.localScale = Vector3.one;
             c.GetComponent<Card>().CardPlace = 1;
             CardPlace1.GetComponent<Place>().isTaken = true;
             currentCardIndex++;
@@ -105,9 +135,13 @@ public class CardPlacement : MonoBehaviour, ISaveable
         if (currentCardIndex < Cards.Count)
         {
             GameObject c = Cards[currentCardIndex];
+            if (CardObject != null)
+                c.transform.SetParent(CardObject.transform, false);
             c.SetActive(true);
-            c.GetComponent<RectTransform>().anchoredPosition = Pos2;
-            c.GetComponent<RectTransform>().rotation = Rot2;
+            RectTransform rect = c.GetComponent<RectTransform>();
+            rect.anchoredPosition = Pos2;
+            rect.rotation = Rot2;
+            rect.localScale = Vector3.one;
             c.GetComponent<Card>().CardPlace = 2;
             CardPlace2.GetComponent<Place>().isTaken = true;
             currentCardIndex++;
@@ -117,9 +151,13 @@ public class CardPlacement : MonoBehaviour, ISaveable
         if (currentCardIndex < Cards.Count)
         {
             GameObject c = Cards[currentCardIndex];
+            if (CardObject != null)
+                c.transform.SetParent(CardObject.transform, false);
             c.SetActive(true);
-            c.GetComponent<RectTransform>().anchoredPosition = Pos3;
-            c.GetComponent<RectTransform>().rotation = Rot3;
+            RectTransform rect = c.GetComponent<RectTransform>();
+            rect.anchoredPosition = Pos3;
+            rect.rotation = Rot3;
+            rect.localScale = Vector3.one;
             c.GetComponent<Card>().CardPlace = 3;
             CardPlace3.GetComponent<Place>().isTaken = true;
             currentCardIndex++;
@@ -140,10 +178,13 @@ public class CardPlacement : MonoBehaviour, ISaveable
             if (currentCardIndex < Cards.Count)
             {
                 GameObject nextCard = Cards[currentCardIndex];
+                if (CardObject != null)
+                    nextCard.transform.SetParent(CardObject.transform, false);
                 nextCard.SetActive(true);
                 RectTransform nextRect = nextCard.GetComponent<RectTransform>();
                 nextRect.anchoredPosition = Pos1;
                 nextRect.rotation = Rot1;
+                nextRect.localScale = Vector3.one;
                 nextCard.GetComponent<Card>().CardPlace = 1;
                 place1.isTaken = true;
                 currentCardIndex++;
@@ -156,10 +197,13 @@ public class CardPlacement : MonoBehaviour, ISaveable
             if (currentCardIndex < Cards.Count)
             {
                 GameObject nextCard = Cards[currentCardIndex];
+                if (CardObject != null)
+                    nextCard.transform.SetParent(CardObject.transform, false);
                 nextCard.SetActive(true);
                 RectTransform nextRect = nextCard.GetComponent<RectTransform>();
                 nextRect.anchoredPosition = Pos2;
                 nextRect.rotation = Rot2;
+                nextRect.localScale = Vector3.one;
                 nextCard.GetComponent<Card>().CardPlace = 2;
                 place2.isTaken = true;
                 currentCardIndex++;
@@ -172,10 +216,13 @@ public class CardPlacement : MonoBehaviour, ISaveable
             if (currentCardIndex < Cards.Count)
             {
                 GameObject nextCard = Cards[currentCardIndex];
+                if (CardObject != null)
+                    nextCard.transform.SetParent(CardObject.transform, false);
                 nextCard.SetActive(true);
                 RectTransform nextRect = nextCard.GetComponent<RectTransform>();
                 nextRect.anchoredPosition = Pos3;
                 nextRect.rotation = Rot3;
+                nextRect.localScale = Vector3.one;
                 nextCard.GetComponent<Card>().CardPlace = 3;
                 place3.isTaken = true;
                 currentCardIndex++;
@@ -200,10 +247,12 @@ public class CardPlacement : MonoBehaviour, ISaveable
 
     public void SkipCard()
     {
-        while (currentCardIndex < Cards.Count &&
-               Cards[currentCardIndex] != null &&
-               Cards[currentCardIndex].GetComponent<Card>() != null &&
-               Cards[currentCardIndex].GetComponent<Card>().locked)
+        while (
+            currentCardIndex < Cards.Count
+            && Cards[currentCardIndex] != null
+            && Cards[currentCardIndex].GetComponent<Card>() != null
+            && Cards[currentCardIndex].GetComponent<Card>().locked
+        )
         {
             currentCardIndex++;
         }
@@ -211,7 +260,7 @@ public class CardPlacement : MonoBehaviour, ISaveable
 
     public void Discard()
     {
-        DoubleClick[] allCards = CardObject.GetComponentsInChildren<DoubleClick>();
+        DoubleClick[] allCards = CardObject.GetComponentsInChildren<DoubleClick>(true);
         bool needRefresh = false;
 
         foreach (DoubleClick card in allCards)
@@ -223,12 +272,22 @@ public class CardPlacement : MonoBehaviour, ISaveable
                 Card cardComp = card.gameObject.GetComponent<Card>();
                 if (cardComp != null)
                 {
-                    if (cardComp.CardPlace == 1) CardPlace1.GetComponent<Place>().isTaken = false;
-                    else if (cardComp.CardPlace == 2) CardPlace2.GetComponent<Place>().isTaken = false;
-                    else if (cardComp.CardPlace == 3) CardPlace3.GetComponent<Place>().isTaken = false;
+                    if (cardComp.locked)
+                        continue;
+
+                    if (cardComp.CardPlace == 1)
+                        CardPlace1.GetComponent<Place>().isTaken = false;
+                    else if (cardComp.CardPlace == 2)
+                        CardPlace2.GetComponent<Place>().isTaken = false;
+                    else if (cardComp.CardPlace == 3)
+                        CardPlace3.GetComponent<Place>().isTaken = false;
                 }
 
-                card.transform.SetParent(null);
+                if (CardObject != null)
+                {
+                    card.transform.SetParent(CardObject.transform, false);
+                }
+                card.transform.localScale = Vector3.one;
                 card.gameObject.SetActive(false);
 
                 Discards--;
@@ -253,10 +312,15 @@ public class CardPlacement : MonoBehaviour, ISaveable
         {
             if (card != null)
             {
+                Card cardComp = card.GetComponent<Card>();
+                if (cardComp != null && cardComp.locked)
+                    continue;
+
                 if (CardObject != null)
                 {
                     card.transform.SetParent(CardObject.transform, false);
                 }
+                card.transform.localScale = Vector3.one;
                 card.SetActive(false);
             }
         }
@@ -277,7 +341,7 @@ public class CardPlacement : MonoBehaviour, ISaveable
     {
         data.CardOrder.Clear();
 
-        for(int i = 0; i < Cards.Count; i++)
+        for (int i = 0; i < Cards.Count; i++)
         {
             data.CardOrder.Add(Cards[i].name);
         }
@@ -285,14 +349,15 @@ public class CardPlacement : MonoBehaviour, ISaveable
 
     public void LoadData(Save data)
     {
-        if(data.CardOrder == null || data.CardOrder.Count == 0) return;
+        if (data.CardOrder == null || data.CardOrder.Count == 0)
+            return;
 
         List<GameObject> reorderedList = new List<GameObject>();
         foreach (string cardName in data.CardOrder)
         {
             GameObject foundCard = Cards.Find(c => c.name == cardName);
 
-            if(foundCard != null)
+            if (foundCard != null)
             {
                 reorderedList.Add(foundCard);
             }
@@ -300,5 +365,4 @@ public class CardPlacement : MonoBehaviour, ISaveable
 
         Cards = reorderedList;
     }
-
 }

@@ -407,7 +407,7 @@ public class UseCard : MonoBehaviour
         }
         else if (cards == Cards.blackarrow)
         {
-            Damaging.DamageAmount = 90;
+            Damaging.DamageAmount = 100;
         }
         else if (cards == Cards.fireball)
         {
@@ -439,15 +439,15 @@ public class UseCard : MonoBehaviour
         {
             if (NonAttacks.Watered == false || NonAttacks.Oiled == false)
             {
-                Damaging.DamageAmount = 10;
+                Damaging.DamageAmount = 5;
             }
             if (NonAttacks.Watered == true)
             {
-                Damaging.DamageAmount = 10 / 3;
+                Damaging.DamageAmount = 5 / 3;
             }
             if (NonAttacks.Oiled == true)
             {
-                Damaging.DamageAmount = 10 * 3;
+                Damaging.DamageAmount = 5 * 3;
             }
         }
         else if (cards == Cards.morexp)
@@ -502,11 +502,11 @@ public class UseCard : MonoBehaviour
         Debug.Log(Damaging.DamageAmount);
         if (NonAttacks.DamageBoosted)
         {
-            Damaging.DamageAmount *= 1.5f;
+            Damaging.DamageAmount *= 1.5f + (Damaging.DamageAmount *gameObject.GetComponent<CardStats>().CardLevel * 0.1f);
         }
         else
         {
-            Damaging.DamageAmount *= 1;
+            Damaging.DamageAmount *= 1 + (Damaging.DamageAmount * gameObject.GetComponent<CardStats>().CardLevel * 0.1f);
         }
     }
 }

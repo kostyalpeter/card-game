@@ -18,45 +18,6 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if (level == 1)
-        {
-            lvl1.gameObject.SetActive(true);
-        }
-        if (level == 2)
-        {
-            lvl2.gameObject.SetActive(true);
-        }
-        if (level == 3)
-        {
-            lvl3.gameObject.SetActive(true);
-        }
-        if (level == 4)
-        {
-            lvl4.gameObject.SetActive(true);
-        }
-        if (level == 5)
-        {
-            lvl5.gameObject.SetActive(true);
-        }
-        if (level == 6)
-        {
-            lvl6.gameObject.SetActive(true);
-        }
-        if (level == 7)
-        {
-            lvl7.gameObject.SetActive(true);
-        }
-        if (level == 8)
-        {
-            lvl8.gameObject.SetActive(true);
-        }
-        if (level == 9)
-        {
-            lvl9.gameObject.SetActive(true);
-        }
-    }
     public void AddLevel()
     {
         if (level < 9)

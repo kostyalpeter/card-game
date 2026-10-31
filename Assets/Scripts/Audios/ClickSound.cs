@@ -20,13 +20,11 @@ public class ClickSound : MonoBehaviour
             {
                 X1.SetActive(false);
                 X2.SetActive(false);
-                Console.console = false;
             }
             else if (!X1.activeSelf)
             {
                 X1.SetActive(true);
                 X2.SetActive(true); 
-                Console.console = true;
             }
         }
     }
