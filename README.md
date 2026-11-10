@@ -6,7 +6,7 @@ Different enemies have different types of attacks, some even have a ability or s
 
 But don't worry you can see all of the informations about your enemy on their card.
 
-If you die, you lose one of your hearts and Will be sent back to the previous enemy level, if you are at the first enemy level you Will lose 10 gold, oh and if you don't have 10 gold, just start a new run bro.
+If you die, you lose one of your hearts and Will be sent back to the previous enemy level.
 
 You can even customize what music you play.
 
