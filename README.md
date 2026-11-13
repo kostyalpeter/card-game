@@ -1,3 +1,12 @@
+Card It!
+
+A tactical card-battler where every choice matters—and dying deletes your save.
+
+<img width="1687" height="947" alt="Képernyőkép 2026-10-31 151257" src="https://github.com/user-attachments/assets/23fd27b4-38a5-4377-97be-cfa85d3f4c01" />
+
+
+------------------------------------------------------------------------------
+
 This is a Card game, if you couldnt tell.
 
 You need to play out your card to damage and finially defeat your enemy.
